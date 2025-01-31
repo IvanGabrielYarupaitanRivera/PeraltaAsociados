@@ -7,7 +7,6 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
 
 <header class="bg-white">
   <!-- Primera fila - Redes sociales y teléfono -->
-
   <div class="bg-primary text-white py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <!-- Redes sociales -->
@@ -46,7 +45,7 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
   </div>
 
   <!-- Segunda fila - Logo, navegación y correo -->
-  <div class="container mx-auto px-4 py-4">
+  <div class="mx-auto px-4 py-4">
     <div class="flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center gap-4">
@@ -54,7 +53,7 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
           <PeraltaAsociados />
         </div>
         <div>
-          <h1 class="font-serif md:text-2xl text-xl font-bold text-primary">
+          <h1 class="font-serif lg:text-2xl text-xl font-bold text-primary">
             Peralta Asociados
           </h1>
           <p class="text-sm text-gray-600 hidden lg:flex">
@@ -64,7 +63,7 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
       </div>
 
       <!-- Navegación -->
-      <nav class="hidden md:block">
+      <nav class="hidden lg:block">
         <ul class="flex gap-8 font-merriweather">
           <li>
             <a
@@ -136,12 +135,18 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
       </div>
 
       <!-- Botón menú móvil -->
-      <button class="md:hidden text-[#171E60]">
+      <button
+        class="lg:hidden text-primary hover:text-secondary transition-colors duration-300 cursor-pointer"
+        id="mobile-menu-button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
         <svg
-          class="w-6 h-6"
+          class="w-8 h-8"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path
             stroke-linecap="round"
@@ -150,6 +155,156 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
             d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
+
+      <!-- Menú móvil -->
+      <div
+        id="mobile-menu"
+        class="hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-sm transform transition-all duration-300"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="container mx-auto px-4 py-8">
+          <div class="flex justify-between items-center mb-8">
+            <div
+              class="text-primary transform transition-all duration-300 hover:scale-105"
+            >
+              <PeraltaAsociados />
+            </div>
+            <button
+              id="close-menu"
+              class="text-primary hover:text-secondary transition-all duration-300 p-2 cursor-pointer"
+              aria-label="Cerrar menú"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+
+          <nav class="py-4">
+            <ul class="flex flex-col gap-8 text-center">
+              <li
+                class="transform transition-all duration-300 hover:-translate-y-1"
+              >
+                <a
+                  href="/"
+                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  Inicio
+                </a>
+              </li>
+              <li
+                class="transform transition-all duration-300 hover:-translate-y-1"
+              >
+                <a
+                  href="/"
+                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  Servicios
+                </a>
+              </li>
+              <li
+                class="transform transition-all duration-300 hover:-translate-y-1"
+              >
+                <a
+                  href="/"
+                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  Nosotros
+                </a>
+              </li>
+              <li
+                class="transform transition-all duration-300 hover:-translate-y-1"
+              >
+                <a
+                  href="/"
+                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  Testimonios
+                </a>
+              </li>
+              <li
+                class="transform transition-all duration-300 hover:-translate-y-1"
+              >
+                <a
+                  href="/"
+                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  Contacto
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
 </header>
+
+<script>
+  const mobileMenuButton = document.querySelector(
+    "#mobile-menu-button"
+  ) as HTMLButtonElement;
+  const closeMenuButton = document.querySelector(
+    "#close-menu"
+  ) as HTMLButtonElement;
+  const mobileMenu = document.querySelector("#mobile-menu") as HTMLDivElement;
+
+  const toggleMenu = () => {
+    const isHidden = mobileMenu.classList.contains("hidden");
+
+    if (isHidden) {
+      // Primero removemos hidden
+      mobileMenu.classList.remove("hidden");
+
+      // Esperamos al siguiente frame para añadir la animación
+      requestAnimationFrame(() => {
+        mobileMenu.style.transform = "translateX(0)";
+        mobileMenu.style.opacity = "1";
+      });
+    } else {
+      // Iniciamos la animación de salida
+      mobileMenu.style.transform = "translateX(-100%)";
+      mobileMenu.style.opacity = "0";
+
+      // Esperamos a que termine la animación
+      mobileMenu.addEventListener(
+        "transitionend",
+        () => {
+          mobileMenu.classList.add("hidden");
+        },
+        { once: true }
+      );
+    }
+
+    document.body.classList.toggle("overflow-hidden");
+    mobileMenuButton.setAttribute("aria-expanded", isHidden.toString());
+  };
+
+  const closeOnEscape = (e: KeyboardEvent) => {
+    if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+      toggleMenu();
+    }
+  };
+
+  mobileMenuButton.addEventListener("click", toggleMenu);
+  closeMenuButton.addEventListener("click", toggleMenu);
+  document.addEventListener("keydown", closeOnEscape);
+</script>
+
+<style>
+  #mobile-menu {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+</style>
