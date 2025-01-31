@@ -1,3 +1,31 @@
+# Contexto del Proyecto
+
+Quiero realizar una página para el emprendimiento de mi padre que es abogado, su emprendimiento se llama "Peralta Asociados" y es sobre brindar asesoría jurídica en la ciudad de Huancavelica. Tengo pensado realizar su página web con Astro y Tailwind CSS.
+
+### Diseño de la Página
+
+Paleta de Colores
+
+- Azul Principal: #171E60 (azul oscuro/naval para transmitir confianza y profesionalidad).
+- Dorado: #D4AF37 (dorado clásico para elegancia y distinción).
+- Neutros: #FFFFFF (blanco para fondos), #F5F5F5 (gris claro para secciones secundarias).
+
+Tipografía
+
+- Títulos: Fuente serif clásica como "Cormorant Garamond" o "Playfair Display" (elegante y legible).
+- Cuerpo de texto: Fuente serif secundaria como "Source Serif Pro" o "Merriweather" (facilita la lectura en párrafos largos).
+
+Resumen del diseño
+
+- Prefiero un diseño clásico, bordes dorados, espacios limpios, minimalista y profesional.
+- Me gustaría incluir elementos visuales como íconos de justicia
+
+### Tono del Contenido
+
+- Me gustaría que fuera cercano, que no use palabras tan complicadas y que sea fácil de entender para el usuario que no tiene conocimiento alguno sobre las leyes.
+
+## Sobre el código
+
 Principio KISS (Keep It Simple, Stupid):
 
 - Implementa soluciones con la mínima complejidad necesaria
@@ -12,8 +40,9 @@ Minimalismo efectivo:
 
 HTML Semántico:
 
-<!-- Mal -->
-<div class="header"></div>
+- Usar siempre etiquetas semánticas
+  <!-- Mal -->
+  <div class="header"></div>
 
 <!-- Bien -->
 <header class="...">
