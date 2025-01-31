@@ -12,8 +12,7 @@ Paleta de Colores
 
 Tipografía
 
-- Títulos: Fuente serif clásica como "Cormorant Garamond" o "Playfair Display" (elegante y legible).
-- Cuerpo de texto: Fuente serif secundaria como "Source Serif Pro" o "Merriweather" (facilita la lectura en párrafos largos).
+- Títulos: Fuente serif clásica como "Playfair Display" (usar font-serif de tailwind).
 
 Resumen del diseño
 
