@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        mdi: ["scale-balance", "gavel", "briefcase", "arrow-right"],
+        mdi: ["scale-balance", "gavel", "briefcase", "arrow-right", "check"],
         "fa-solid": ["scale-balanced", "landmark"],
       },
     }),
