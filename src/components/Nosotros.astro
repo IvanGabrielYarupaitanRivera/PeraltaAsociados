@@ -1,0 +1,219 @@
+<section class="py-20 relative bg-neutral-100" id="nosotros">
+  <!-- Patrón de fondo -->
+  <div class="absolute inset-0 opacity-30">
+    <svg
+      width="100%"
+      height="100%"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <pattern
+        id="subtle-pattern"
+        x="0"
+        y="0"
+        width="40"
+        height="40"
+        patternUnits="userSpaceOnUse"
+      >
+        <path
+          d="M0 20h40M20 0v40"
+          stroke="#171E60"
+          stroke-width="0.5"
+          stroke-opacity="0.2"
+          fill="none"></path>
+        <circle cx="20" cy="20" r="1" fill="#171E60" fill-opacity="0.2"
+        ></circle>
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#subtle-pattern)"></rect>
+    </svg>
+  </div>
+
+  <!-- Contenido principal -->
+  <main class="relative z-10">
+    <div class="container mx-auto px-4">
+      <!-- Encabezado decorativo -->
+      <header class="flex items-center gap-4 mb-8">
+        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        ></span>
+        <p
+          class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
+        >
+          Sobre Nosotros
+        </p>
+        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        ></span>
+      </header>
+
+      <!-- Título principal -->
+      <header class="text-center max-w-3xl mx-auto mb-16">
+        <h1
+          class="font-serif text-3xl md:text-4xl lg:text-5xl text-primary font-bold mb-4"
+        >
+          Tu Firma Legal de Confianza en Huancavelica
+        </h1>
+        <p class="text-gray-600">
+          En Peralta Asociados defendemos tus derechos con soluciones legales
+          efectivas.
+        </p>
+      </header>
+
+      <!-- Contenido en dos columnas -->
+      <section class="grid lg:grid-cols-2 gap-12 items-start">
+        <!-- Columna imagen -->
+        <figure class="relative h-[700px]">
+          <img
+            src="/images/lady-justice.webp"
+            alt="Representación de la Justicia - Mujer con balanza"
+            class="w-full h-full object-contain"
+            width="500"
+            height="700"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <!-- Columna contenido -->
+        <aside class="space-y-12">
+          <!-- Misión -->
+          <article
+            class="relative h-[400px] overflow-hidden rounded-sm shadow-sm group"
+          >
+            <figure class="absolute inset-0">
+              <img
+                src="/images/nosotros/mision-legal.webp"
+                alt="Equipo de abogados de Peralta Asociados trabajando en un caso legal en Huancavelica"
+                class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                width="1600"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"
+              >
+              </div>
+            </figure>
+
+            <div class="relative h-full flex items-center">
+              <div class="w-1/2 lg:w-2/3 p-8 text-white">
+                <header class="flex items-center gap-4 mb-4">
+                  <span class="h-[2px] w-12 bg-secondary" aria-hidden="true"
+                  ></span>
+                  <h2 class="font-serif text-2xl font-bold">Nuestra Misión</h2>
+                </header>
+                <p class="leading-relaxed text-neutral-200 text-pretty">
+                  Brindar asesoría legal especializada y cercana en
+                  Huancavelica, transformando términos jurídicos complejos en
+                  soluciones prácticas. Nos dedicamos a defender tus derechos
+                  con más de 15 años de experiencia en diferentes áreas del
+                  derecho.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Visión -->
+          <article
+            class="relative h-[400px] overflow-hidden rounded-sm shadow-sm group"
+          >
+            <figure class="absolute inset-0">
+              <img
+                src="/images/nosotros/vision-legal.webp"
+                alt="Edificio de justicia representando nuestra visión de ser líderes en asesoría legal en Huancavelica"
+                class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
+                width="1600"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"
+              >
+              </div>
+            </figure>
+
+            <div class="relative h-full flex items-center">
+              <div class="w-1/2 lg:w-2/3 p-8 text-white">
+                <header class="flex items-center gap-4 mb-4">
+                  <span class="h-[2px] w-12 bg-secondary" aria-hidden="true"
+                  ></span>
+                  <h2 class="font-serif text-2xl font-bold">Nuestra Visión</h2>
+                </header>
+                <p class="leading-relaxed text-neutral-200 text-pretty">
+                  Ser la firma legal líder en Huancavelica, transformando la
+                  manera de brindar servicios legales. Nos distinguimos por
+                  hacer el derecho comprensible y accesible, asegurando que cada
+                  cliente reciba una atención personalizada y resultados
+                  efectivos.
+                </p>
+              </div>
+            </div>
+          </article>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <!-- Valores -->
+  <!-- <div class="space-y-6">
+    <div class="flex items-center gap-4">
+      <div class="h-[2px] w-12 bg-secondary"></div>
+      <h3 class="font-serif text-2xl text-primary font-bold">
+        Nuestros Valores
+      </h3>
+    </div>
+
+    <ul class="grid sm:grid-cols-2 gap-6 ml-4">
+      <li class="flex items-start gap-3">
+        <Icon
+          name="mdi:star-four-points"
+          class="w-6 h-6 text-secondary flex-shrink-0"
+        />
+        <div>
+          <h4 class="font-bold text-primary mb-1">Compromiso</h4>
+          <p class="text-gray-600 text-sm">
+            Dedicación total a cada caso y cliente que confía en nosotros.
+          </p>
+        </div>
+      </li>
+      <li class="flex items-start gap-3">
+        <Icon
+          name="mdi:star-four-points"
+          class="w-6 h-6 text-secondary flex-shrink-0"
+        />
+        <div>
+          <h4 class="font-bold text-primary mb-1">Transparencia</h4>
+          <p class="text-gray-600 text-sm">
+            Comunicación clara y honesta en todo momento.
+          </p>
+        </div>
+      </li>
+      <li class="flex items-start gap-3">
+        <Icon
+          name="mdi:star-four-points"
+          class="w-6 h-6 text-secondary flex-shrink-0"
+        />
+        <div>
+          <h4 class="font-bold text-primary mb-1">Experiencia</h4>
+          <p class="text-gray-600 text-sm">
+            Más de 15 años resolviendo casos exitosamente.
+          </p>
+        </div>
+      </li>
+      <li class="flex items-start gap-3">
+        <Icon
+          name="mdi:star-four-points"
+          class="w-6 h-6 text-secondary flex-shrink-0"
+        />
+        <div>
+          <h4 class="font-bold text-primary mb-1">Cercanía</h4>
+          <p class="text-gray-600 text-sm">
+            Trato personalizado y lenguaje claro para nuestros clientes.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div> -->
+</section>
