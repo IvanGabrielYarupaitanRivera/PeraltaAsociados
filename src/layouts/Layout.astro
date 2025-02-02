@@ -5,7 +5,46 @@ const SITE_DESCRIPTION =
   "Asesoría legal especializada en Huancavelica. Expertos en derecho civil, laboral, administrativo y constitucional con más de 15 años de experiencia.";
 ---
 
-<!doctype html>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LawFirm",
+    "name": "Peralta Asociados",
+    "image": "/images/og-image.jpg",
+    "url": "https://peraltaasociados.com",
+    "description": "Asesoría legal especializada en Huancavelica. Expertos en derecho civil, laboral, administrativo y constitucional.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jr. Mayta Cápac N° 215",
+      "addressLocality": "Huancavelica",
+      "addressRegion": "Huancavelica",
+      "postalCode": "",
+      "addressCountry": "PE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-12.7869",
+      "longitude": "-74.9731"
+    },
+    "telephone": "+51976762237",
+    "email": "cyarupaitanp@gmail.com",
+    "sameAs": ["https://www.facebook.com/PeraltaAsociadosPeru"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "priceRange": "$$",
+    "areaServed": {
+      "@type": "City",
+      "name": "Huancavelica"
+    }
+  }
+</script>
+
 <html lang="es">
   <head>
     <meta
@@ -64,6 +103,14 @@ const SITE_DESCRIPTION =
     <meta name="twitter:title" content={SITE_TITLE} />
     <meta name="twitter:description" content={SITE_DESCRIPTION} />
     <meta name="twitter:image" content="/images/og-image.jpg" />
+
+    <!-- Local Business Meta Tags -->
+    <meta name="city" content="Huancavelica" />
+    <meta name="state" content="Huancavelica" />
+    <meta name="country" content="Perú" />
+    <meta name="zipcode" content="09000" />
+    <meta name="target" content="Huancavelica, Perú" />
+    <meta name="subject" content="Servicios Legales en Huancavelica" />
 
     <!-- Palabras clave -->
     <meta
