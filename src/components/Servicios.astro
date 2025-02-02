@@ -1,5 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+
+import derechoAdministrativo from "../assets/images/servicios/derechoAdministrativo.webp";
+import derechoCivil from "../assets/images/servicios/derechoCivil.webp";
+import derechoLaboral from "../assets/images/servicios/derechoLaboral.webp";
+import derechoConstitucional from "../assets/images/servicios/derechoConstitucional.webp";
 ---
 
 <section class="py-20 relative bg-neutral-100" id="servicios">
@@ -63,8 +69,8 @@ import { Icon } from "astro-icon/components";
         <!-- Card de Derecho Administrativo -->
         <article class="relative h-[600px] group overflow-hidden rounded-sm">
           <!-- Imagen de fondo -->
-          <img
-            src="/images/servicios/derecho-administrativo.webp"
+          <Image
+            src={derechoAdministrativo}
             alt="Asesoría legal en derecho administrativo en Huancavelica - Imagen de la justicia con una balanza"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             width="800"
@@ -115,8 +121,8 @@ import { Icon } from "astro-icon/components";
         <!-- Card de Derecho Civil -->
         <article class="relative h-[600px] group overflow-hidden rounded-sm">
           <!-- Imagen de fondo -->
-          <img
-            src="/images/servicios/derecho-civil.webp"
+          <Image
+            src={derechoCivil}
             alt="Asesoría legal en derecho civil en Huancavelica - Documentos legales y balanza de justicia"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             width="800"
@@ -165,8 +171,8 @@ import { Icon } from "astro-icon/components";
         <!-- Card de Derecho Laboral -->
         <article class="relative h-[600px] group overflow-hidden rounded-sm">
           <!-- Imagen de fondo -->
-          <img
-            src="/images/servicios/derecho-laboral.webp"
+          <Image
+            src={derechoLaboral}
             alt="Asesoría en derecho laboral en Huancavelica - Defensa de derechos laborales y beneficios sociales"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             width="800"
@@ -215,8 +221,8 @@ import { Icon } from "astro-icon/components";
         <!-- Card de Derecho Constitucional -->
         <article class="relative h-[600px] group overflow-hidden rounded-sm">
           <!-- Imagen de fondo -->
-          <img
-            src="/images/servicios/derecho-constitucional.webp"
+          <Image
+            src={derechoConstitucional}
             alt="Asesoría en derecho constitucional en Huancavelica - Protección de derechos fundamentales"
             class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             width="800"
