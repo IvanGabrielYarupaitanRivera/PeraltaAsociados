@@ -1,3 +1,11 @@
+---
+import { Image } from "astro:assets";
+
+import ladyJustice from "../assets/images/nosotros/lady-justice.webp";
+import misionLegal from "../assets/images/nosotros/mision-legal.webp";
+import visionLegal from "../assets/images/nosotros/vision-legal.webp";
+---
+
 <section class="py-20 relative bg-neutral-100" id="nosotros">
   <!-- Patrón de fondo -->
   <div class="absolute inset-0 opacity-30">
@@ -61,8 +69,8 @@
       <section class="grid lg:grid-cols-2 gap-12 items-start">
         <!-- Columna imagen -->
         <figure class="relative h-[700px]">
-          <img
-            src="/images/lady-justice.webp"
+          <Image
+            src={ladyJustice}
             alt="Representación de la Justicia - Mujer con balanza"
             class="w-full h-full object-contain"
             width="500"
@@ -79,8 +87,8 @@
             class="relative h-[400px] overflow-hidden rounded-sm shadow-sm group"
           >
             <figure class="absolute inset-0">
-              <img
-                src="/images/nosotros/mision-legal.webp"
+              <Image
+                src={misionLegal}
                 alt="Equipo de abogados de Peralta Asociados trabajando en un caso legal en Huancavelica"
                 class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                 width="1600"
@@ -118,8 +126,8 @@
             class="relative h-[400px] overflow-hidden rounded-sm shadow-sm group"
           >
             <figure class="absolute inset-0">
-              <img
-                src="/images/nosotros/vision-legal.webp"
+              <Image
+                src={visionLegal}
                 alt="Edificio de justicia representando nuestra visión de ser líderes en asesoría legal en Huancavelica"
                 class="w-full h-full object-cover transition-all duration-300 group-hover:scale-105"
                 width="1600"
