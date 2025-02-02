@@ -6,10 +6,12 @@ import Nosotros from "./Nosotros.astro";
 import Footer from "./Footer.astro";
 ---
 
-<div id="container">
+<div id="container" class="flex flex-col min-h-screen">
   <Header />
-  <Hero />
-  <Servicios />
-  <Nosotros />
+  <main class="flex-1">
+    <Hero />
+    <Servicios />
+    <Nosotros />
+  </main>
   <Footer />
 </div>
