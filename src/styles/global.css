@@ -6,3 +6,11 @@
 
   --font-sans: "Source Serif 4", serif;
 }
+
+@font-face {
+  font-display: swap;
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/source-serif-4-v8-latin-ext-regular.woff2") format("woff2");
+}
