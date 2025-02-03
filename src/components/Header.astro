@@ -1,8 +1,11 @@
 ---
+import { Icon } from "astro-icon/components";
+
 import FacebookLogo from "../assets/icons/FacebookLogo.astro";
 import WhatsAppLogo from "../assets/icons/WhatsAppLogo.astro";
 import PhoneIcon from "../assets/icons/PhoneIcon.astro";
 import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
+import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
 ---
 
 <header class="bg-white">
@@ -59,7 +62,9 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
           <PeraltaAsociados />
         </div>
         <div>
-          <h1 class="font-serif lg:text-2xl text-xl font-bold text-primary">
+          <h1
+            class="font-serif lg:text-2xl sm:text-xl text-lg font-bold text-primary"
+          >
             Peralta Asociados
           </h1>
           <p class="text-sm text-gray-600 hidden lg:flex">
@@ -73,7 +78,7 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
         <ul class="flex gap-8 font-merriweather">
           <li>
             <a
-              href="/"
+              href="#inicio"
               class="text-primary hover:text-secondary text-sm lg:text-base transition-colors duration-300"
               aria-current="page"
             >
@@ -82,7 +87,7 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
           </li>
           <li>
             <a
-              href="/servicios"
+              href="#servicios"
               class="text-primary text-sm lg:text-base hover:text-secondary transition-colors duration-300"
             >
               Servicios
@@ -90,7 +95,7 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
           </li>
           <li>
             <a
-              href="/nosotros"
+              href="#nosotros"
               class="text-primary text-sm lg:text-base hover:text-secondary transition-colors duration-300"
             >
               Nosotros
@@ -98,15 +103,15 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
           </li>
           <li>
             <a
-              href="/testimonios"
+              href="#equipo"
               class="text-primary text-sm lg:text-base hover:text-secondary transition-colors duration-300"
             >
-              Testimonios
+              Equipo
             </a>
           </li>
           <li>
             <a
-              href="/contacto"
+              href="#contacto"
               class="text-primary text-sm lg:text-base hover:text-secondary transition-colors duration-300"
             >
               Contacto
@@ -165,92 +170,183 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
       <!-- Menú móvil -->
       <div
         id="mobile-menu"
-        class="hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-sm transform transition-all duration-300"
+        class="hidden fixed right-0 top-0 w-full h-full z-50 bg-white/90 backdrop-blur-sm transform transition-all duration-300"
         role="dialog"
         aria-modal="true"
       >
-        <div class="container mx-auto px-4 py-8">
-          <div class="flex justify-between items-center mb-8">
-            <div
-              class="text-primary transform transition-all duration-300 hover:scale-105"
-            >
-              <PeraltaAsociados />
-            </div>
-            <button
-              id="close-menu"
-              class="text-primary hover:text-secondary transition-all duration-300 p-2 cursor-pointer"
-              aria-label="Cerrar menú"
-            >
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-          </div>
+        <div class="h-full w-full flex flex-col">
+          <!-- Header -->
+          <header
+            class="bg-gradient-to-r from-primary to-primary/95 p-4 rounded-b-lg shadow-md"
+          >
+            <div class="flex justify-between items-center py-2">
+              <!-- Logo -->
+              <figure class="text-white">
+                <PeraltaAsociadosLight />
+              </figure>
 
-          <nav class="py-4">
-            <ul class="flex flex-col gap-8 text-center">
-              <li
-                class="transform transition-all duration-300 hover:-translate-y-1"
+              <!-- Botón de cierre -->
+              <button
+                id="close-menu"
+                class="text-white hover:text-secondary transition-all duration-300 p-2"
+                aria-label="Cerrar menú"
               >
-                <a
-                  href="/"
-                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                  Inicio
-                </a>
-              </li>
-              <li
-                class="transform transition-all duration-300 hover:-translate-y-1"
-              >
-                <a
-                  href="/"
-                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  Servicios
-                </a>
-              </li>
-              <li
-                class="transform transition-all duration-300 hover:-translate-y-1"
-              >
-                <a
-                  href="/"
-                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  Nosotros
-                </a>
-              </li>
-              <li
-                class="transform transition-all duration-300 hover:-translate-y-1"
-              >
-                <a
-                  href="/"
-                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  Testimonios
-                </a>
-              </li>
-              <li
-                class="transform transition-all duration-300 hover:-translate-y-1"
-              >
-                <a
-                  href="/"
-                  class="text-primary hover:text-secondary transition-colors duration-300 text-xl block py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  Contacto
-                </a>
-              </li>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
+          </header>
+
+          <!-- Navegación -->
+          <nav class="">
+            <ul class="flex flex-col divide-y divide-gray-200">
+              {
+                ["Inicio", "Servicios", "Nosotros", "Equipo", "Contacto"].map(
+                  (item) => (
+                    <li>
+                      <a
+                        href={`#${item.toLowerCase()}`}
+                        class="flex items-center gap-4 py-4 px-6 text-primary hover:bg-gray-50 transition-all duration-300 group"
+                      >
+                        <Icon name="mdi:star-four-points" class="w-5 h-5" />
+                        <span class="text-lg font-medium group-hover:translate-x-2 transition-transform duration-300">
+                          {item}
+                        </span>
+                      </a>
+                    </li>
+                  )
+                )
+              }
             </ul>
           </nav>
+
+          <!-- Información de contacto -->
+          <footer class="mt-auto border-t border-gray-100">
+            <section>
+              <!-- Contacto directo -->
+              <nav
+                class="grid grid-cols-2"
+                aria-label="Información de contacto"
+              >
+                <a
+                  href="tel:976762237"
+                  class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+                  aria-label="Llamar al número de teléfono"
+                >
+                  <figure class="flex items-center gap-3">
+                    <div class="text-secondary">
+                      <Icon
+                        name="mdi:phone"
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <figcaption class="text-left">
+                      <span class="text-xs text-gray-500">Llámanos</span>
+                      <strong
+                        class="block text-primary group-hover:text-secondary transition-colors"
+                      >
+                        +51 976 762 237
+                      </strong>
+                    </figcaption>
+                  </figure>
+                </a>
+
+                <a
+                  href="mailto:cyarupaitanp@gmail.com"
+                  class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+                  aria-label="Enviar correo electrónico"
+                >
+                  <figure class="flex items-center gap-3">
+                    <div class="text-secondary">
+                      <Icon
+                        name="mdi:email"
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <figcaption class="text-left">
+                      <span class="text-xs text-gray-500">Escríbenos</span>
+                      <strong
+                        class="block text-primary group-hover:text-secondary transition-colors"
+                      >
+                        cyarupaitanp@gmail.com
+                      </strong>
+                    </figcaption>
+                  </figure>
+                </a>
+              </nav>
+
+              <!-- Ubicación y redes sociales -->
+              <nav
+                class="grid grid-cols-2"
+                aria-label="Ubicación y redes sociales"
+              >
+                <a
+                  href="https://maps.app.goo.gl/xdNuLoFVub7qPK5Q7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+                  aria-label="Ver ubicación en Google Maps"
+                >
+                  <figure class="flex items-center gap-3">
+                    <div class="text-secondary">
+                      <Icon
+                        name="mdi:map-marker"
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <figcaption class="text-left">
+                      <span class="text-xs text-gray-500">Ubicación</span>
+                      <strong
+                        class="block text-primary group-hover:text-secondary transition-colors"
+                      >
+                        Jr. Mayta Cápac N° 215
+                      </strong>
+                    </figcaption>
+                  </figure>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/PeraltaAsociadosPeru"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+                  aria-label="Visitar página de Facebook"
+                >
+                  <figure class="flex items-center gap-3">
+                    <div class="text-secondary">
+                      <Icon
+                        name="mdi:facebook"
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <figcaption class="text-left">
+                      <span class="text-xs text-gray-500">Facebook</span>
+                      <strong
+                        class="block text-primary group-hover:text-secondary transition-colors"
+                      >
+                        Peralta Asociados
+                      </strong>
+                    </figcaption>
+                  </figure>
+                </a>
+              </nav>
+            </section>
+          </footer>
         </div>
       </div>
     </div>
