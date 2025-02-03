@@ -177,7 +177,7 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
         <div class="h-full w-full flex flex-col">
           <!-- Header -->
           <header
-            class="bg-gradient-to-r from-primary to-primary/95 p-4 rounded-b-lg shadow-md"
+            class="bg-gradient-to-r from-primary to-primary/95 p-4 shadow-md"
           >
             <div class="flex justify-between items-center py-2">
               <!-- Logo -->
@@ -209,7 +209,7 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
           </header>
 
           <!-- Navegación -->
-          <nav class="">
+          <nav class="my-5">
             <ul class="flex flex-col divide-y divide-gray-200">
               {
                 ["Inicio", "Servicios", "Nosotros", "Equipo", "Contacto"].map(
@@ -232,37 +232,13 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
           </nav>
 
           <!-- Información de contacto -->
-          <footer class="mt-auto border-t border-gray-100">
+          <footer class="border-t border-gray-100 overflow-auto">
             <section>
               <!-- Contacto directo -->
               <nav
-                class="grid grid-cols-2"
+                class="grid grid-cols-1"
                 aria-label="Información de contacto"
               >
-                <a
-                  href="tel:976762237"
-                  class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
-                  aria-label="Llamar al número de teléfono"
-                >
-                  <figure class="flex items-center gap-3">
-                    <div class="text-secondary">
-                      <Icon
-                        name="mdi:phone"
-                        class="w-5 h-5"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <figcaption class="text-left">
-                      <span class="text-xs text-gray-500">Llámanos</span>
-                      <strong
-                        class="block text-primary group-hover:text-secondary transition-colors"
-                      >
-                        +51 976 762 237
-                      </strong>
-                    </figcaption>
-                  </figure>
-                </a>
-
                 <a
                   href="mailto:cyarupaitanp@gmail.com"
                   class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
@@ -278,11 +254,35 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
                     </div>
                     <figcaption class="text-left">
                       <span class="text-xs text-gray-500">Escríbenos</span>
-                      <strong
-                        class="block text-primary group-hover:text-secondary transition-colors"
+                      <p
+                        class="block text-primary group-hover:text-secondary transition-colors text-sm"
                       >
                         cyarupaitanp@gmail.com
-                      </strong>
+                      </p>
+                    </figcaption>
+                  </figure>
+                </a>
+
+                <a
+                  href="tel:976762237"
+                  class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
+                  aria-label="Llamar al número de teléfono"
+                >
+                  <figure class="flex items-center gap-3">
+                    <div class="text-secondary">
+                      <Icon
+                        name="mdi:phone"
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <figcaption class="text-left">
+                      <span class="text-xs text-gray-500">Llámanos</span>
+                      <p
+                        class="block text-primary group-hover:text-secondary transition-colors text-sm"
+                      >
+                        976 762 237
+                      </p>
                     </figcaption>
                   </figure>
                 </a>
@@ -290,7 +290,7 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
 
               <!-- Ubicación y redes sociales -->
               <nav
-                class="grid grid-cols-2"
+                class="grid grid-cols-1"
                 aria-label="Ubicación y redes sociales"
               >
                 <a
@@ -310,11 +310,11 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
                     </div>
                     <figcaption class="text-left">
                       <span class="text-xs text-gray-500">Ubicación</span>
-                      <strong
-                        class="block text-primary group-hover:text-secondary transition-colors"
+                      <p
+                        class="block text-primary group-hover:text-secondary transition-colors text-sm"
                       >
                         Jr. Mayta Cápac N° 215
-                      </strong>
+                      </p>
                     </figcaption>
                   </figure>
                 </a>
@@ -336,11 +336,11 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
                     </div>
                     <figcaption class="text-left">
                       <span class="text-xs text-gray-500">Facebook</span>
-                      <strong
-                        class="block text-primary group-hover:text-secondary transition-colors"
+                      <p
+                        class="block text-primary group-hover:text-secondary transition-colors text-sm"
                       >
                         Peralta Asociados
-                      </strong>
+                      </p>
                     </figcaption>
                   </figure>
                 </a>
