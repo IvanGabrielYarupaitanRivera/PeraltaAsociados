@@ -14,3 +14,8 @@
   font-weight: 400;
   src: url("fonts/source-serif-4-v8-latin-ext-regular.woff2") format("woff2");
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}

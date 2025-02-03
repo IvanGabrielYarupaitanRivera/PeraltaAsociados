@@ -8,12 +8,12 @@ import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
 import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
 ---
 
-<header class="bg-white">
+<header class="">
   <!-- Primera fila - Redes sociales y teléfono -->
-  <div class="bg-primary text-white py-4">
-    <div class="container mx-auto px-4 flex justify-between items-center">
+  <div class="bg-primary text-white">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <!-- Redes sociales -->
-      <div class="items-center gap-4 flex">
+      <nav class="flex items-center gap-4" aria-label="Redes sociales">
         <a
           href="https://www.facebook.com/PeraltaAsociadosPeru/"
           class="hover:text-secondary transition-colors duration-300"
@@ -22,7 +22,6 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
           aria-label="Visita nuestro perfil de Facebook"
         >
           <span class="sr-only">Facebook</span>
-
           <FacebookLogo />
         </a>
 
@@ -34,10 +33,9 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
           aria-label="Envíanos un mensaje por WhatsApp"
         >
           <span class="sr-only">WhatsApp</span>
-
           <WhatsAppLogo />
         </a>
-      </div>
+      </nav>
 
       <!-- Teléfono -->
       <div class="flex items-center gap-2">
@@ -52,16 +50,18 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
       </div>
     </div>
   </div>
+</header>
 
-  <!-- Segunda fila - Logo, navegación y correo -->
-  <div class="mx-auto px-4 py-4">
+<!-- Segunda fila - Logo, navegación y correo -->
+<header class="bg-white/90 backdrop-blur-md shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4">
     <div class="flex justify-between items-center">
-      <!-- Logo -->
-      <div class="flex items-center gap-4">
-        <div class="text-primary">
+      <!-- Logo y nombre de la empresa -->
+      <figure class="flex items-center gap-4">
+        <div class="text-primary" aria-hidden="true">
           <PeraltaAsociados />
         </div>
-        <div>
+        <figcaption>
           <h1
             class="font-serif lg:text-2xl sm:text-xl text-lg font-bold text-primary"
           >
@@ -70,8 +70,8 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
           <p class="text-sm text-gray-600 hidden lg:flex">
             Asesoría Legal en Huancavelica
           </p>
-        </div>
-      </div>
+        </figcaption>
+      </figure>
 
       <!-- Navegación -->
       <nav class="hidden lg:block">
