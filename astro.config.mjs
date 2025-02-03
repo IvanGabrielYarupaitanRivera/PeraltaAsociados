@@ -24,6 +24,8 @@ export default defineConfig({
           "map-marker",
           "phone",
           "email",
+          "home",
+          "account-group",
         ],
         "fa-solid": ["scale-balanced", "landmark"],
       },
