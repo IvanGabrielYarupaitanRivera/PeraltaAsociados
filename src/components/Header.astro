@@ -153,7 +153,7 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
         aria-expanded="false"
       >
         <svg
-          class="w-8 h-8"
+          class="w-6 h-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -180,16 +180,25 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
   <div class="h-full w-full flex flex-col">
     <!-- Header -->
     <header class="bg-gradient-to-r from-primary to-primary/95 p-4 shadow-md">
-      <div class="flex justify-between items-center py-2">
+      <div class="flex justify-between items-center">
         <!-- Logo -->
-        <figure class="text-white">
-          <PeraltaAsociadosLight />
+        <figure class="flex items-center gap-4">
+          <div aria-hidden="true">
+            <PeraltaAsociadosLight />
+          </div>
+          <figcaption>
+            <h1
+              class="font-serif lg:text-2xl sm:text-xl text-lg font-bold text-white"
+            >
+              Peralta Asociados
+            </h1>
+          </figcaption>
         </figure>
 
         <!-- Botón de cierre -->
         <button
           id="close-menu"
-          class="text-white hover:text-secondary transition-all duration-300 p-2"
+          class="text-white hover:text-secondary transition-all duration-300"
           aria-label="Cerrar menú"
         >
           <svg
