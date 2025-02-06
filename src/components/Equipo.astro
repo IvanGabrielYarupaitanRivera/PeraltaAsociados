@@ -36,142 +36,160 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
     </svg>
   </div>
 
-  <div class="container mx-auto px-4">
-    <!-- Encabezado decorativo -->
-    <header class="flex items-center gap-4 mb-8">
-      <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
-      ></span>
-      <p
-        class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
+  <main class="relative z-10">
+    <div class="container mx-auto px-4">
+      <!-- Encabezado decorativo -->
+      <header class="flex items-center gap-4 mb-8">
+        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        ></span>
+        <p
+          class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
+        >
+          Nuestro Equipo
+        </p>
+        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        ></span>
+      </header>
+
+      <!-- Título principal -->
+      <header class="text-center max-w-3xl mx-auto mb-16">
+        <h1
+          class="font-serif text-3xl md:text-4xl lg:text-5xl text-primary font-bold mb-4"
+        >
+          <span class="block">Experiencia y Compromiso a tu Servicio</span>
+        </h1>
+        <p class="text-gray-600">
+          Conoce al equipo legal comprometido con la defensa de tus derechos.
+        </p>
+      </header>
+
+      <section
+        class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start max-w-7xl mx-auto"
       >
-        Nuestro Equipo
-      </p>
-      <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
-      ></span>
-    </header>
+        <!-- Columna Imagen -->
+        <div class="lg:col-span-4 relative">
+          <figure
+            class="aspect-[3/4] overflow-hidden rounded-sm group relative"
+          >
+            <Image
+              src={abogadoProfile}
+              alt="Dr. Ciro Gabriel Yarupaitan Peralta - Abogado Principal en Peralta Asociados"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              widths={[280, 400, 800]}
+              sizes={`(max-width: 360px) 280px, (max-width: 768px) 400px, 800px`}
+              format="webp"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption class="sr-only">
+              Fotografía profesional del Dr. Ciro Gabriel Yarupaitan Peralta
+            </figcaption>
+          </figure>
+        </div>
 
-    <!-- Título principal -->
-    <header class="text-center max-w-3xl mx-auto mb-16">
-      <h1
-        class="font-serif text-3xl md:text-4xl lg:text-5xl text-primary font-bold mb-4"
-      >
-        <span class="block">Experiencia y Compromiso a tu Servicio</span>
-      </h1>
-      <p class="text-gray-600">
-        Conoce al equipo legal comprometido con la defensa de tus derechos.
-      </p>
-    </header>
+        <!-- Columna Información -->
+        <div class="lg:col-span-8 space-y-12">
+          <!-- Encabezado Personal -->
+          <article class="space-y-4">
+            <header>
+              <span class="text-sm tracking-widest uppercase text-primary/60">
+                Abogado Principal
+              </span>
+              <h2
+                class="font-serif text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mt-2"
+              >
+                Ciro Gabriel Yarupaitan Peralta
+              </h2>
+            </header>
+          </article>
 
-    <section
-      class="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start max-w-7xl mx-auto"
-    >
-      <!-- Columna Imagen -->
-      <div class="lg:col-span-4 relative">
-        <figure class="aspect-[3/4] overflow-hidden rounded-sm group relative">
-          <Image
-            src={abogadoProfile}
-            alt="Dr. Ciro Gabriel Yarupaitan Peralta - Abogado Principal en Peralta Asociados"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            widths={[280, 400, 800]}
-            sizes={`(max-width: 360px) 280px, (max-width: 768px) 400px, 800px`}
-            format="webp"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption class="sr-only">
-            Fotografía profesional del Dr. Ciro Gabriel Yarupaitan Peralta
-          </figcaption>
-        </figure>
-      </div>
+          <!-- Valores y Principios -->
+          <section aria-labelledby="valores-title" class="py-8">
+            <h3 id="valores-title" class="sr-only">
+              Mis Valores Profesionales
+            </h3>
 
-      <!-- Columna Información -->
-      <div class="lg:col-span-8 space-y-12">
-        <!-- Encabezado Personal -->
-        <article class="space-y-4">
-          <header>
-            <span class="text-sm tracking-widest uppercase text-primary/60">
-              Abogado Principal
-            </span>
-            <h2
-              class="font-serif text-3xl lg:text-4xl xl:text-5xl font-bold text-primary mt-2"
-            >
-              Ciro Gabriel Yarupaitan Peralta
-            </h2>
-          </header>
-        </article>
+            <ul class="grid sm:grid-cols-2 gap-8">
+              <!-- Compromiso Personal -->
+              <li class="group">
+                <article class="flex items-start gap-4">
+                  <Icon
+                    name="mdi:handshake"
+                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                  />
+                  <div>
+                    <h4 class="font-serif text-lg text-primary mb-2">
+                      Compromiso Personal
+                    </h4>
+                    <p class="text-primary/70 text-sm">
+                      Me dedico a cada caso como si fuera el único, porque
+                      entiendo que detrás de cada expediente hay una persona que
+                      confía en mí.
+                    </p>
+                  </div>
+                </article>
+              </li>
 
-        <!-- Valores y Principios -->
-        <section aria-labelledby="valores-title" class="py-8">
-          <h3 id="valores-title" class="sr-only">Mis Valores Profesionales</h3>
+              <!-- Transparencia Total -->
+              <li class="group">
+                <article class="flex items-start gap-4">
+                  <Icon
+                    name="mdi:scale-balance"
+                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                  />
+                  <div>
+                    <h4 class="font-serif text-lg text-primary mb-2">
+                      Transparencia Total
+                    </h4>
+                    <p class="text-primary/70 text-sm">
+                      Siempre te explicaré tu situación legal de manera clara y
+                      directa, sin tecnicismos innecesarios ni falsas promesas.
+                    </p>
+                  </div>
+                </article>
+              </li>
 
-          <dl class="grid sm:grid-cols-2 gap-8">
-            <div class="flex items-start gap-4 group">
-              <Icon
-                name="mdi:handshake"
-                class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
-              />
-              <div>
-                <dt class="font-serif text-lg text-primary mb-2">
-                  Compromiso Personal
-                </dt>
-                <dd class="text-primary/70 text-sm">
-                  Me dedico a cada caso como si fuera el único, porque entiendo
-                  que detrás de cada expediente hay una persona que confía en
-                  mí.
-                </dd>
-              </div>
-            </div>
+              <!-- Experiencia Probada -->
+              <li class="group">
+                <article class="flex items-start gap-4">
+                  <Icon
+                    name="mdi:briefcase-check"
+                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                  />
+                  <div>
+                    <h4 class="font-serif text-lg text-primary mb-2">
+                      Experiencia Probada
+                    </h4>
+                    <p class="text-primary/70 text-sm">
+                      En mis 15 años de práctica legal, he ayudado a cientos de
+                      huancavelicanos a resolver sus casos satisfactoriamente.
+                    </p>
+                  </div>
+                </article>
+              </li>
 
-            <div class="flex items-start gap-4 group">
-              <Icon
-                name="mdi:scale-balance"
-                class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
-              />
-              <div>
-                <dt class="font-serif text-lg text-primary mb-2">
-                  Transparencia Total
-                </dt>
-                <dd class="text-primary/70 text-sm">
-                  Siempre te explicaré tu situación legal de manera clara y
-                  directa, sin tecnicismos innecesarios ni falsas promesas.
-                </dd>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 group">
-              <Icon
-                name="mdi:briefcase-check"
-                class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
-              />
-              <div>
-                <dt class="font-serif text-lg text-primary mb-2">
-                  Experiencia Probada
-                </dt>
-                <dd class="text-primary/70 text-sm">
-                  En mis 15 años de práctica legal, he ayudado a cientos de
-                  huancavelicanos a resolver sus casos satisfactoriamente.
-                </dd>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4 group">
-              <Icon
-                name="mdi:account-heart"
-                class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
-              />
-              <div>
-                <dt class="font-serif text-lg text-primary mb-2">
-                  Trato Cercano
-                </dt>
-                <dd class="text-primary/70 text-sm">
-                  Te escucho y te acompaño en todo el proceso legal, usando un
-                  lenguaje que puedas entender y sintiéndote respaldado.
-                </dd>
-              </div>
-            </div>
-          </dl>
-        </section>
-      </div>
-    </section>
-  </div>
+              <!-- Trato Cercano -->
+              <li class="group">
+                <article class="flex items-start gap-4">
+                  <Icon
+                    name="mdi:account-heart"
+                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                  />
+                  <div>
+                    <h4 class="font-serif text-lg text-primary mb-2">
+                      Trato Cercano
+                    </h4>
+                    <p class="text-primary/70 text-sm">
+                      Te escucho y te acompaño en todo el proceso legal, usando
+                      un lenguaje que puedas entender y sintiéndote respaldado.
+                    </p>
+                  </div>
+                </article>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </div>
+  </main>
 </section>
