@@ -220,7 +220,7 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
 
     <!-- Navegación -->
     <nav class="my-5">
-      <ul class="flex flex-col divide-y divide-gray-200">
+      <ul class="flex flex-col">
         {
           ["Inicio", "Servicios", "Nosotros", "Equipo", "Contacto"].map(
             (item) => (
@@ -230,7 +230,7 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
                   class="flex items-center gap-4 py-4 px-6 text-primary hover:bg-gray-50 transition-all duration-300 group"
                 >
                   <Icon name="mdi:star-four-points" class="w-5 h-5" />
-                  <span class="text-lg font-medium group-hover:translate-x-2 transition-transform duration-300">
+                  <span class="text-sm font-medium group-hover:translate-x-2 transition-transform duration-300">
                     {item}
                   </span>
                 </a>
@@ -240,105 +240,6 @@ import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
         }
       </ul>
     </nav>
-
-    <!-- Información de contacto -->
-    <footer class="border-t border-gray-100 overflow-auto">
-      <section>
-        <!-- Contacto directo -->
-        <nav class="grid grid-cols-1" aria-label="Información de contacto">
-          <a
-            href="mailto:cyarupaitanp@gmail.com"
-            class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
-            aria-label="Enviar correo electrónico"
-          >
-            <figure class="flex items-center gap-3">
-              <div class="text-secondary">
-                <Icon name="mdi:email" class="w-5 h-5" aria-hidden="true" />
-              </div>
-              <figcaption class="text-left">
-                <span class="text-xs text-gray-500">Escríbenos</span>
-                <p
-                  class="block text-primary group-hover:text-secondary transition-colors text-sm"
-                >
-                  cyarupaitanp@gmail.com
-                </p>
-              </figcaption>
-            </figure>
-          </a>
-
-          <a
-            href="tel:976762237"
-            class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
-            aria-label="Llamar al número de teléfono"
-          >
-            <figure class="flex items-center gap-3">
-              <div class="text-secondary">
-                <Icon name="mdi:phone" class="w-5 h-5" aria-hidden="true" />
-              </div>
-              <figcaption class="text-left">
-                <span class="text-xs text-gray-500">Llámanos</span>
-                <p
-                  class="block text-primary group-hover:text-secondary transition-colors text-sm"
-                >
-                  976 762 237
-                </p>
-              </figcaption>
-            </figure>
-          </a>
-        </nav>
-
-        <!-- Ubicación y redes sociales -->
-        <nav class="grid grid-cols-1" aria-label="Ubicación y redes sociales">
-          <a
-            href="https://maps.app.goo.gl/xdNuLoFVub7qPK5Q7"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
-            aria-label="Ver ubicación en Google Maps"
-          >
-            <figure class="flex items-center gap-3">
-              <div class="text-secondary">
-                <Icon
-                  name="mdi:map-marker"
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                />
-              </div>
-              <figcaption class="text-left">
-                <span class="text-xs text-gray-500">Ubicación</span>
-                <p
-                  class="block text-primary group-hover:text-secondary transition-colors text-sm"
-                >
-                  Jr. Mayta Cápac N° 215
-                </p>
-              </figcaption>
-            </figure>
-          </a>
-
-          <a
-            href="https://www.facebook.com/PeraltaAsociadosPeru"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-white/5 p-4 rounded-lg hover:bg-gray-50 transition-all duration-300 group"
-            aria-label="Visitar página de Facebook"
-          >
-            <figure class="flex items-center gap-3">
-              <div class="text-secondary">
-                <Icon name="mdi:facebook" class="w-5 h-5" aria-hidden="true" />
-              </div>
-              <figcaption class="text-left">
-                <span class="text-xs text-gray-500">Facebook</span>
-                <p
-                  class="block text-primary group-hover:text-secondary transition-colors text-sm"
-                >
-                  Peralta Asociados
-                </p>
-              </figcaption>
-            </figure>
-          </a>
-        </nav>
-      </section>
-    </footer>
   </div>
 </div>
 
