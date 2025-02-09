@@ -1,76 +1,168 @@
 ---
+import { Icon } from "astro-icon/components";
 const formName = "contacto";
 ---
 
-<section id="contacto" class="py-20 bg-neutral-100">
-  <div class="container mx-auto px-4">
-    <header class="mb-8 text-center">
-      <h1 class="font-serif text-3xl md:text-4xl text-primary font-bold">
-        Contáctanos
-      </h1>
-      <p class="text-gray-600">
-        ¿Tienes alguna consulta? Completa el formulario y nos pondremos en
-        contacto.
-      </p>
-    </header>
-    <form
-      name={formName}
-      action="/exito"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="max-w-lg mx-auto space-y-6"
+<section id="contacto" class="py-20 relative bg-neutral-100">
+  <!-- Patrón de fondo en modo oscuro, versión mejorada y moderna -->
+  <div class="absolute inset-0">
+    <svg
+      width="100%"
+      height="100%"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
-      <!-- Campo oculto para Netlify -->
-      <input type="hidden" name="form-name" value={formName} />
-      <p class="hidden">
-        <label>
-          No rellenes este campo si eres humano: <input name="bot-field" />
-        </label>
-      </p>
-      <div>
-        <label for="nombre" class="block text-sm font-medium text-gray-700">
-          Nombre
-        </label>
-        <input
-          type="text"
-          id="nombre"
-          name="nombre"
-          required
-          class="mt-1 block w-full rounded-sm border-gray-300 p-2"
-        />
-      </div>
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">
-          Correo Electrónico
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="mt-1 block w-full rounded-sm border-gray-300 p-2"
-        />
-      </div>
-      <div>
-        <label for="mensaje" class="block text-sm font-medium text-gray-700">
-          Mensaje
-        </label>
-        <textarea
-          id="mensaje"
-          name="mensaje"
-          rows="5"
-          required
-          class="mt-1 block w-full rounded-sm border-gray-300 p-2"></textarea>
-      </div>
-      <div class="text-center">
-        <button
-          type="submit"
-          class="inline-flex items-center px-8 py-2 bg-primary text-white font-medium hover:bg-primary/90 transition-all duration-300 rounded-sm"
+      <defs>
+        <pattern
+          id="improved-dark-pattern"
+          x="0"
+          y="0"
+          width="40"
+          height="40"
+          patternUnits="userSpaceOnUse"
         >
-          Enviar
-        </button>
-      </div>
-    </form>
+          <!-- Fondo base en tonos oscuros: triángulo principal -->
+          <polygon points="40,40 40,0 0,40" fill="#171e60" fill-opacity="0.05"
+          ></polygon>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#improved-dark-pattern)"
+      ></rect>
+    </svg>
   </div>
+
+  <main class="relative z-10">
+    <div class="container mx-auto px-4">
+      <!-- Encabezado decorativo -->
+      <header class="flex items-center gap-4 mb-8">
+        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        ></span>
+        <p
+          class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
+        >
+          Contacto
+        </p>
+        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        ></span>
+      </header>
+
+      <!-- Título principal -->
+      <header class="text-center max-w-3xl mx-auto mb-16">
+        <h1
+          class="font-serif text-3xl md:text-4xl lg:text-5xl text-primary font-bold mb-4"
+        >
+          <span class="block">¿Necesitas Asesoría Legal?</span>
+        </h1>
+        <p class="text-gray-600">
+          Completa el formulario y nuestro equipo se pondrá en contacto contigo
+          para ayudarte.
+        </p>
+      </header>
+
+      <!-- Formulario de contacto -->
+      <section class="max-w-2xl mx-auto">
+        <form
+          name={formName}
+          action="/exito"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-8 bg-gradient-to-t from-neutral-50 to-neutral-100 p-8 md:p-10 rounded-sm shadow-lg"
+        >
+          <!-- Campo oculto para Netlify -->
+          <input type="hidden" name="form-name" value={formName} />
+          <div class="hidden" aria-hidden="true">
+            <label>No rellenar: <input name="bot-field" tabindex="-1" /></label>
+          </div>
+
+          <!-- Campos del formulario -->
+          <fieldset class="space-y-6">
+            <legend class="sr-only">Formulario de contacto</legend>
+
+            <div class="group relative">
+              <label
+                for="nombre"
+                class="block text-base font-semibold text-primary font-serif"
+              >
+                Nombre completo
+                <span class="text-red-500" aria-hidden="true">*</span>
+              </label>
+              <div class="mt-1 relative rounded-sm shadow-sm">
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  required
+                  aria-required="true"
+                  class="block w-full px-4 py-3 bg-white rounded-sm
+                      
+                     placeholder:text-gray-400 text-black"
+                  placeholder="Ingresa tu nombre completo"
+                  title="Por favor ingresa un nombre válido"
+                />
+              </div>
+            </div>
+
+            <div class="group relative">
+              <label
+                for="email"
+                class="block text-base font-semibold text-primary font-serif"
+              >
+                Correo electrónico <span class="text-red-500" aria-hidden="true"
+                  >*</span
+                >
+              </label>
+              <div class="mt-1 relative rounded-sm shadow-sm">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  aria-required="true"
+                  class="block w-full px-4 py-3 bg-white rounded-sm
+                      
+                  placeholder:text-gray-400 text-black"
+                  placeholder="tu@email.com"
+                />
+              </div>
+            </div>
+
+            <div class="group relative">
+              <label
+                for="mensaje"
+                class="block text-base font-semibold text-primary font-serif"
+              >
+                Tu mensaje <span class="text-red-500" aria-hidden="true">*</span
+                >
+              </label>
+              <div class="mt-1 relative rounded-sm shadow-sm">
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="5"
+                  required
+                  aria-required="true"
+                  class="block w-full px-4 py-3 bg-white rounded-sm placeholder:text-gray-400 text-black resize-none"
+                  placeholder="¿Cómo podemos ayudarte? Cuéntanos brevemente tu caso..."
+                ></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="text-center pt-6 group">
+            <button
+              type="submit"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-sm shadow-sm disabled:opacity-50 cursor-pointer"
+            >
+              <span>Enviar consulta</span>
+              <Icon
+                name="mdi:send"
+                class="w-4 h-4 transition-transform group-hover:translate-x-1"
+              />
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
 </section>

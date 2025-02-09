@@ -31,6 +31,8 @@ export default defineConfig({
           "handshake",
           "briefcase-check",
           "account-heart",
+          "send",
+          "arrow-left",
         ],
         "fa-solid": ["scale-balanced", "landmark"],
       },
