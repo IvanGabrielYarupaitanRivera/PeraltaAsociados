@@ -38,7 +38,7 @@ const formName = "contacto";
         <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
         ></span>
         <p
-          class="bg-secondary text-white font-medium tracking-wide uppercase text-sm
+          class="bg-primary text-white font-medium tracking-wide uppercase text-sm
                  whitespace-nowrap px-4 py-1.5 rounded-sm shadow-glow"
         >
           Contacto
@@ -166,33 +166,3 @@ const formName = "contacto";
     </div>
   </main>
 </section>
-
-<style>
-  .shadow-glow {
-    animation: glow 3s ease-in-out infinite;
-    transition: all 0.3s ease;
-  }
-
-  @keyframes glow {
-    0% {
-      box-shadow:
-        0 0 5px rgb(212, 175, 55),
-        0 0 10px rgba(212, 175, 55);
-    }
-    50% {
-      box-shadow:
-        0 0 20px rgba(212, 175, 55),
-        0 0 40px rgba(212, 175, 55);
-      transform: scale(1.02);
-    }
-    100% {
-      box-shadow:
-        0 0 5px rgba(212, 175, 55),
-        0 0 10px rgba(212, 175, 55);
-    }
-  }
-
-  .shadow-glow:hover {
-    animation-play-state: paused;
-  }
-</style>
