@@ -3,155 +3,118 @@ import { Icon } from "astro-icon/components";
 import PeraltaAsociadosLight from "../assets/icons/PeraltaAsociadosLight.astro";
 import FacebookLogo from "../assets/icons/FacebookLogo.astro";
 import WhatsAppLogo from "../assets/icons/WhatsAppLogo.astro";
+import PeraltaAsociados from "../assets/icons/PeraltaAsociados.astro";
 
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-primary text-white">
-  <!-- Primera fila - Contenido principal -->
-  <div class="container mx-auto">
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-0 rounded-sm">
-      <!-- Columna 1 - Logo e información -->
-      <section
-        class="space-y-6 p-6 py-12 flex flex-col items-center text-center"
+<footer class="bg-primary">
+  <!-- Primera fila - Logo y descripción -->
+  <div class="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <section
+      class="flex flex-col items-center text-center max-w-2xl mx-auto space-y-8"
+    >
+      <PeraltaAsociadosLight />
+
+      <p class="text-white/80 leading-relaxed">
+        Comprometidos con la justicia y el derecho en Huancavelica.
+      </p>
+
+      <nav aria-label="Redes sociales" class="flex gap-6">
+        <a
+          href="https://www.facebook.com/PeraltaAsociadosPeru"
+          class="text-white hover:text-white/80 transition-colors duration-300"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Síguenos en Facebook"
+        >
+          <FacebookLogo />
+        </a>
+        <a
+          href="https://wa.me/976762237"
+          class="text-white hover:text-white/80 transition-colors duration-300"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contáctanos por WhatsApp"
+        >
+          <WhatsAppLogo />
+        </a>
+      </nav>
+    </section>
+  </div>
+
+  <!-- Segunda fila - Información de contacto -->
+  <div class="border-t border-white/20 text-center">
+    <div class="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
+      <div
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto"
       >
-        <!-- Logo -->
-        <figure>
-          <PeraltaAsociadosLight />
-        </figure>
-
-        <!-- Descripción -->
-        <p class="text-white/80 leading-relaxed max-w-md">
-          Comprometidos con la justicia y el derecho en Huancavelica.
-        </p>
-
-        <!-- Redes sociales -->
-        <nav class="flex items-center gap-4">
-          <a
-            href="https://www.facebook.com/PeraltaAsociadosPeru"
-            class="text-white hover:text-secondary transition-colors duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Síguenos en Facebook"
+        <!-- Ubicación -->
+        <section class="space-y-2">
+          <h3
+            class="text-gray-400 text-sm font-medium uppercase tracking-wider"
           >
-            <FacebookLogo />
-          </a>
-          <a
-            href="https://wa.me/976762237"
-            class="text-white hover:text-secondary transition-colors duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Contáctanos por WhatsApp"
-          >
-            <WhatsAppLogo />
-          </a>
-        </nav>
-      </section>
-
-      <!-- Columna 2 - Información de contacto -->
-      <section
-        class="space-y-6 p-6 lg:border-r md:border-x border-t border-white/20 py-12 flex flex-col items-center text-center"
-      >
-        <header>
-          <h2 class="font-serif text-xl text-secondary">Contáctanos</h2>
-        </header>
-
-        <address class="space-y-4 not-italic">
-          <div class="flex items-center gap-3">
-            <Icon
-              name="mdi:map-marker"
-              class="w-5 h-5 text-secondary flex-shrink-0"
-              aria-hidden="true"
-            />
+            Ubicación
+          </h3>
+          <address class="not-italic flex justify-center">
             <a
               href="https://maps.app.goo.gl/xdNuLoFVub7qPK5Q7"
-              class="text-white/80 hover:text-secondary transition-colors duration-300"
+              class="flex items-center gap-3 group"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Ubicación en Google Maps - Jr. Mayta Cápac N° 215"
             >
-              Jr. Mayta Cápac N° 215
+              <span
+                class="text-white group-hover:text-white/90 transition-colors"
+              >
+                Jr. Mayta Cápac N° 215
+              </span>
             </a>
-          </div>
+          </address>
+        </section>
 
-          <div class="flex items-center gap-3">
-            <Icon
-              name="mdi:phone"
-              class="w-5 h-5 text-secondary flex-shrink-0"
-              aria-hidden="true"
-            />
-            <a
-              href="tel:976762237"
-              class="text-white/80 hover:text-secondary transition-colors duration-300"
-            >
-              +51 976 762 237
+        <!-- Teléfono -->
+        <section class="space-y-2">
+          <h3
+            class="text-gray-400 text-sm font-medium uppercase tracking-wider"
+          >
+            Teléfono
+          </h3>
+          <address class="not-italic flex justify-center">
+            <a href="tel:976762237" class="flex items-center gap-3 group">
+              <span
+                class="text-white group-hover:text-white/90 transition-colors"
+              >
+                +51 976 762 237
+              </span>
             </a>
-          </div>
+          </address>
+        </section>
 
-          <div class="flex items-center gap-3">
-            <Icon
-              name="mdi:email"
-              class="w-5 h-5 text-secondary flex-shrink-0"
-              aria-hidden="true"
-            />
+        <!-- Correo -->
+        <section class="space-y-2">
+          <h3
+            class="text-gray-400 text-sm font-medium uppercase tracking-wider"
+          >
+            Correo
+          </h3>
+          <address class="not-italic flex justify-center">
             <a
               href="mailto:cyarupaitanp@gmail.com"
-              class="text-white/80 hover:text-secondary transition-colors duration-300"
+              class="flex items-center gap-3 group"
             >
-              cyarupaitanp@gmail.com
+              <span
+                class="text-white group-hover:text-white/90 transition-colors"
+              >
+                cyarupaitanp@gmail.com
+              </span>
             </a>
-          </div>
-        </address>
-      </section>
-
-      <!-- Columna 3 - Enlaces -->
-      <nav
-        class="space-y-6 py-12 p-6 hidden lg:block flex-col items-center text-center"
-      >
-        <header>
-          <h2 class="font-serif text-xl text-secondary">Enlaces Rápidos</h2>
-        </header>
-
-        <ul class="space-y-3">
-          <li>
-            <a
-              href="#inicio"
-              class="text-white/80 hover:text-secondary transition-colors duration-300"
-              aria-current="page"
-            >
-              Inicio
-            </a>
-          </li>
-          <li>
-            <a
-              href="#servicios"
-              class="text-white/80 hover:text-secondary transition-colors duration-300"
-            >
-              Servicios
-            </a>
-          </li>
-          <li>
-            <a
-              href="#nosotros"
-              class="text-white/80 hover:text-secondary transition-colors duration-300"
-            >
-              Nosotros
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contacto"
-              class="text-white/80 hover:text-secondary transition-colors duration-300"
-            >
-              Contacto
-            </a>
-          </li>
-        </ul>
-      </nav>
+          </address>
+        </section>
+      </div>
     </div>
   </div>
 
-  <!-- Segunda fila - Copyright -->
+  <!-- Tercera fila - Copyright -->
   <div class="border-t border-white/20">
     <div class="container mx-auto px-4 py-6">
       <div

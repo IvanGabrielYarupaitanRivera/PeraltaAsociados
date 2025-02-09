@@ -1,3 +1,7 @@
+---
+const uniqueId = `mask-${crypto.randomUUID()}`;
+---
+
 <svg
   class="w-8 h-8 md:w-12 md:h-12"
   viewBox="0 0 448 448"
@@ -6,7 +10,7 @@
   xmlns="http://www.w3.org/2000/svg"
 >
   <mask
-    id="mask0_17_70"
+    id={uniqueId}
     style="mask-type:alpha"
     maskUnits="userSpaceOnUse"
     x="0"
@@ -22,7 +26,7 @@
       stroke="black"
       stroke-width="5.27059"></circle>
   </mask>
-  <g mask="url(#mask0_17_70)">
+  <g mask={`url(#${uniqueId})`}>
     <path
       d="M15.8125 342.588V221.365C15.8125 104.93 110.201 10.5411 226.636 10.5411C343.071 10.5411 437.46 104.93 437.46 221.365C437.46 337.799 343.071 432.188 226.636 432.188C210.461 432.188 194.712 430.367 179.582 426.918"
       stroke="white"
