@@ -12,11 +12,14 @@ export default defineConfig({
       include: {
         mdi: [
           "scale-balance",
+          "hand-heart",
+          "shield-check",
           "gavel",
           "briefcase",
           "arrow-right",
           "check",
           "target",
+          "folder-information",
           "eye",
           "star-four-points",
           "facebook",
