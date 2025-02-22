@@ -18,16 +18,7 @@
     <loc>https://peraltaasociados.com/contacto</loc>
     <lastmod>2024-02-29</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-        <xhtml:link 
-        rel="alternate" 
-        hreflang="es" 
-        href="https://peraltaasociados.com/contacto"
-    />
-    <image:image>
-        <image:loc>https://peraltaasociados.com/images/contacto/whatsapp-contact.webp</image:loc>
-        <image:title>Contactar Abogado en Huancavelica</image:title>
-    </image:image>
+    <priority>0.8</priority>    
   </url>
   
 </urlset>
