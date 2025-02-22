@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = "Peralta Asociados | Abogado en Huancavelica",
-  description = "Abogado especializado en Huancavelica. Expertos en derecho laboral, civil y administrativo. Consulta gratuita con el Dr. Ciro Peralta.",
+  title = "Contactar Abogado en Huancavelica | Dr. Ciro Peralta",
+  description = "Contacte a su abogado en Huancavelica. Consulta gratuita con el Dr. Ciro Peralta, abogado especializado con más de 15 años de experiencia en Huancavelica. Agenda tu cita ahora.",
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
@@ -17,10 +17,10 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
   {
     "@context": "https://schema.org",
     "@type": "LawFirm",
-    "name": "Peralta Asociados",
+    "name": "Abogado en Huancavelica - Dr. Ciro Peralta",
     "image": "/images/og-image.jpg",
-    "url": "https://peraltaasociados.com",
-    "description": "Asesoría legal especializada en Huancavelica. Expertos en derecho civil, laboral, administrativo y constitucional.",
+    "url": "https://peraltaasociados.com/contacto",
+    "description": "Contacte a su abogado de confianza en Huancavelica. Atención personalizada y primera consulta gratuita.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Jr. Mayta Cápac N° 215",
@@ -49,6 +49,13 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
     "areaServed": {
       "@type": "City",
       "name": "Huancavelica"
+    },
+    "ContactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+51976762237",
+      "contactType": "Consultas legales",
+      "availableLanguage": ["Spanish"],
+      "areaServed": "Huancavelica"
     }
   }
 </script>
@@ -109,7 +116,7 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
     <!-- Palabras clave -->
     <meta
       name="keywords"
-      content="abogado huancavelica, asesoría legal, derecho civil, derecho laboral, derecho administrativo, derecho constitucional, servicios legales perú, peralta asociados perú"
+      content="abogado huancavelica, contactar abogado huancavelica, asesoría legal huancavelica, consulta legal gratuita huancavelica, Dr Ciro Peralta abogado, estudio jurídico huancavelica, abogado cerca de mí huancavelica"
     />
 
     <!-- Información adicional -->
