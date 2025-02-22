@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<article
+  class="bg-white p-8 rounded-sm shadow-lg transform hover:scale-[1.02] transition-all"
+  id="whatsapp"
+>
+  <header class="flex items-center gap-4 mb-6">
+    <div class="p-3 bg-green-50 rounded-full">
+      <Icon name="mdi:whatsapp" class="w-6 h-6 text-green-500" />
+    </div>
+    <h2 class="font-serif text-2xl text-primary">WhatsApp</h2>
+  </header>
+
+  <p class="text-gray-600 mb-8">
+    Respuesta inmediata a sus consultas legales. Estamos disponibles en horario
+    de oficina.
+  </p>
+
+  <footer>
+    <a
+      href="https://wa.me/51976762237"
+      class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white rounded-sm hover:bg-green-600 transition-all w-full justify-center"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name="mdi:whatsapp" class="w-5 h-5" />
+      <span>Escribir ahora</span>
+    </a>
+  </footer>
+</article>

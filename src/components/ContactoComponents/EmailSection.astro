@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<article
+  class="bg-white p-8 rounded-sm shadow-lg transform hover:scale-[1.02] transition-all"
+  id="email"
+>
+  <header class="flex items-center gap-4 mb-6">
+    <div class="p-3 bg-blue-50 rounded-full">
+      <Icon name="mdi:email" class="w-6 h-6 text-blue-500" />
+    </div>
+    <h2 class="font-serif text-2xl text-primary">Correo</h2>
+  </header>
+
+  <p class="text-gray-600 mb-4">
+    Para consultas detalladas y envío de documentación.
+  </p>
+
+  <a
+    href="mailto:cyarupaitanp@gmail.com"
+    class="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors"
+  >
+    <span class="text-lg">cyarupaitanp@gmail.com</span>
+    <Icon name="mdi:arrow-right" class="w-5 h-5" />
+  </a>
+</article>
