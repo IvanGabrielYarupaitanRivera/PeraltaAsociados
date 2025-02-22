@@ -94,7 +94,7 @@ import ChatBot from "../../assets/icons/ChatBot.astro";
         <ul class="flex gap-8 font-merriweather">
           <li>
             <a
-              href="#whatsapp"
+              href="#formas-de-contacto"
               class="text-primary text-sm lg:text-base hover:text-secondary transition-colors duration-300"
             >
               WhatsApp
@@ -102,7 +102,7 @@ import ChatBot from "../../assets/icons/ChatBot.astro";
           </li>
           <li>
             <a
-              href="#correo"
+              href="#formas-de-contacto"
               class="text-primary text-sm lg:text-base hover:text-secondary transition-colors duration-300"
             >
               Correo
@@ -110,7 +110,7 @@ import ChatBot from "../../assets/icons/ChatBot.astro";
           </li>
           <li>
             <a
-              href="#ubicacion"
+              href="#formas-de-contacto"
               class="text-primary text-sm lg:text-base hover:text-secondary transition-colors duration-300"
             >
               Ubicación
@@ -229,15 +229,20 @@ import ChatBot from "../../assets/icons/ChatBot.astro";
     <nav class="my-5">
       <ul class="flex flex-col">
         {
-          ["WhatsApp", "Correo", "Ubicación", "Contacto"].map((item) => (
+          [
+            ["WhatsApp", "formas-de-contacto"],
+            ["Correo", "formas-de-contacto"],
+            ["Ubicación", "formas-de-contacto"],
+            ["Contacto", "contacto"],
+          ].map((item) => (
             <li>
               <a
-                href={`#${item.toLowerCase()}`}
+                href={`#${item[1]}`}
                 class="flex items-center gap-4 py-4 px-6 text-primary hover:bg-gray-50 transition-all duration-300 group"
               >
                 <Icon name="mdi:star-four-points" class="w-5 h-5" />
                 <span class="text-sm font-medium group-hover:translate-x-2 transition-transform duration-300">
-                  {item}
+                  {item[0]}
                 </span>
               </a>
             </li>

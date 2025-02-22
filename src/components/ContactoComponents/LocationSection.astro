@@ -1,47 +1,69 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import mapImage from "../../assets/images/contacto/location-contact.webp";
 ---
 
 <article
-  class="bg-white p-8 rounded-sm shadow-lg transform hover:scale-[1.02] transition-all"
+  class="p-8 rounded-sm shadow-lg transform hover:shadow-xl transition-all duration-300 bg-white"
+  id="ubicacion"
 >
-  <header class="p-8 flex items-center gap-4">
-    <div class="p-3 bg-primary/10 rounded-full">
-      <Icon name="mdi:map-marker" class="w-6 h-6 text-primary" />
+  <!-- Encabezado con ícono -->
+  <header class="flex items-center gap-4 mb-6">
+    <div class="p-3 rounded-full">
+      <Icon
+        name="mdi:map-marker"
+        class="w-6 h-6 text-red-500"
+        aria-hidden="true"
+      />
     </div>
     <div>
-      <h2 class="font-serif text-2xl text-primary mb-1">Ubicación</h2>
-      <p class="text-gray-600">Jr. Mayta Cápac N° 215, Huancavelica</p>
+      <h2 class="font-serif text-2xl text-primary mb-1">Nuestra Ubicación</h2>
+      <p class="text-sm text-gray-500">Visítenos en horario de oficina</p>
     </div>
   </header>
 
-  <!-- Mapa Grande -->
-  <div class="relative overflow-hidden rounded-sm shadow-lg">
-    <!-- Contenedor del mapa con proporción 16:9 -->
-    <div class="aspect-[16/9] bg-neutral-50">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d243.18257618705172!2d-74.96980787128969!3d-12.783625550131601!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDQ3JzAwLjciUyA3NMKwNTgnMTAuOSJX!5e0!3m2!1ses-419!2spe!4v1740203452494!5m2!1ses-419!2spe"
-        width="100%"
-        height="100%"
-        style="border:0;"
+  <!-- Imagen y descripción -->
+  <div class="space-y-6 mb-8">
+    <figure
+      class="aspect-square w-full max-w-sm mx-auto overflow-hidden rounded-sm"
+    >
+      <Image
+        src={mapImage}
+        alt="Ubicación del estudio jurídico Peralta Asociados en Huancavelica"
+        class="w-full h-full object-cover"
+        width={400}
+        height={400}
         loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        class="w-full h-full"
-        title="Ubicación de Peralta Asociados en Google Maps - Jr. Mayta Cápac N° 215, Huancavelica"
-        aria-label="Mapa interactivo mostrando la ubicación de nuestras oficinas"
-      ></iframe>
-    </div>
+      />
+    </figure>
 
-    <footer class="p-8 border-t border-gray-100">
-      <a
-        href="https://maps.app.goo.gl/xdNuLoFVub7qPK5Q7"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors"
-      >
-        <span>Ver en Google Maps</span>
-        <Icon name="mdi:arrow-right" class="w-5 h-5" />
-      </a>
-    </footer>
+    <div class="space-y-4">
+      <p class="text-gray-600 leading-relaxed">
+        Visite a su <strong>abogado en Huancavelica</strong>. Estamos ubicados
+        en el barrio de San Cristobal.
+      </p>
+    </div>
   </div>
+
+  <!-- CTA -->
+  <footer class="space-y-4">
+    <a
+      href="https://maps.app.goo.gl/xdNuLoFVub7qPK5Q7"
+      class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-red-600 text-white rounded-sm hover:bg-red-700 transform hover:translate-y-[-1px] transition-all duration-300 shadow-sm hover:shadow group"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Ver ubicación del abogado en Huancavelica en Google Maps"
+    >
+      <Icon
+        name="mdi:map-marker"
+        class="w-5 h-5 transition-transform group-hover:scale-110"
+      />
+      <span class="font-medium">Ver en Google Maps</span>
+    </a>
+
+    <p class="text-xs text-center text-gray-500">
+      Horario de atención: Lunes a Viernes 8:00 AM - 8:00 PM
+    </p>
+  </footer>
 </article>

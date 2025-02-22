@@ -1,27 +1,67 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import emailImage from "../../assets/images/contacto/email-contact.webp";
 ---
 
 <article
-  class="bg-white p-8 rounded-sm shadow-lg transform hover:scale-[1.02] transition-all"
-  id="email"
+  class="p-8 rounded-sm shadow-lg transform hover:shadow-xl transition-all duration-300 bg-white"
+  id="correo"
 >
+  <!-- Encabezado con ícono -->
   <header class="flex items-center gap-4 mb-6">
-    <div class="p-3 bg-blue-50 rounded-full">
-      <Icon name="mdi:email" class="w-6 h-6 text-blue-500" />
+    <div class="p-3 bg-yellow-50 rounded-full">
+      <Icon
+        name="mdi:email"
+        class="w-6 h-6 text-yellow-500"
+        aria-hidden="true"
+      />
     </div>
-    <h2 class="font-serif text-2xl text-primary">Correo</h2>
+    <div>
+      <h2 class="font-serif text-2xl text-primary mb-1">Correo Electrónico</h2>
+      <p class="text-sm text-gray-500">Respuesta en máximo 24 horas</p>
+    </div>
   </header>
 
-  <p class="text-gray-600 mb-4">
-    Para consultas detalladas y envío de documentación.
-  </p>
+  <!-- Imagen y descripción -->
+  <div class="space-y-6 mb-8">
+    <figure
+      class="aspect-square w-full max-w-sm mx-auto overflow-hidden rounded-sm"
+    >
+      <Image
+        src={emailImage}
+        alt="Contacte a su abogado en Huancavelica vía correo electrónico"
+        class="w-full h-full object-cover"
+        width={400}
+        height={400}
+        loading="lazy"
+      />
+    </figure>
 
-  <a
-    href="mailto:cyarupaitanp@gmail.com"
-    class="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors"
-  >
-    <span class="text-lg">cyarupaitanp@gmail.com</span>
-    <Icon name="mdi:arrow-right" class="w-5 h-5" />
-  </a>
+    <div class="space-y-4">
+      <p class="text-gray-600 leading-relaxed">
+        Envíe su consulta detallada a su <strong>abogado en Huancavelica</strong
+        >. Ideal para documentación.
+      </p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <footer class="space-y-4">
+    <a
+      href="mailto:cyarupaitanp@gmail.com"
+      class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-yellow-500 text-white rounded-sm hover:bg-yellow-600 transform hover:translate-y-[-1px] transition-all duration-300 shadow-sm hover:shadow group"
+      aria-label="Enviar correo a abogado en Huancavelica"
+    >
+      <Icon
+        name="mdi:email"
+        class="w-5 h-5 transition-transform group-hover:scale-110"
+      />
+      <span class="font-medium">Enviar correo</span>
+    </a>
+
+    <p class="text-xs text-center text-gray-500">
+      Horario de atención: Lunes a Viernes 8:00 AM - 8:00 PM
+    </p>
+  </footer>
 </article>
