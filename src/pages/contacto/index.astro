@@ -1,9 +1,18 @@
 ---
 import ContactoPage from "../../components/ContactoComponents/ContactoPage.astro";
-import LayoutContact from "../../layouts/LayoutContact.astro";
+import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 ---
 
-<LayoutContact>
+<Layout
+  title="Contacto - Abogado en Huancavelica | Peralta Asociados"
+  description="¿Necesitas un abogado en Huancavelica? Contáctanos para asesoría legal especializada. Primera consulta gratuita. Atención personalizada y soluciones efectivas."
+  keywords="abogado en huancavelica, asesoría legal huancavelica, contactar abogado, consulta legal gratuita, bufete de abogados huancavelica, estudio jurídico huancavelica"
+  schema={{
+    name: "Peralta Asociados - Abogados en Huancavelica",
+    description:
+      "Estudio jurídico en Huancavelica con más de 15 años brindando asesoría legal especializada. Consulta gratuita y atención personalizada para resolver tus problemas legales.",
+  }}
+>
   <ContactoPage />
-</LayoutContact>
+</Layout>
