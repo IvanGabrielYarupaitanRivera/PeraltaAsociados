@@ -24,46 +24,42 @@ const canonicalPath = Astro.url.pathname.endsWith("/")
   : Astro.url.pathname + "/";
 const canonicalUrl = new URL(canonicalPath, "https://peraltaasociados.com")
   .href;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "LawFirm",
+  "name": schema.name,
+  "image": "/images/og-image.jpg",
+  "url": canonicalUrl,
+  "description": schema.description,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jr. Mayta Cápac N° 215",
+    "addressLocality": "Huancavelica",
+    "addressRegion": "Huancavelica",
+    "postalCode": "09001",
+    "addressCountry": "PE"
+  },
+ "geo": { 
+    "@type": "GeoCoordinates",
+    "latitude": "-12.783512104745357",
+    "longitude": "-74.96969928675489"
+  },
+  "telephone": "+51976762237",
+  "email": "cyarupaitanp@gmail.com",
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "City",
+    "name": "Huancavelica"
+  },  
+  "sameAs": [
+    "https://www.facebook.com/PeraltaAsociadosPeru",
+  ],
+  "availableLanguage": ["Spanish"],
+};
 ---
 
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LawFirm",
-    "name": schema.name,
-    "image": "/images/og-image.jpg",
-    "url": canonicalUrl,
-    "description": schema.description,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jr. Mayta Cápac N° 215",
-      "addressLocality": "Huancavelica",
-      "addressRegion": "Huancavelica",
-      "postalCode": "",
-      "addressCountry": "PE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "-12.7869",
-      "longitude": "-74.9731"
-    },
-    "telephone": "+51976762237",
-    "email": "cyarupaitanp@gmail.com",
-    "sameAs": ["https://www.facebook.com/PeraltaAsociadosPeru"],
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    ],
-    "priceRange": "$$",
-    "areaServed": {
-      "@type": "City",
-      "name": "Huancavelica"
-    }
-  }
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)}>
 </script>
 
 <html lang="es">
