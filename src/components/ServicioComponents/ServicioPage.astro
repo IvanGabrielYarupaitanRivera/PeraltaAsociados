@@ -2,13 +2,19 @@
 import Footer from "../Footer.astro";
 import Header from "../Header.astro";
 import ServiciosHero from "./ServiciosHero.astro";
+import ServicioVentajas from "./ServicioVentajas.astro";
 
 interface Props {
   title: string;
   description: string;
+  ventajas: {
+    titulo: string;
+    descripcion: string;
+    icono: string;
+  }[];
 }
 
-const { title, description } = Astro.props;
+const { title, description, ventajas } = Astro.props;
 ---
 
 <div id="container" class="flex flex-col min-h-screen">
@@ -16,6 +22,7 @@ const { title, description } = Astro.props;
 
   <main class="flex-1">
     <ServiciosHero title={title} description={description} />
+    <ServicioVentajas ventajas={ventajas} />
   </main>
 
   <Footer />

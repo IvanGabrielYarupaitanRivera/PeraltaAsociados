@@ -1,5 +1,6 @@
 ---
 import ServicioPage from "../../components/ServicioComponents/ServicioPage.astro";
+import ServicioVentajas from "../../components/ServicioComponents/ServicioVentajas.astro";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
 ---
@@ -17,5 +18,43 @@ import "../../styles/global.css";
   <ServicioPage
     title="Abogado Administrativo en Huancavelica"
     description="Defendemos sus derechos ante entidades públicas. Especialistas en procesos disciplinarios PNP y recursos administrativos. Consulta gratuita."
+    ventajas={[
+      {
+        titulo: "Experiencia en Derecho Administrativo",
+        descripcion:
+          "15 años resolviendo procedimientos administrativos en Huancavelica con éxito",
+        icono: "mdi:shield-check",
+      },
+      {
+        titulo: "Defensa ante Entidades Públicas",
+        descripcion:
+          "Especialistas en recursos impugnativos ante SUNAFIL y SUNAT en Huancavelica",
+        icono: "mdi:gavel",
+      },
+      {
+        titulo: "Procesos Disciplinarios PNP",
+        descripcion:
+          "Asesoría especializada en defensa administrativa para personal policial",
+        icono: "mdi:police-badge",
+      },
+      {
+        titulo: "Trámites Administrativos",
+        descripcion:
+          "Gestión eficiente de sus procedimientos ante instituciones públicas",
+        icono: "mdi:file-document-outline",
+      },
+      {
+        titulo: "Atención Personalizada",
+        descripcion:
+          "Seguimiento detallado y comunicación constante sobre su caso",
+        icono: "mdi:account-multiple",
+      },
+      {
+        titulo: "Primera Consulta Sin Costo",
+        descripcion:
+          "Evaluación gratuita de su caso administrativo con opciones claras",
+        icono: "mdi:hand-coin",
+      },
+    ]}
   />
 </Layout>
