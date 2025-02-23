@@ -12,6 +12,7 @@ export default defineConfig({
       include: {
         mdi: [
           "scale-balance",
+          "alert-circle",
           "home-outline",
           "shield-account",
           "account-lock-open",
