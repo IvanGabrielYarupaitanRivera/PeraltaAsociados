@@ -7,6 +7,36 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Servicios Legales -->
+  <url>
+    <loc>https://peraltaasociados.com/derecho-administrativo/</loc>
+    <lastmod>2024-02-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://peraltaasociados.com/derecho-civil/</loc>
+    <lastmod>2024-02-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://peraltaasociados.com/derecho-laboral/</loc>
+    <lastmod>2024-02-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://peraltaasociados.com/derecho-constitucional/</loc>
+    <lastmod>2024-02-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
    <url>
     <loc>https://peraltaasociados.com/contacto/</loc>
     <lastmod>2024-02-29</lastmod>
@@ -21,6 +51,5 @@
     <priority>0.5</priority>
   </url>
 
-  
-  
+
 </urlset>
