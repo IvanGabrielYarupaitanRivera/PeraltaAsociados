@@ -2,11 +2,23 @@
 interface Props {
   title?: string;
   description?: string;
+  pageUrl?: string; 
+  keywords?: string; 
+  schema?: {
+    name?: string;
+    description?: string;  
+  };
 }
 
 const {
   title = "Peralta Asociados | Abogado en Huancavelica",
   description = "Abogado especializado en Huancavelica. Expertos en derecho laboral, civil y administrativo. Consulta gratuita con el Dr. Ciro Peralta.",
+  pageUrl = "https://peraltaasociados.com", 
+  keywords = "abogado huancavelica, asesoría legal, derecho civil, derecho laboral, derecho administrativo, derecho constitucional, servicios legales perú, peralta asociados perú", 
+  schema = {
+    name: "Peralta Asociados",
+    description: "Asesoría legal especializada en Huancavelica..." 
+  }
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
@@ -17,10 +29,10 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
   {
     "@context": "https://schema.org",
     "@type": "LawFirm",
-    "name": "Peralta Asociados",
+    "name": schema.name,
     "image": "/images/og-image.jpg",
-    "url": "https://peraltaasociados.com",
-    "description": "Asesoría legal especializada en Huancavelica. Expertos en derecho civil, laboral, administrativo y constitucional.",
+    "url": pageUrl,
+    "description": schema.description,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Jr. Mayta Cápac N° 215",
@@ -109,7 +121,7 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
     <!-- Palabras clave -->
     <meta
       name="keywords"
-      content="abogado huancavelica, asesoría legal, derecho civil, derecho laboral, derecho administrativo, derecho constitucional, servicios legales perú, peralta asociados perú"
+      content={keywords}
     />
 
     <!-- Información adicional -->
