@@ -2,102 +2,53 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section
-  class="relative overflow-hidden bg-gradient-to-b from-yellow-900 via-secondary to-yellow-900"
->
+<section class="relative overflow-hidden bg-neutral-100">
   <!-- Contenido principal -->
-  <div class="container mx-auto px-4 pt-24 pb-12 md:py-28 lg:py-32">
+  <div class="container mx-auto px-4 py-40 md:py-20 lg:py-32">
     <div class="max-w-2xl mx-auto">
-      <!-- Badge superior -->
+      <!-- Texto decorativo -->
       <div class="flex items-center gap-4 mb-8">
-        <div class="sm:block h-[2px] flex-1 bg-white"></div>
+        <div class="sm:block h-[2px] flex-1 bg-primary"></div>
         <p
-          class="text-white font-medium tracking-wide uppercase text-sm sm:text-base whitespace-nowrap"
+          class="text-primary font-medium tracking-wide uppercase text-sm sm:text-base whitespace-nowrap"
         >
-          Abogado en Huancavelica
+          Asesoría Legal Profesional
         </p>
-        <div class="sm:block h-[2px] flex-1 bg-white"></div>
+        <div class="sm:block h-[2px] flex-1 bg-primary"></div>
       </div>
 
-      <!-- Título principal optimizado para SEO -->
+      <!-- Título principal -->
       <h1
-        class="font-serif text-3xl sm:text-6xl text-white font-bold text-center mb-8"
+        class="font-serif text-3xl sm:text-6xl text-primary font-bold text-center mb-8"
       >
-        Contacte a su Abogado en Huancavelica
+        Abogado en Huancavelica
       </h1>
 
       <!-- Descripción -->
       <p
-        class="text-white text-base sm:text-lg md:text-xl leading-relaxed text-center mb-12"
+        class="text-primary/90 text-base sm:text-lg md:text-xl leading-relaxed text-center mb-12"
       >
-        Le ofrecemos su primera consulta totalmente gratuita. Somos el estudio
-        legal con más de 15 años de experiencia. Contáctenos ahora y reciba
-        atención inmediata para resolver su caso.
+        Más de 15 años brindando soluciones legales efectivas en Huancavelica.
+        Primera consulta sin costo.
       </p>
 
-      <!-- CTAs -->
-      <div
-        class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
-      >
+      <!-- CTA -->
+      <div class="text-center">
         <a
           href="https://api.whatsapp.com/send?phone=976762237"
-          class="flex items-center px-6 py-3 text-white border-2 border-white ho hover:bg-blue-950 bg-primary transition-all duration-300 rounded-sm group"
+          class="inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-primary hover:bg-blue-950 hover:text-white transition-all duration-300 rounded-sm group shadow-lg hover:shadow-xl"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Escribir ahora a su abogado en Huancavelica"
+          aria-label="Contactar Abogado Ahora"
         >
-          <Icon name="mdi:phone" class="w-5 h-5 mr-2" aria-hidden="true" />
-          <span>Escribir Ahora</span>
+          <span>Contactar Abogado Ahora</span>
+          <Icon
+            name="mdi:arrow-right"
+            class="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden="true"
+          />
         </a>
       </div>
-
-      <!-- Indicadores de confianza -->
-      <section class="mt-12 py-6 border-t pt-12 border-white/10">
-        <h2 class="sr-only">Razones para confiar en nuestro servicio legal</h2>
-
-        <dl
-          class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center text-white/80"
-        >
-          <!-- Años de Experiencia -->
-          <div class="group">
-            <dt class="text-sm font-medium mb-2 text-white/60">
-              Años de Experiencia
-            </dt>
-            <dd
-              class="font-serif font-bold text-3xl text-white transition-all duration-300 group-hover:scale-110"
-            >
-              +15
-              <span class="sr-only"
-                >años de experiencia legal en Huancavelica</span
-              >
-            </dd>
-          </div>
-
-          <!-- Casos Resueltos -->
-          <div class="group">
-            <dt class="text-sm font-medium mb-2 text-white/60">
-              Casos Resueltos
-            </dt>
-            <dd
-              class="font-serif font-bold text-3xl text-white transition-all duration-300 group-hover:scale-110"
-            >
-              +100
-              <span class="sr-only">casos legales resueltos exitosamente</span>
-            </dd>
-          </div>
-
-          <!-- Compromiso -->
-          <div class="group">
-            <dt class="text-sm font-medium mb-2 text-white/60">Compromiso</dt>
-            <dd
-              class="font-serif font-bold text-3xl text-white transition-all duration-300 group-hover:scale-110"
-            >
-              100%
-              <span class="sr-only">de compromiso con nuestros clientes</span>
-            </dd>
-          </div>
-        </dl>
-      </section>
     </div>
   </div>
 </section>

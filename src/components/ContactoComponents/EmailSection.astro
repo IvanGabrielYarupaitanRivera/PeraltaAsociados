@@ -1,7 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-import { Image } from "astro:assets";
-import emailImage from "../../assets/images/contacto/email-contact.webp";
 ---
 
 <article
@@ -21,41 +19,73 @@ import emailImage from "../../assets/images/contacto/email-contact.webp";
     </div>
   </header>
 
-  <!-- Imagen y descripción -->
-  <div class="space-y-6 mb-8">
-    <figure
-      class="aspect-square w-full max-w-sm mx-auto overflow-hidden rounded-sm"
-    >
-      <Image
-        src={emailImage}
-        alt="Contacte a su abogado en Huancavelica vía correo electrónico"
-        class="w-full h-full object-cover"
-        width={400}
-        height={400}
-        loading="lazy"
-      />
-    </figure>
-
+  <!-- Descripción del servicio -->
+  <section class="space-y-6 mb-8" aria-labelledby="whatsapp-description">
     <div class="space-y-4">
-      <p class="text-gray-600 leading-relaxed text-pretty line-clamp-3">
-        Envíe su consulta detallada a su <strong>abogado en Huancavelica</strong
-        >. Ideal para documentación y casos complejos.
+      <h3 id="whatsapp-description" class="sr-only">
+        Beneficios de contactarnos por WhatsApp
+      </h3>
+      <p class="text-gray-600 text-sm">
+        Contacte a su abogado especializado en Huancavelica y reciba:
       </p>
+
+      <ul class="text-gray-600">
+        <li>
+          <div
+            class="flex items-center gap-2 py-2 hover:bg-gray-50 transition-all duration-300 group"
+          >
+            <Icon name="mdi:star-four-points" class="w-4 h-4 text-primary" />
+            <span
+              class="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300"
+            >
+              Respuesta detallada y documentada
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div
+            class="flex items-center gap-2 py-2 hover:bg-gray-50 transition-all duration-300 group"
+          >
+            <Icon name="mdi:star-four-points" class="w-4 h-4 text-primary" />
+            <span
+              class="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300"
+            >
+              Seguimiento formal de su caso
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div
+            class="flex items-center gap-2 py-2 hover:bg-gray-50 transition-all duration-300 group"
+          >
+            <Icon name="mdi:star-four-points" class="w-4 h-4 text-primary" />
+            <span
+              class="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300"
+            >
+              Envío de documentos legales
+            </span>
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
+  </section>
 
   <!-- CTA -->
   <footer class="space-y-4">
     <a
       href="mailto:cyarupaitanp@gmail.com"
-      class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-primary text-white rounded-sm transform hover:translate-y-[-1px] transition-all duration-300 shadow-sm hover:shadow group"
+      class="flex items-center justify-center w-full px-8 py-2 text-sm bg-primary hover:bg-blue-950 text-white transition-all duration-300 rounded-sm group"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Enviar correo a abogado en Huancavelica"
     >
+      <span class="font-medium">Enviar correo</span>
       <Icon
         name="mdi:email"
-        class="w-5 h-5 transition-transform group-hover:scale-110"
+        class="w-4 h-4 mx-2 transform transition-transform duration-300 group-hover:translate-x-1"
       />
-      <span class="font-medium">Enviar correo</span>
     </a>
 
     <p class="text-xs text-center text-gray-500">
