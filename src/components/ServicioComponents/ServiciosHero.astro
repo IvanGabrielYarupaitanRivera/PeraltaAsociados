@@ -1,0 +1,49 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-neutral-100">
+  <!-- Contenido principal -->
+  <div class="container mx-auto px-4 py-28 md:py-16 lg:py-32">
+    <div class="max-w-2xl mx-auto">
+      <!-- Título principal -->
+      <h1
+        class="font-serif text-3xl sm:text-6xl text-primary font-bold text-center mb-8"
+      >
+        {title}
+      </h1>
+
+      <!-- Descripción -->
+      <p
+        class="text-primary/90 text-base sm:text-lg md:text-xl leading-relaxed text-center mb-12"
+      >
+        {description}
+      </p>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <a
+          href="https://api.whatsapp.com/send?phone=976762237"
+          class="inline-flex items-center px-8 py-4 text-lg font-medium text-white bg-primary hover:bg-blue-950 hover:text-white transition-all duration-300 rounded-sm group shadow-lg hover:shadow-xl"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Contactar Abogado Ahora"
+        >
+          <span>Contactar Abogado Ahora</span>
+          <Icon
+            name="mdi:arrow-right"
+            class="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden="true"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -9,7 +9,10 @@ const {
   description = "Contacte a su abogado en Huancavelica. Consulta gratuita con el Dr. Ciro Peralta, abogado especializado con más de 15 años de experiencia en Huancavelica. Agenda tu cita ahora.",
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
+const canonicalPath = Astro.url.pathname.endsWith("/")
+  ? Astro.url.pathname
+  : Astro.url.pathname + "/";
+const canonicalUrl = new URL(canonicalPath, "https://peraltaasociados.com")
   .href;
 ---
 
@@ -19,7 +22,7 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
     "@type": "LawFirm",
     "name": "Abogado en Huancavelica - Dr. Ciro Peralta",
     "image": "/images/og-image.jpg",
-    "url": "https://peraltaasociados.com/contacto",
+    "url": "https://peraltaasociados.com/contacto/",
     "description": "Contacte a su abogado de confianza en Huancavelica. Atención personalizada y primera consulta gratuita.",
     "address": {
       "@type": "PostalAddress",
@@ -93,14 +96,14 @@ const canonicalUrl = new URL(Astro.url.pathname, "https://peraltaasociados.com")
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://peraltaasociados.com/" />
+    <meta property="og:url" content="https://peraltaasociados.com/contacto/" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/images/og-image.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://peraltaasociados.com/" />
+    <meta name="twitter:url" content="https://peraltaasociados.com/contacto/" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/images/og-image.jpg" />

@@ -1,0 +1,22 @@
+---
+import Footer from "../Footer.astro";
+import Header from "../Header.astro";
+import ServiciosHero from "./ServiciosHero.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div id="container" class="flex flex-col min-h-screen">
+  <Header />
+
+  <main class="flex-1">
+    <ServiciosHero title={title} description={description} />
+  </main>
+
+  <Footer />
+</div>
