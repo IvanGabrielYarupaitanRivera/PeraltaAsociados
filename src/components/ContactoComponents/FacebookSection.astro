@@ -1,0 +1,99 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<article
+  class="p-8 rounded-sm shadow-lg transform hover:shadow-xl transition-all duration-300 bg-white"
+  id="facebook"
+>
+  <!-- Encabezado con ícono -->
+  <header class="flex items-center gap-4 mb-6">
+    <div class="p-3 rounded-full bg-blue-100">
+      <Icon
+        name="mdi:facebook"
+        class="w-6 h-6 text-primary"
+        aria-hidden="true"
+      />
+    </div>
+    <div>
+      <h2 class="font-serif text-2xl text-primary mb-1">Nuestro Facebook</h2>
+      <p class="text-sm text-gray-500 text-pretty line-clamp-1">
+        Mantente informado
+      </p>
+    </div>
+  </header>
+
+  <!-- Descripción del servicio -->
+  <section class="space-y-6 mb-8" aria-labelledby="facebook-description">
+    <div class="space-y-4">
+      <h3 id="facebook-description" class="sr-only">
+        Beneficios de seguirnos en Facebook
+      </h3>
+      <p class="text-gray-600 text-sm text-pretty">
+        Sigue nuestra página de Facebook y mantente actualizado:
+      </p>
+
+      <ul class="text-gray-600">
+        <li>
+          <div
+            class="flex items-center gap-2 py-2 hover:bg-gray-50 transition-all duration-300 group"
+          >
+            <Icon name="mdi:star-four-points" class="w-4 h-4 text-primary" />
+            <span
+              class="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300"
+            >
+              Consejos legales gratuitos
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div
+            class="flex items-center gap-2 py-2 hover:bg-gray-50 transition-all duration-300 group"
+          >
+            <Icon name="mdi:star-four-points" class="w-4 h-4 text-primary" />
+            <span
+              class="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300"
+            >
+              Noticias legales relevantes
+            </span>
+          </div>
+        </li>
+
+        <li>
+          <div
+            class="flex items-center gap-2 py-2 hover:bg-gray-50 transition-all duration-300 group"
+          >
+            <Icon name="mdi:star-four-points" class="w-4 h-4 text-primary" />
+            <span
+              class="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300"
+            >
+              Videos informativos
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <footer class="space-y-4">
+    <a
+      href="https://www.facebook.com/PeraltaAsociadosPeru"
+      class="flex items-center justify-center w-full px-8 py-2 text-sm bg-primary hover:bg-blue-950 text-white transition-all duration-300 rounded-sm group"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visitar página de Facebook de Peralta Asociados"
+    >
+      <span class="font-medium">Visitar página</span>
+      <Icon
+        name="mdi:arrow-right"
+        class="w-4 h-4 mx-2 transform transition-transform duration-300 group-hover:translate-x-1"
+      />
+    </a>
+
+    <p class="text-xs text-center text-gray-500">
+      Síguenos para mantenerte actualizado
+    </p>
+  </footer>
+</article>

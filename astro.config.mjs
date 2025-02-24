@@ -12,7 +12,10 @@ export default defineConfig({
       include: {
         mdi: [
           "scale-balance",
+          "chat",
           "alert-circle",
+          "robot",
+          "cash-remove",
           "home-outline",
           "shield-account",
           "account-lock-open",
