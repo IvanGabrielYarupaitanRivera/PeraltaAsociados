@@ -11,11 +11,11 @@ interface Props {
 
 const {
   title = "Peralta Asociados | Abogado en Huancavelica",
-  description = "Abogado especializado en Huancavelica. Expertos en derecho laboral, civil y administrativo. Consulta gratuita con el Dr. Ciro Peralta.", 
+  description = "Abogado especializado en Huancavelica. Expertos en derecho laboral, civil y administrativo. Consulta gratuita con el Dr. Ciro Yarupaitan Peralta.", 
   keywords = "abogado huancavelica, asesoría legal, derecho civil, derecho laboral, derecho administrativo, derecho constitucional, servicios legales perú, peralta asociados perú", 
   schema = {
     name: "Peralta Asociados",
-    description: "Asesoría legal especializada en Huancavelica..." 
+    description: "Asesoría legal especializada en Huancavelica en derecho civil, administrativo, laboral, constitucional y más. Contamos con abogados expertos y comprometidos en brindar soluciones legales efectivas. ¡Contáctenos para una consulta!" 
   }
 } = Astro.props;
 
@@ -30,6 +30,8 @@ const schemaData = {
   "@type": "LawFirm",
   "name": schema.name,
   "image": "/images/og-image.jpg",
+  "logo": "/images/logo.png",
+  "slogan": "Su defensa en buenas manos",
   "url": canonicalUrl,
   "description": schema.description,
   "address": {
@@ -52,10 +54,22 @@ const schemaData = {
     "@type": "City",
     "name": "Huancavelica"
   },  
+  "serviceArea": [  
+        {"@type": "City", "name": "Huancavelica"},
+        {"@type": "AdministrativeArea", "name": "Huancavelica Region"}
+    ],
   "sameAs": [
     "https://www.facebook.com/PeraltaAsociadosPeru",
   ],
   "availableLanguage": ["Spanish"],
+  "openingHours": ["Mo-Fr 08:00-20:00"],
+  "founder": "Dr. Ciro Gabriel Yarupaitan Peralta",
+  "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+51976762237",
+        "email": "cyarupaitanp@gmail.com",
+        "contactType": "Atención al cliente"
+    },
 };
 ---
 
