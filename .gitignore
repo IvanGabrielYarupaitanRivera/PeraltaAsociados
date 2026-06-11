@@ -26,4 +26,7 @@ pnpm-debug.log*
 # github copilot instructions
 .github/
 
+# build
+.netlify/build
+
  
