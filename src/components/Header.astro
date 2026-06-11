@@ -163,13 +163,15 @@ import ChatBot from "../assets/icons/ChatBot.astro";
 
       <!-- Botón menú móvil -->
       <button
-        class="lg:hidden text-primary hover:text-secondary transition-colors duration-300 cursor-pointer"
+        class="lg:hidden text-primary hover:text-secondary transition-colors duration-300 cursor-pointer relative w-6 h-6"
         id="mobile-menu-button"
         aria-label="Abrir menú"
         aria-expanded="false"
       >
+        <!-- Icono hamburguesa -->
         <svg
-          class="w-6 h-6"
+          id="hamburger-icon"
+          class="w-6 h-6 absolute inset-0 transition-opacity duration-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -180,6 +182,21 @@ import ChatBot from "../assets/icons/ChatBot.astro";
             stroke-linejoin="round"
             stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <!-- Icono X (oculto por defecto) -->
+        <svg
+          id="close-icon"
+          class="w-6 h-6 absolute inset-0 transition-opacity duration-300 opacity-0"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
     </div>
@@ -192,6 +209,7 @@ import ChatBot from "../assets/icons/ChatBot.astro";
   class="hidden fixed right-0 top-0 w-full h-full z-50 bg-white/90 backdrop-blur-sm transform transition-all duration-300"
   role="dialog"
   aria-modal="true"
+  aria-label="Menú de navegación"
 >
   <div class="h-full w-full flex flex-col">
     <!-- Header -->
@@ -271,25 +289,36 @@ import ChatBot from "../assets/icons/ChatBot.astro";
     "#close-menu"
   ) as HTMLButtonElement;
   const mobileMenu = document.querySelector("#mobile-menu") as HTMLDivElement;
+  const hamburgerIcon = document.querySelector(
+    "#hamburger-icon"
+  ) as SVGElement;
+  const closeIcon = document.querySelector("#close-icon") as SVGElement;
+  const menuLinks = mobileMenu?.querySelectorAll("a");
 
   const toggleMenu = () => {
     const isHidden = mobileMenu.classList.contains("hidden");
 
     if (isHidden) {
-      // Primero removemos hidden
+      // Abrir menú
       mobileMenu.classList.remove("hidden");
 
-      // Esperamos al siguiente frame para añadir la animación
       requestAnimationFrame(() => {
         mobileMenu.style.transform = "translateX(0)";
         mobileMenu.style.opacity = "1";
       });
+
+      // Mostrar icono X, ocultar hamburguesa
+      hamburgerIcon.style.opacity = "0";
+      closeIcon.style.opacity = "1";
     } else {
-      // Iniciamos la animación de salida
+      // Cerrar menú
       mobileMenu.style.transform = "translateX(100%)";
       mobileMenu.style.opacity = "0";
 
-      // Esperamos a que termine la animación
+      // Mostrar hamburguesa, ocultar X
+      hamburgerIcon.style.opacity = "1";
+      closeIcon.style.opacity = "0";
+
       mobileMenu.addEventListener(
         "transitionend",
         () => {
@@ -300,17 +329,39 @@ import ChatBot from "../assets/icons/ChatBot.astro";
     }
 
     document.body.classList.toggle("overflow-hidden");
-    mobileMenuButton.setAttribute("aria-expanded", isHidden.toString());
+    const isNowHidden = mobileMenu.classList.contains("hidden");
+    mobileMenuButton.setAttribute("aria-expanded", (!isNowHidden).toString());
   };
 
-  const closeOnEscape = (e: KeyboardEvent) => {
-    if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+  const closeMenu = () => {
+    if (!mobileMenu.classList.contains("hidden")) {
       toggleMenu();
     }
   };
 
+  const closeOnEscape = (e: KeyboardEvent) => {
+    if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
+      closeMenu();
+    }
+  };
+
+  // Cerrar al hacer clic en un enlace del menú
+  menuLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      // Pequeño delay para que el navegador procese el cambio de ruta
+      setTimeout(closeMenu, 150);
+    });
+  });
+
+  // Cerrar al hacer clic fuera del menú (en el backdrop)
+  mobileMenu?.addEventListener("click", (e) => {
+    if (e.target === mobileMenu) {
+      closeMenu();
+    }
+  });
+
   mobileMenuButton.addEventListener("click", toggleMenu);
-  closeMenuButton.addEventListener("click", toggleMenu);
+  closeMenuButton.addEventListener("click", closeMenu);
   document.addEventListener("keydown", closeOnEscape);
 </script>
 
