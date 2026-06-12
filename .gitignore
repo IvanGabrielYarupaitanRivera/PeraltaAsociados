@@ -26,8 +26,8 @@ pnpm-debug.log*
 # github copilot instructions
 .github/
 
-# build
-.netlify/build
+# netlify local cache
+.netlify/
 
 # personal IDE settings
 .vscode/settings.json
