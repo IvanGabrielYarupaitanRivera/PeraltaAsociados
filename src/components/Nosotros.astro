@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BackgroundPattern from "./BackgroundPattern.astro";
+import ScrollReveal from "./ScrollReveal.astro";
 
 import ladyJustice from "../assets/images/nosotros/lady-justice.webp";
 import misionLegal from "../assets/images/nosotros/mision-legal.webp";
@@ -13,6 +14,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
 
   <!-- Contenido principal -->
   <main class="relative z-10">
+    <ScrollReveal animation="fade-up" delay={200}>
     <div class="container mx-auto px-4">
       <!-- Encabezado decorativo -->
       <header class="flex items-center gap-4 mb-8">
@@ -135,5 +137,6 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
         </aside>
       </section>
     </div>
+    </ScrollReveal>
   </main>
 </section>

@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import BackgroundPattern from "./BackgroundPattern.astro";
+import ScrollReveal from "./ScrollReveal.astro";
 // Importar la foto del abogado
 import abogadoProfile from "../assets/images/equipo/profile.webp";
 ---
@@ -11,6 +12,7 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
   <BackgroundPattern variant="subtle" opacity={0.3} />
 
   <main class="relative z-10">
+    <ScrollReveal animation="fade-up" delay={300}>
     <div class="container mx-auto px-4">
       <!-- Encabezado decorativo -->
       <header class="flex items-center gap-4 mb-8">
@@ -165,5 +167,6 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
         </div>
       </section>
     </div>
+    </ScrollReveal>
   </main>
 </section>
