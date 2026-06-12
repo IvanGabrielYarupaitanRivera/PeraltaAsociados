@@ -192,6 +192,9 @@ const schemaData = {
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
 
+    <!-- Slot para inyecciones específicas de páginas hijas (schemas, metadatos extra) -->
+    <slot name="head-extra" />
+
     <!-- Metadatos alternativos -->
     <link
       rel="alternate"
