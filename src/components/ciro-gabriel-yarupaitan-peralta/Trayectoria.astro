@@ -42,7 +42,7 @@ const { formacion, especialidades, membresias } = Astro.props;
         <div class="sm:block h-0.5 flex-1 bg-secondary"></div>
       </div>
 
-      <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="text-center   mx-auto mb-16">
         <h2 class="font-serif text-3xl md:text-4xl text-primary font-bold mb-4">
           Trayectoria Académica y Distinciones
         </h2>
@@ -53,24 +53,34 @@ const { formacion, especialidades, membresias } = Astro.props;
     </ScrollReveal>
 
     <!-- Grid 2 columnas: Formación + Membresías -->
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-3xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-4xl mx-auto">
       <!-- Formación Académica -->
       <ScrollReveal animation="fade-up" delay={200}>
-        <div class="border-t border-neutral-200 pt-6">
+        <div>
           <h3 class="font-serif text-xl font-bold text-primary mb-8">
             Formación Académica
           </h3>
 
-          <ol class="space-y-8 list-none" aria-label="Historial académico">
+          <ol class="list-none" aria-label="Historial académico">
             {formacion.map((item) => (
               <li
-                class="border-b border-neutral-100 pb-6 last:border-b-0 last:pb-0"
+                class="group relative border-t border-neutral-200 py-5 first:border-t-0 first:pt-0 cursor-default"
               >
-                <article>
-                  <p class="text-xs font-medium tracking-wider text-secondary uppercase mb-1">
+                {/* Línea de tinta extensible */}
+                <div
+                  class="absolute top-0 left-0 h-[1.5px] w-0 bg-secondary transition-all duration-500 ease-out group-hover:w-full"
+                  aria-hidden="true"
+                ></div>
+
+                <article class="pt-2">
+                  <p
+                    class="text-xs font-medium tracking-wider text-secondary uppercase mb-1 transition-transform duration-300 group-hover:translate-x-1"
+                  >
                     {item.anio}
                   </p>
-                  <p class="font-bold text-primary text-base">
+                  <p
+                    class="font-bold text-primary text-base transition-colors duration-300 group-hover:text-secondary"
+                  >
                     {item.titulo}
                   </p>
                   <p class="text-sm text-neutral-600 mt-1">
@@ -85,19 +95,34 @@ const { formacion, especialidades, membresias } = Astro.props;
 
       <!-- Membresías Profesionales -->
       <ScrollReveal animation="fade-up" delay={200}>
-        <div class="border-t border-neutral-200 pt-6">
+        <div>
           <h3 class="font-serif text-xl font-bold text-primary mb-8">
             Membresías Profesionales
           </h3>
 
-          <ul class="space-y-6 list-none" aria-label="Membresías profesionales">
+          <ul class="list-none" aria-label="Membresías profesionales">
             {membresias.map((membresia) => (
               <li
-                class="flex items-start gap-3 border-b border-neutral-100 pb-5 last:border-b-0 last:pb-0"
+                class="group relative flex items-start gap-3 border-t border-neutral-200 py-5 first:border-t-0 first:pt-0 cursor-default"
               >
-                <span class="text-secondary text-lg leading-none mt-0.5" aria-hidden="true">›</span>
-                <div>
-                  <p class="text-primary font-medium">{membresia}</p>
+                {/* Línea de tinta extensible */}
+                <div
+                  class="absolute top-0 left-0 h-[1.5px] w-0 bg-secondary transition-all duration-500 ease-out group-hover:w-full"
+                  aria-hidden="true"
+                ></div>
+
+                <span
+                  class="text-secondary text-lg leading-none mt-0.5 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                >
+                  ›
+                </span>
+                <div class="pt-2">
+                  <p
+                    class="text-primary font-medium transition-colors duration-300 group-hover:text-secondary"
+                  >
+                    {membresia}
+                  </p>
                   <p class="text-xs uppercase tracking-wider text-neutral-500 mt-1">
                     Miembro Activo
                   </p>
@@ -129,17 +154,30 @@ const { formacion, especialidades, membresias } = Astro.props;
             </h3>
           </div>
 
-          <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 pt-8 border-t border-neutral-200 list-none" aria-label="Áreas de práctica especializada">
+          <ol
+            class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 list-none"
+            aria-label="Áreas de práctica especializada"
+          >
             {especialidades.map((esp, index) => {
               const romanNumerals = ["I", "II", "III", "IV"];
               return (
-                <li class="space-y-3">
-                  <article>
-                    <span class="text-xs font-bold tracking-widest text-secondary block">
+                <li
+                  class="group relative cursor-default"
+                >
+                  <article class="pt-2">
+                    <span
+                      class="text-xs font-bold tracking-widest text-secondary block transition-transform duration-300 group-hover:translate-x-1"
+                    >
                       {romanNumerals[index]}. {esp.nombre.toUpperCase()}
                     </span>
-                    <div class="h-px w-6 bg-neutral-300" aria-hidden="true"></div>
-                    <p class="text-sm text-neutral-700 leading-relaxed text-pretty">
+                    {/* Línea de tinta extensible */}
+                    <div
+                      class="h-px w-6 bg-neutral-300 transition-all duration-500 ease-out group-hover:w-full group-hover:bg-secondary mt-2"
+                      aria-hidden="true"
+                    ></div>
+                    <p
+                      class="text-sm text-neutral-700 leading-relaxed text-pretty mt-3 transition-colors duration-300 group-hover:text-primary"
+                    >
                       {esp.descripcion}
                     </p>
                   </article>
