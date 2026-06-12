@@ -1,10 +1,12 @@
 ---
 import { Icon } from "astro-icon/components";
+import ScrollReveal from "../ScrollReveal.astro";
 ---
 
 <section class="relative overflow-hidden bg-neutral-100" aria-label="Asesoría legal en Huancavelica">
   <!-- Contenido principal -->
   <div class="container mx-auto px-4 py-28 md:py-16 lg:py-32">
+    <ScrollReveal animation="fade-up" delay={0}>
     <div class="max-w-2xl mx-auto">
       <!-- Título principal -->
       <h1
@@ -39,5 +41,6 @@ import { Icon } from "astro-icon/components";
         </a>
       </div>
     </div>
+    </ScrollReveal>
   </div>
 </section>
