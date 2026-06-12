@@ -1,0 +1,75 @@
+---
+import { Icon } from "astro-icon/components";
+import ScrollReveal from "@components/ScrollReveal.astro";
+
+export interface Props {
+  biografia: string;
+  logros: string[];
+  vision: string;
+}
+
+const { biografia, logros, vision } = Astro.props;
+---
+
+<section
+  class="py-20 bg-white"
+  aria-label="Perfil profesional de Ciro Gabriel Yarupaitan Peralta"
+>
+  <div class="container mx-auto px-4 max-w-4xl">
+    <!-- Bloque: Perfil y Visión Jurídica -->
+    <ScrollReveal animation="fade-up" delay={100}>
+      <header class="flex items-center gap-4 mb-8">
+        <span class="sm:block h-0.5 w-12 bg-secondary" aria-hidden="true"></span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-primary">
+          Perfil y Visión Jurídica
+        </h2>
+      </header>
+
+      <div class="space-y-6 text-neutral-700 text-base sm:text-lg leading-relaxed">
+        <p class="text-pretty">
+          {biografia}
+        </p>
+
+        {vision && (
+          <div class="bg-neutral-50 border-l-4 border-secondary p-6 rounded-r-sm">
+            <p class="text-primary font-medium mb-2 text-sm uppercase tracking-wide">
+              Filosofía Profesional
+            </p>
+            <p class="text-neutral-700 text-pretty italic">
+              "{vision}"
+            </p>
+          </div>
+        )}
+      </div>
+    </ScrollReveal>
+
+    <!-- Bloque: Casos de Éxito -->
+    {logros.length > 0 && (
+      <ScrollReveal animation="fade-up" delay={100}>
+        <div class="mt-16">
+          <header class="flex items-center gap-4 mb-8">
+            <span class="sm:block h-0.5 w-12 bg-secondary" aria-hidden="true"></span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-primary">
+              Casos de Éxito y Reconocimientos
+            </h2>
+          </header>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            {logros.map((logro) => (
+              <div
+                class="flex items-start gap-3 p-4 rounded-sm bg-neutral-50 border border-neutral-100"
+              >
+                <Icon
+                  name="mdi:check-circle"
+                  class="w-6 h-6 text-secondary shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
+                <p class="text-neutral-700 text-pretty">{logro}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </ScrollReveal>
+    )}
+  </div>
+</section>
