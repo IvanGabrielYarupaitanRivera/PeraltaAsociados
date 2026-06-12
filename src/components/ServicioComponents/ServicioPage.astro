@@ -3,6 +3,7 @@ import Footer from "../Footer.astro";
 import Header from "../Header.astro";
 import ServiciosHero from "./ServiciosHero.astro";
 import ServicioVentajas from "./ServicioVentajas.astro";
+import ScrollReveal from "../ScrollReveal.astro";
 
 interface Props {
   title: string;
@@ -21,8 +22,13 @@ const { title, description, ventajas } = Astro.props;
   <Header />
 
   <main class="flex-1">
-    <ServiciosHero title={title} description={description} />
-    <ServicioVentajas ventajas={ventajas} />
+    <ScrollReveal animation="fade-up" delay={0}>
+      <ServiciosHero title={title} description={description} />
+    </ScrollReveal>
+
+    <ScrollReveal animation="fade-up" delay={200}>
+      <ServicioVentajas ventajas={ventajas} />
+    </ScrollReveal>
   </main>
 
   <Footer />

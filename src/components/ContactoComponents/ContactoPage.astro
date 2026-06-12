@@ -4,15 +4,24 @@ import ContactHero from "./ContactHero.astro";
 import Contacto from "../Contacto.astro";
 import Footer from "../Footer.astro";
 import FormasContact from "./FormasContact.astro";
+import ScrollReveal from "../ScrollReveal.astro";
 ---
 
 <div id="container" class="flex flex-col min-h-screen">
   <ContactHeader />
 
   <main class="flex-1">
-    <ContactHero />
-    <FormasContact />
-    <Contacto />
+    <ScrollReveal animation="fade-up" delay={0}>
+      <ContactHero />
+    </ScrollReveal>
+
+    <ScrollReveal animation="fade-up" delay={200}>
+      <FormasContact />
+    </ScrollReveal>
+
+    <ScrollReveal animation="fade-up" delay={300}>
+      <Contacto />
+    </ScrollReveal>
   </main>
 
   <Footer />
