@@ -17,7 +17,7 @@ const { biografia, logros, vision } = Astro.props;
 >
   <BackgroundPattern variant="subtle" opacity={0.3} />
 
-  <div class="relative z-10 container mx-auto px-4  ">
+  <div class="relative z-10 container mx-auto px-4 max-w-5xl">
     <!-- Perfil y Visión Jurídica -->
     <ScrollReveal animation="fade-up" delay={100}>
       <div class="flex items-center gap-4 mb-8">
@@ -37,42 +37,49 @@ const { biografia, logros, vision } = Astro.props;
         </p>
       </div>
 
-      <div class="text-center max-w-2xl mx-auto">
-        <p class="text-lg text-neutral-700 leading-relaxed text-pretty">
+      <div class="max-w-3xl mx-auto">
+        <p
+          class="text-lg text-neutral-800 leading-relaxed text-pretty
+            first-letter:text-6xl first-letter:font-bold first-letter:text-secondary
+            first-letter:mr-3 first-letter:float-left first-letter:leading-none"
+        >
           {biografia}
         </p>
       </div>
     </ScrollReveal>
 
-    <!-- Filosofía Profesional -->
+    <!-- Filosofía Profesional — blockquote tipo manuscrito -->
     {vision && (
       <ScrollReveal animation="fade-up" delay={100}>
-        <div class="my-16">
-          <blockquote class="relative py-8 px-4 border-t border-b border-neutral-200 text-center">
-            <span
-              class="absolute top-2 left-1/2 -translate-x-1/2 text-5xl text-secondary/20 font-black pointer-events-none select-none"
-              aria-hidden="true"
-            >
-              "
-            </span>
-            <p class="text-xl sm:text-2xl italic text-primary max-w-2xl mx-auto leading-normal">
-              "{vision}"
-            </p>
-            <cite class="block mt-4 text-xs uppercase tracking-widest text-neutral-500 not-italic font-medium">
-              — Filosofía Profesional del Despacho
-            </cite>
-          </blockquote>
+        <div class="relative my-16 py-8 border-t border-b border-neutral-200/80 text-center">
+          <span
+            class="absolute -top-4 left-1/2 -translate-x-1/2 bg-neutral-100 px-4 text-3xl text-secondary/40 select-none"
+            aria-hidden="true"
+          >
+            "
+          </span>
+          <p class="text-xl italic font-medium text-primary max-w-2xl mx-auto leading-relaxed">
+            {vision}
+          </p>
+          <span class="text-xs uppercase tracking-widest text-secondary font-bold block mt-3">
+            — Filosofía Profesional
+          </span>
         </div>
       </ScrollReveal>
     )}
 
-    <!-- Casos de Éxito y Reconocimientos -->
+    <!-- Separador decorativo -->
+    <div class="flex justify-center my-16">
+      <div class="h-px w-24 bg-neutral-300" aria-hidden="true"></div>
+    </div>
+
+    <!-- Casos de Éxito y Reconocimientos — estilo "Contadores Cronológicos" -->
     {logros.length > 0 && (
       <ScrollReveal animation="fade-up" delay={100}>
         <div class="flex items-center gap-4 mb-8">
           <div class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></div>
           <p class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap">
-            Resultados que Respaldan
+            Jurisprudencia y Logros
           </p>
           <div class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></div>
         </div>
@@ -83,21 +90,38 @@ const { biografia, logros, vision } = Astro.props;
           </h3>
         </div>
 
-        <div class="divide-y divide-neutral-200 border-t border-b border-neutral-200 max-w-2xl mx-auto">
-          {logros.map((logro, index) => (
-            <div
-              class="group py-6 flex flex-col md:flex-row md:items-start gap-4 md:gap-8 transition-colors duration-300 hover:bg-neutral-50/50 px-2"
-            >
-              <div class="text-xl font-bold text-secondary font-sans md:pt-1">
-                {String(index + 1).padStart(2, "0")}
-              </div>
-              <div class="space-y-2 flex-1">
-                <p class="text-base text-neutral-700 leading-relaxed text-pretty">
-                  {logro}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-12 max-w-5xl mx-auto">
+          {logros.map((logro, index) => {
+            const categorias = ["Precedente Civil", "Litigio Constitucional", "Distinción Corporativa"];
+            return (
+              <article
+                class="group relative flex flex-col justify-between pt-6 border-t border-neutral-200 cursor-default"
+              >
+                {/* Línea de tinta extensible */}
+                <div
+                  class="absolute top-0 left-0 h-[1.5px] w-0 bg-secondary transition-all duration-500 ease-out group-hover:w-full"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="space-y-4">
+                  <span
+                    class="text-2xl font-bold font-sans tracking-tight text-secondary transition-transform duration-300 block group-hover:-translate-y-1"
+                  >
+                    {String(index + 1).padStart(2, "0")}.
+                  </span>
+                  <p
+                    class="text-base font-medium text-neutral-800 leading-relaxed text-balance transition-colors duration-300 group-hover:text-primary"
+                  >
+                    {logro}
+                  </p>
+                </div>
+
+                <span class="text-[10px] font-sans tracking-widest text-neutral-400 uppercase mt-6 block">
+                  {categorias[index] || "Precedente Legal"}
+                </span>
+              </article>
+            );
+          })}
         </div>
       </ScrollReveal>
     )}
