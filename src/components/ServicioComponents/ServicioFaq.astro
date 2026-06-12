@@ -1,4 +1,7 @@
 ---
+import BackgroundPattern from "../BackgroundPattern.astro";
+import ScrollReveal from "../ScrollReveal.astro";
+
 interface FaqItem {
   pregunta: string;
   respuesta: string;
@@ -28,42 +31,48 @@ const faqSchema = {
 </script>
 
 <section class="py-20 relative bg-neutral-100" aria-label="Preguntas frecuentes">
-  <div class="container mx-auto px-4">
-    <!-- Encabezado decorativo -->
-    <header class="flex items-center gap-4 mb-8">
-      <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"></span>
-      <p class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap">
-        Preguntas Frecuentes
-      </p>
-      <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"></span>
-    </header>
+  <BackgroundPattern variant="subtle" opacity={0.3} />
 
-    <div class="max-w-3xl mx-auto space-y-4">
-      {
-        faqs.map((faq, index) => (
-          <details
-            class="group bg-white rounded-sm shadow-sm hover:shadow-md transition-all duration-300 open:shadow-md"
-          >
-            <summary
-              class="flex items-center justify-between gap-4 px-6 py-4 cursor-pointer list-none text-primary font-serif font-bold text-lg hover:text-secondary transition-colors duration-300 [&::-webkit-details-marker]:hidden"
-            >
-              <span class="text-pretty">{faq.pregunta}</span>
-              <svg
-                class="w-5 h-5 flex-shrink-0 text-secondary transition-transform duration-300 group-open:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+  <div class="relative z-10">
+    <div class="container mx-auto px-4">
+      <ScrollReveal animation="fade-up" delay={100}>
+        <!-- Encabezado decorativo -->
+        <header class="flex items-center gap-4 mb-12">
+          <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"></span>
+          <p class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap">
+            Preguntas Frecuentes
+          </p>
+          <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"></span>
+        </header>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          {
+            faqs.map((faq) => (
+              <details
+                class="group bg-white rounded-sm shadow-sm hover:shadow-md transition-all duration-300 open:shadow-md overflow-hidden"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </summary>
-            <div class="px-6 pb-4 text-gray-600 leading-relaxed">
-              {faq.respuesta}
-            </div>
-          </details>
-        ))
-      }
+                <summary
+                  class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none text-primary font-serif font-bold text-lg hover:bg-primary/5 transition-colors duration-300 [&::-webkit-details-marker]:hidden"
+                >
+                  <span class="text-pretty pr-4">{faq.pregunta}</span>
+                  <svg
+                    class="w-5 h-5 flex-shrink-0 text-secondary transition-transform duration-300 group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                </summary>
+                <div class="px-6 pb-5 pt-2 text-gray-600 leading-relaxed border-t border-gray-100">
+                  {faq.respuesta}
+                </div>
+              </details>
+            ))
+          }
+        </div>
+      </ScrollReveal>
     </div>
   </div>
 </section>
