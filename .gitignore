@@ -29,4 +29,8 @@ pnpm-debug.log*
 # build
 .netlify/build
 
+# personal IDE settings
+.vscode/settings.json
+.gemini/
+
  
