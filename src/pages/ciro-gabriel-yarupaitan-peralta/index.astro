@@ -1,9 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import SchemaAttorney from "@components/ciro-gabriel-yarupaitan-peralta/SchemaAttorney.astro";
-import HeroSection from "@components/ciro-gabriel-yarupaitan-peralta/Hero.astro";
-import BioSection from "@components/ciro-gabriel-yarupaitan-peralta/Bio.astro";
-import TrayectoriaSection from "@components/ciro-gabriel-yarupaitan-peralta/Trayectoria.astro";
+import FundadorPage from "@components/ciro-gabriel-yarupaitan-peralta/FundadorPage.astro";
 
 const pageTitle =
   "Ciro Gabriel Yarupaitan Peralta — Abogado Fundador | Peralta Asociados";
@@ -78,26 +76,12 @@ const trayectoriaData = {
   description={pageDescription}
   robots="index, follow"
 >
-  <!-- SchemaAttorney va aquí dentro del body, funciona correctamente -->
-  <SchemaAttorney />
+  <!-- SchemaAttorney inyectado en el <head> mediante named slot -->
+  <SchemaAttorney slot="head-extra" />
 
-  <HeroSection
-    nombre={heroData.nombre}
-    titulo={heroData.titulo}
-    colegiatura={heroData.colegiatura}
-    experiencia={heroData.experiencia}
-    slogan={heroData.slogan}
-  />
-
-  <BioSection
-    biografia={bioData.biografia}
-    logros={bioData.logros}
-    vision={bioData.vision}
-  />
-
-  <TrayectoriaSection
-    formacion={trayectoriaData.formacion}
-    especialidades={trayectoriaData.especialidades}
-    membresias={trayectoriaData.membresias}
+  <FundadorPage
+    heroData={heroData}
+    bioData={bioData}
+    trayectoriaData={trayectoriaData}
   />
 </Layout>
