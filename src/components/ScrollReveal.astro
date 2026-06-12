@@ -9,11 +9,13 @@ interface Props {
 }
 
 const { animation = "fade-up", delay = 0, duration = 600 } = Astro.props;
+const revealClass = `reveal reveal-${animation}`;
+const revealStyle = `transition-duration: ${duration}ms; transition-delay: ${delay}ms;`;
 ---
 
 <div
-  class="reveal reveal-{animation}"
-  style="transition-duration: {duration}ms; transition-delay: {delay}ms;"
+  class={revealClass}
+  style={revealStyle}
 >
   <slot />
 </div>
