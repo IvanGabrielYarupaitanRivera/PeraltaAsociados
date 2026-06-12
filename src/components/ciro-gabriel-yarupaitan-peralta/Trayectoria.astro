@@ -1,0 +1,133 @@
+---
+import { Icon } from "astro-icon/components";
+import BackgroundPattern from "@components/BackgroundPattern.astro";
+import ScrollReveal from "@components/ScrollReveal.astro";
+
+export interface FormacionItem {
+  titulo: string;
+  institucion: string;
+  anio: string;
+}
+
+export interface EspecialidadItem {
+  nombre: string;
+  descripcion: string;
+  icono: string;
+}
+
+export interface Props {
+  formacion: FormacionItem[];
+  especialidades: EspecialidadItem[];
+  membresias: string[];
+}
+
+const { formacion, especialidades, membresias } = Astro.props;
+---
+
+<section
+  class="py-20 relative bg-neutral-100"
+  aria-label="Trayectoria académica y especialidades del Dr. Yarupaitan"
+>
+  <BackgroundPattern variant="subtle" opacity={0.3} />
+
+  <div class="relative z-10 container mx-auto px-4 max-w-5xl">
+    <ScrollReveal animation="fade-up" delay={200}>
+      <!-- Encabezado -->
+      <header class="flex items-center gap-4 mb-12">
+        <span class="sm:block h-0.5 w-12 bg-secondary" aria-hidden="true"></span>
+        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-primary">
+          Trayectoria Académica y Distinciones
+        </h2>
+      </header>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Columna izquierda: Formación -->
+        <div>
+          <h3
+            class="font-serif text-xl font-bold text-primary mb-6 flex items-center gap-3"
+          >
+            <Icon
+              name="mdi:account-tie"
+              class="w-6 h-6 text-secondary"
+              aria-hidden="true"
+            />
+            Formación Académica
+          </h3>
+
+          <div class="space-y-4">
+            {formacion.map((item) => (
+              <div
+                class="bg-white p-5 rounded-sm shadow-sm border-l-4 border-secondary"
+              >
+                <p class="font-bold text-primary text-lg">{item.titulo}</p>
+                <p class="text-neutral-600 text-sm">{item.institucion}</p>
+                <p class="text-secondary text-xs font-medium mt-1">{item.anio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Columna derecha: Membresías -->
+        <div>
+          <h3
+            class="font-serif text-xl font-bold text-primary mb-6 flex items-center gap-3"
+          >
+            <Icon
+              name="mdi:star-four-points"
+              class="w-6 h-6 text-secondary"
+              aria-hidden="true"
+            />
+            Membresías Profesionales
+          </h3>
+
+          <div class="space-y-3">
+            {membresias.map((membresia) => (
+              <div class="flex items-center gap-3 bg-white p-4 rounded-sm shadow-sm">
+                <Icon
+                  name="mdi:check-circle"
+                  class="w-5 h-5 text-secondary shrink-0"
+                  aria-hidden="true"
+                />
+                <p class="text-neutral-700">{membresia}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Especialidades -->
+      {especialidades.length > 0 && (
+        <div class="mt-16">
+          <h3
+            class="font-serif text-xl font-bold text-primary mb-6 flex items-center gap-3"
+          >
+            <Icon
+              name="mdi:gavel"
+              class="w-6 h-6 text-secondary"
+              aria-hidden="true"
+            />
+            Áreas de Práctica Especializada
+          </h3>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {especialidades.map((esp) => (
+              <article
+                class="bg-white p-5 rounded-sm shadow-sm border border-neutral-100 hover:shadow-md hover:border-secondary/30 transition-all duration-300"
+              >
+                <Icon
+                  name={esp.icono}
+                  class="w-8 h-8 text-secondary mb-3"
+                  aria-hidden="true"
+                />
+                <h4 class="font-bold text-primary mb-2">{esp.nombre}</h4>
+                <p class="text-sm text-neutral-600 leading-relaxed text-pretty">
+                  {esp.descripcion}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+    </ScrollReveal>
+  </div>
+</section>
