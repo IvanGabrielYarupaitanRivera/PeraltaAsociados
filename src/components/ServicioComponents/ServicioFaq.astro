@@ -74,30 +74,32 @@ const faqSchema = {
     var buttons = document.querySelectorAll(".faq-btn");
     var i;
     for (i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener("click", faqClick);
+      (buttons[i] as HTMLButtonElement).addEventListener("click", faqClick);
     }
   }
 
-  function faqClick() {
+  function faqClick(this: HTMLButtonElement) {
     var btn = this;
-    var outer = btn.nextElementSibling;
+    var outer = btn.nextElementSibling as HTMLElement | null;
+    var arrow = btn.querySelector(".faq-arrow") as HTMLElement | null;
+
+    if (!outer || !arrow) return;
+
     var isOpen = btn.getAttribute("aria-expanded") === "true";
 
     if (isOpen) {
-      // Cerrar: primero darle altura actual, luego ir a 0
       outer.style.maxHeight = outer.scrollHeight + "px";
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          outer.style.maxHeight = "0px";
+          outer!.style.maxHeight = "0px";
         });
       });
       btn.setAttribute("aria-expanded", "false");
-      btn.querySelector(".faq-arrow").style.transform = "rotate(0deg)";
+      arrow.style.transform = "rotate(0deg)";
     } else {
-      // Abrir: darle su altura real
       outer.style.maxHeight = outer.scrollHeight + "px";
       btn.setAttribute("aria-expanded", "true");
-      btn.querySelector(".faq-arrow").style.transform = "rotate(180deg)";
+      arrow.style.transform = "rotate(180deg)";
     }
   }
 
