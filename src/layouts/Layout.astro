@@ -32,12 +32,59 @@ const canonicalUrl = new URL(canonicalPath, "https://peraltaasociados.com")
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "LawFirm",
+  "@id": "https://peraltaasociados.com/#firm",
   "name": schema.name,
+  "legalName": "Peralta Asociados Estudio Jurídico",
   "image": "/images/og-image.jpg",
   "logo": "/images/logo.png",
   "slogan": "Su defensa en buenas manos",
   "url": canonicalUrl,
   "description": schema.description,
+  "knowsAbout": [
+    "Derecho Civil",
+    "Derecho Laboral",
+    "Derecho Administrativo",
+    "Derecho Constitucional",
+    "Litigios Locales en Huancavelica"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios Legales en Huancavelica",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Asesoría en Derecho Civil",
+          "description": "Especialistas en prescripción adquisitiva, pensión de alimentos, conciliación extrajudicial y saneamiento de propiedades en la región de Huancavelica."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Asesoría en Derecho Laboral",
+          "description": "Defensa en casos de despido arbitrario, reposición laboral, cobro de beneficios sociales como CTS y gratificaciones, e indemnizaciones en Huancavelica."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Asesoría en Derecho Administrativo",
+          "description": "Procesos disciplinarios PNP, defensa ante SUNAFIL y SUNAT, recursos impugnativos y trámites administrativos ante entidades públicas en Huancavelica."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Asesoría en Derecho Constitucional",
+          "description": "Acciones de amparo, habeas corpus, acciones de cumplimiento y defensa de derechos fundamentales en la región de Huancavelica."
+        }
+      }
+    ]
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Jr. Mayta Cápac N° 215",
