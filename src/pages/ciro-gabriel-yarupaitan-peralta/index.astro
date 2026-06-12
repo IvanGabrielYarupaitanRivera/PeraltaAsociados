@@ -7,6 +7,8 @@ const pageTitle =
   "Ciro Gabriel Yarupaitan Peralta — Abogado Fundador | Peralta Asociados";
 const pageDescription =
   "Conoce al Dr. Ciro Gabriel Yarupaitan Peralta, abogado fundador de Peralta Asociados. [X] años de experiencia en Derecho Civil, Laboral, Administrativo y Constitucional en Huancavelica.";
+const pageKeywords =
+  "ciro gabriel yarupaitan peralta, abogado fundador huancavelica, peralta asociados fundador, abogado huancavelica, estudio jurídico huancavelica, derecho civil huancavelica, derecho laboral huancavelica";
 
 // Datos placeholder — reemplazar cuando el cliente entregue la información real
 const heroData = {
@@ -74,7 +76,10 @@ const trayectoriaData = {
 <Layout
   title={pageTitle}
   description={pageDescription}
+  keywords={pageKeywords}
   robots="index, follow"
+  ogUrl="https://peraltaasociados.com/ciro-gabriel-yarupaitan-peralta/"
+  ogImage="/images/og-image.jpg"
 >
   <!-- SchemaAttorney inyectado en el <head> mediante named slot -->
   <SchemaAttorney slot="head-extra" />

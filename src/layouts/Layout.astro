@@ -11,6 +11,8 @@ interface Props {
     name?: string;
     description?: string;  
   };
+  ogUrl?: string;
+  ogImage?: string;
 }
 
 const {
@@ -21,7 +23,9 @@ const {
   schema = {
     name: "Peralta Asociados",
     description: "Asesoría legal especializada en Huancavelica en derecho civil, administrativo, laboral, constitucional y más. Contamos con abogados expertos y comprometidos en brindar soluciones legales efectivas. ¡Contáctenos para una consulta!" 
-  }
+  },
+  ogUrl = "https://peraltaasociados.com/",
+  ogImage = "/images/og-image.jpg",
 } = Astro.props;
 
 const canonicalPath = Astro.url.pathname.endsWith("/")
@@ -161,17 +165,17 @@ const schemaData = {
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://peraltaasociados.com/" />
+    <meta property="og:url" content={ogUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:image" content={ogImage} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://peraltaasociados.com/" />
+    <meta name="twitter:url" content={ogUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="/images/og-image.jpg" />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Local Business Meta Tags -->
     <meta name="city" content="Huancavelica" />
