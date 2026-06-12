@@ -71,10 +71,6 @@ const trayectoriaData = {
   ],
 };
 
-const canonicalUrl = new URL(
-  Astro.url.pathname,
-  "https://peraltaasociados.com",
-).href;
 ---
 
 <Layout
@@ -82,7 +78,7 @@ const canonicalUrl = new URL(
   description={pageDescription}
   robots="index, follow"
 >
-  <link rel="canonical" href={canonicalUrl} />
+  <!-- SchemaAttorney va aquí dentro del body, funciona correctamente -->
   <SchemaAttorney />
 
   <HeroSection
