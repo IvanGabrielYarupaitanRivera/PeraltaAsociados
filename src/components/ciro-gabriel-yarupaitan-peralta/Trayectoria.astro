@@ -24,7 +24,7 @@ const { formacion, especialidades, membresias } = Astro.props;
 ---
 
 <section
-  class="py-20 relative bg-white"
+  class="py-20 relative bg-neutral-100"
   aria-label="Trayectoria académica y especialidades del Dr. Yarupaitan"
 >
   <BackgroundPattern variant="subtle" opacity={0.3} />
@@ -61,21 +61,25 @@ const { formacion, especialidades, membresias } = Astro.props;
             Formación Académica
           </h3>
 
-          <div class="space-y-8">
+          <ol class="space-y-8 list-none" aria-label="Historial académico">
             {formacion.map((item) => (
-              <div class="border-b border-neutral-100 pb-6 last:border-b-0 last:pb-0">
-                <p class="text-xs font-medium tracking-wider text-secondary uppercase mb-1">
-                  {item.anio}
-                </p>
-                <p class="font-bold text-primary text-base">
-                  {item.titulo}
-                </p>
-                <p class="text-sm text-neutral-600 mt-1">
-                  {item.institucion}
-                </p>
-              </div>
+              <li
+                class="border-b border-neutral-100 pb-6 last:border-b-0 last:pb-0"
+              >
+                <article>
+                  <p class="text-xs font-medium tracking-wider text-secondary uppercase mb-1">
+                    {item.anio}
+                  </p>
+                  <p class="font-bold text-primary text-base">
+                    {item.titulo}
+                  </p>
+                  <p class="text-sm text-neutral-600 mt-1">
+                    {item.institucion}
+                  </p>
+                </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </ScrollReveal>
 
@@ -86,9 +90,11 @@ const { formacion, especialidades, membresias } = Astro.props;
             Membresías Profesionales
           </h3>
 
-          <div class="space-y-6">
+          <ul class="space-y-6 list-none" aria-label="Membresías profesionales">
             {membresias.map((membresia) => (
-              <div class="flex items-start gap-3 border-b border-neutral-100 pb-5 last:border-b-0 last:pb-0">
+              <li
+                class="flex items-start gap-3 border-b border-neutral-100 pb-5 last:border-b-0 last:pb-0"
+              >
                 <span class="text-secondary text-lg leading-none mt-0.5" aria-hidden="true">›</span>
                 <div>
                   <p class="text-primary font-medium">{membresia}</p>
@@ -96,9 +102,9 @@ const { formacion, especialidades, membresias } = Astro.props;
                     Miembro Activo
                   </p>
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </ScrollReveal>
     </div>
@@ -123,22 +129,24 @@ const { formacion, especialidades, membresias } = Astro.props;
             </h3>
           </div>
 
-          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 pt-8 border-t border-neutral-200">
+          <ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 pt-8 border-t border-neutral-200 list-none" aria-label="Áreas de práctica especializada">
             {especialidades.map((esp, index) => {
               const romanNumerals = ["I", "II", "III", "IV"];
               return (
-                <div class="space-y-3">
-                  <span class="text-xs font-bold tracking-widest text-secondary block">
-                    {romanNumerals[index]}. {esp.nombre.toUpperCase()}
-                  </span>
-                  <div class="h-px w-6 bg-neutral-300" aria-hidden="true"></div>
-                  <p class="text-sm text-neutral-700 leading-relaxed text-pretty">
-                    {esp.descripcion}
-                  </p>
-                </div>
+                <li class="space-y-3">
+                  <article>
+                    <span class="text-xs font-bold tracking-widest text-secondary block">
+                      {romanNumerals[index]}. {esp.nombre.toUpperCase()}
+                    </span>
+                    <div class="h-px w-6 bg-neutral-300" aria-hidden="true"></div>
+                    <p class="text-sm text-neutral-700 leading-relaxed text-pretty">
+                      {esp.descripcion}
+                    </p>
+                  </article>
+                </li>
               );
             })}
-          </div>
+          </ol>
         </div>
       </ScrollReveal>
     )}
