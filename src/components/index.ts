@@ -1,0 +1,10 @@
+export { default as BackgroundPattern } from "./BackgroundPattern.astro";
+export { default as Contacto } from "./Contacto.astro";
+export { default as Equipo } from "./Equipo.astro";
+export { default as Footer } from "./Footer.astro";
+export { default as Header } from "./Header.astro";
+export { default as Hero } from "./Hero.astro";
+export { default as Nosotros } from "./Nosotros.astro";
+export { default as ScrollReveal } from "./ScrollReveal.astro";
+export { default as Servicios } from "./Servicios.astro";
+export { default as WhatsAppFloat } from "./WhatsAppFloat.astro";
