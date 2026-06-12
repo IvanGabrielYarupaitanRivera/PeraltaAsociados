@@ -4,6 +4,8 @@ import Header from "../Header.astro";
 import ServiciosHero from "./ServiciosHero.astro";
 import ServicioVentajas from "./ServicioVentajas.astro";
 import ServicioFaq from "./ServicioFaq.astro";
+import ScrollReveal from "../ScrollReveal.astro";
+import BackgroundPattern from "../BackgroundPattern.astro";
 
 interface FaqItem {
   pregunta: string;
@@ -13,6 +15,7 @@ interface FaqItem {
 interface Props {
   title: string;
   description: string;
+  contexto?: string;
   ventajas: {
     titulo: string;
     descripcion: string;
@@ -21,7 +24,7 @@ interface Props {
   faqs?: FaqItem[];
 }
 
-const { title, description, ventajas, faqs = [] } = Astro.props;
+const { title, description, contexto, ventajas, faqs = [] } = Astro.props;
 ---
 
 <div id="container" class="flex flex-col min-h-screen">
@@ -29,6 +32,20 @@ const { title, description, ventajas, faqs = [] } = Astro.props;
 
   <main class="flex-1">
     <ServiciosHero title={title} description={description} />
+    {contexto && (
+      <section class="py-16 relative bg-neutral-100">
+        <BackgroundPattern variant="subtle" opacity={0.3} />
+        <div class="container relative z-10 mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <ScrollReveal animation="fade-up" delay={100}>
+              <p class="text-gray-700 text-lg leading-relaxed text-center">
+                {contexto}
+              </p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+    )}
     <ServicioVentajas ventajas={ventajas} />
     {faqs.length > 0 && <ServicioFaq faqs={faqs} />}
   </main>
