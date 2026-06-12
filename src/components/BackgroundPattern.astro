@@ -7,10 +7,10 @@ interface Props {
 }
 
 const { variant = "subtle", opacity } = Astro.props;
-const opacityClass = opacity !== undefined ? `opacity-${Math.round(opacity * 100)}` : "";
+const opacityValue = opacity !== undefined ? Math.round(opacity * 100) : "";
 ---
 
-<div class="absolute inset-0 {opacityClass}">
+<div class:list={["absolute inset-0", opacity !== undefined && `opacity-${opacityValue}`]}>
   <svg
     width="100%"
     height="100%"

@@ -27,7 +27,7 @@ const faqSchema = {
 };
 ---
 
-<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}>
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline>
 </script>
 
 <section class="py-20 relative bg-neutral-100" aria-label="Preguntas frecuentes">
@@ -43,7 +43,7 @@ const faqSchema = {
 
         <div class="max-w-3xl mx-auto space-y-4">
           {
-            faqs.map((faq, i) => (
+            faqs.map((faq) => (
               <div class="bg-white rounded-sm shadow-sm">
                 <button
                   class="faq-btn w-full flex items-center justify-between gap-4 px-6 py-5 cursor-pointer text-primary font-serif font-bold text-lg hover:bg-primary/5 transition-colors duration-300 text-left"
