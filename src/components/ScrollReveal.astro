@@ -1,0 +1,79 @@
+---
+interface Props {
+  /** Animación: "fade-up" (default), "fade-left", "fade-right", "scale-in" */
+  animation?: "fade-up" | "fade-left" | "fade-right" | "scale-in";
+  /** Delay en ms antes de que inicie la animación */
+  delay?: number;
+  /** Duración de la animación en ms */
+  duration?: number;
+}
+
+const { animation = "fade-up", delay = 0, duration = 600 } = Astro.props;
+---
+
+<div
+  class="reveal reveal-{animation}"
+  style="transition-duration: {duration}ms; transition-delay: {delay}ms;"
+>
+  <slot />
+</div>
+
+<style is:global>
+  /* Estado inicial: oculto con desplazamiento */
+  .reveal {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-out;
+    will-change: opacity, transform;
+  }
+
+  /* Estado visible */
+  .reveal.revealed {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+
+  /* Variantes de animación (estado inicial) */
+  .reveal-fade-up {
+    transform: translateY(30px);
+  }
+
+  .reveal-fade-left {
+    transform: translateX(-30px);
+  }
+
+  .reveal-fade-right {
+    transform: translateX(30px);
+  }
+
+  .reveal-scale-in {
+    transform: scale(0.9);
+  }
+
+  /* Respetar preferencia de movimiento reducido */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.05, rootMargin: "0px 0px -60px 0px" }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => {
+    observer.observe(el);
+  });
+</script>
