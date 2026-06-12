@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
-import BackgroundPattern from "../BackgroundPattern.astro";
-import ScrollReveal from "../ScrollReveal.astro";
+import BackgroundPattern from "@components/BackgroundPattern.astro";
+import ScrollReveal from "@components/ScrollReveal.astro";
 
 interface Props {
   ventajas: {
@@ -21,14 +21,14 @@ const { ventajas } = Astro.props;
     <ScrollReveal animation="fade-up" delay={100}>
     <!-- Encabezado decorativo -->
     <header class="flex items-center gap-4 mb-8">
-      <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+      <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
       ></span>
       <p
         class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
       >
         Nuestros Beneficios
       </p>
-      <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+      <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
       ></span>
     </header>
 

@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 import BackgroundPattern from "./BackgroundPattern.astro";
 import ScrollReveal from "./ScrollReveal.astro";
 // Importar la foto del abogado
-import abogadoProfile from "../assets/images/equipo/profile.webp";
+import abogadoProfile from "@assets/images/equipo/profile.webp";
 ---
 
 <section class="py-20 relative bg-neutral-100" id="equipo" aria-label="Nuestro equipo">
@@ -16,14 +16,14 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
     <div class="container mx-auto px-4">
       <!-- Encabezado decorativo -->
       <header class="flex items-center gap-4 mb-8">
-        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
         ></span>
         <p
           class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
         >
           Nuestro Equipo
         </p>
-        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
         ></span>
       </header>
 
@@ -45,7 +45,7 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
         <!-- Columna Imagen -->
         <div class="lg:col-span-4 relative">
           <figure
-            class="aspect-[3/4] overflow-hidden rounded-sm group relative"
+            class="aspect-3/4 overflow-hidden rounded-sm group relative"
           >
             <Image
               src={abogadoProfile}
@@ -91,7 +91,7 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
                 <article class="flex items-start gap-4">
                   <Icon
                     name="mdi:handshake"
-                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                    class="w-6 h-6 text-secondary shrink-0 transition-transform group-hover:scale-110"
                   />
                   <div>
                     <h4 class="font-serif text-lg text-primary mb-2">
@@ -111,7 +111,7 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
                 <article class="flex items-start gap-4">
                   <Icon
                     name="mdi:scale-balance"
-                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                    class="w-6 h-6 text-secondary shrink-0 transition-transform group-hover:scale-110"
                   />
                   <div>
                     <h4 class="font-serif text-lg text-primary mb-2">
@@ -130,7 +130,7 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
                 <article class="flex items-start gap-4">
                   <Icon
                     name="mdi:briefcase-check"
-                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                    class="w-6 h-6 text-secondary shrink-0 transition-transform group-hover:scale-110"
                   />
                   <div>
                     <h4 class="font-serif text-lg text-primary mb-2">
@@ -149,7 +149,7 @@ import abogadoProfile from "../assets/images/equipo/profile.webp";
                 <article class="flex items-start gap-4">
                   <Icon
                     name="mdi:account-heart"
-                    class="w-6 h-6 text-secondary flex-shrink-0 transition-transform group-hover:scale-110"
+                    class="w-6 h-6 text-secondary shrink-0 transition-transform group-hover:scale-110"
                   />
                   <div>
                     <h4 class="font-serif text-lg text-primary mb-2">

@@ -1,6 +1,6 @@
 ---
-import BackgroundPattern from "../BackgroundPattern.astro";
-import ScrollReveal from "../ScrollReveal.astro";
+import BackgroundPattern from "@components/BackgroundPattern.astro";
+import ScrollReveal from "@components/ScrollReveal.astro";
 
 interface FaqItem {
   pregunta: string;
@@ -36,9 +36,9 @@ const faqSchema = {
     <div class="container mx-auto px-4">
       <ScrollReveal animation="fade-up" delay={100}>
         <header class="flex items-center gap-4 mb-12">
-          <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"></span>
+          <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></span>
           <p class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap">Preguntas Frecuentes</p>
-          <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"></span>
+          <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></span>
         </header>
 
         <div class="max-w-3xl mx-auto space-y-4">
@@ -50,7 +50,7 @@ const faqSchema = {
                   aria-expanded="false"
                 >
                   <span class="text-pretty pr-4">{faq.pregunta}</span>
-                  <svg class="faq-arrow w-5 h-5 flex-shrink-0 text-secondary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg class="faq-arrow w-5 h-5 shrink-0 text-secondary transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>

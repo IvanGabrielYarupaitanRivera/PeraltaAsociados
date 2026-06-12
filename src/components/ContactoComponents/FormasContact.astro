@@ -4,8 +4,8 @@ import EmailSection from "./EmailSection.astro";
 import LocationSection from "./LocationSection.astro";
 import FacebookSection from "./FacebookSection.astro";
 import ChatbotSection from "./ChatbotSection.astro";
-import BackgroundPattern from "../BackgroundPattern.astro";
-import ScrollReveal from "../ScrollReveal.astro";
+import BackgroundPattern from "@components/BackgroundPattern.astro";
+import ScrollReveal from "@components/ScrollReveal.astro";
 ---
 
 <section class="py-20 relative bg-neutral-100" id="formas-de-contacto" aria-label="Formas de contacto">
@@ -16,14 +16,14 @@ import ScrollReveal from "../ScrollReveal.astro";
     <div class="container mx-auto px-4">
       <!-- Encabezado decorativo -->
       <header class="flex items-center gap-4 mb-8">
-        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
         ></span>
         <p
           class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
         >
           Contacte a su Abogado
         </p>
-        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
         ></span>
       </header>
 

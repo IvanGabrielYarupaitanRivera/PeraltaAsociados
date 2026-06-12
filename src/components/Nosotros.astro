@@ -3,9 +3,9 @@ import { Image } from "astro:assets";
 import BackgroundPattern from "./BackgroundPattern.astro";
 import ScrollReveal from "./ScrollReveal.astro";
 
-import ladyJustice from "../assets/images/nosotros/lady-justice.webp";
-import misionLegal from "../assets/images/nosotros/mision-legal.webp";
-import visionLegal from "../assets/images/nosotros/vision-legal.webp";
+import ladyJustice from "@assets/images/nosotros/lady-justice.webp";
+import misionLegal from "@assets/images/nosotros/mision-legal.webp";
+import visionLegal from "@assets/images/nosotros/vision-legal.webp";
 ---
 
 <section class="py-20 relative bg-neutral-100" id="nosotros" aria-label="Sobre nosotros">
@@ -18,14 +18,14 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
     <div class="container mx-auto px-4">
       <!-- Encabezado decorativo -->
       <header class="flex items-center gap-4 mb-8">
-        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
         ></span>
         <p
           class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
         >
           Sobre Nosotros
         </p>
-        <span class="sm:block h-[2px] flex-1 bg-secondary" aria-hidden="true"
+        <span class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"
         ></span>
       </header>
 
@@ -45,7 +45,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
       <!-- Contenido en dos columnas -->
       <section class="grid lg:grid-cols-2 gap-12 items-start">
         <!-- Columna imagen -->
-        <figure class="relative h-[700px]">
+        <figure class="relative h-175">
           <Image
             src={ladyJustice}
             alt="Representación de la Justicia - Mujer con balanza"
@@ -61,7 +61,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
         <aside class="space-y-12">
           <!-- Misión -->
           <article
-            class="relative h-[400px] overflow-hidden rounded-sm shadow-sm group"
+            class="relative h-100 overflow-hidden rounded-sm shadow-sm group"
           >
             <figure class="absolute inset-0">
               <Image
@@ -74,7 +74,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
                 decoding="async"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-r from-black via-black/90 md:via-black/80 md:to-transparent to-black/70"
+                class="absolute inset-0 bg-linear-to-r from-black via-black/90 md:via-black/80 md:to-transparent to-black/70"
               >
               </div>
             </figure>
@@ -82,7 +82,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
             <div class="relative h-full flex items-center">
               <div class="w-full md:w-1/2 lg:w-2/3 p-8 text-white">
                 <header class="flex items-center gap-4 mb-4">
-                  <span class="h-[2px] w-12 bg-secondary" aria-hidden="true"
+                  <span class="h-0.5 w-12 bg-secondary" aria-hidden="true"
                   ></span>
                   <h2 class="font-serif text-2xl font-bold">Nuestra Misión</h2>
                 </header>
@@ -99,7 +99,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
 
           <!-- Visión -->
           <article
-            class="relative h-[400px] overflow-hidden rounded-sm shadow-sm group"
+            class="relative h-100 overflow-hidden rounded-sm shadow-sm group"
           >
             <figure class="absolute inset-0">
               <Image
@@ -112,7 +112,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
                 decoding="async"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-r from-black via-black/90 md:via-black/80 md:to-transparent to-black/70"
+                class="absolute inset-0 bg-linear-to-r from-black via-black/90 md:via-black/80 md:to-transparent to-black/70"
               >
               </div>
             </figure>
@@ -120,7 +120,7 @@ import visionLegal from "../assets/images/nosotros/vision-legal.webp";
             <div class="relative h-full flex items-center">
               <div class="w-full md:w-1/2 lg:w-2/3 p-8 text-white">
                 <header class="flex items-center gap-4 mb-4">
-                  <span class="h-[2px] w-12 bg-secondary" aria-hidden="true"
+                  <span class="h-0.5 w-12 bg-secondary" aria-hidden="true"
                   ></span>
                   <h2 class="font-serif text-2xl font-bold">Nuestra Visión</h2>
                 </header>
