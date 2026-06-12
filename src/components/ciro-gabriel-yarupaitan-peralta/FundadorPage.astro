@@ -1,0 +1,64 @@
+---
+import { Header, Footer } from "@components";
+import HeroSection from "./Hero.astro";
+import BioSection from "./Bio.astro";
+import TrayectoriaSection from "./Trayectoria.astro";
+
+export interface Props {
+  heroData: {
+    nombre: string;
+    titulo: string;
+    colegiatura: string;
+    experiencia: string;
+    slogan: string;
+  };
+  bioData: {
+    biografia: string;
+    vision: string;
+    logros: string[];
+  };
+  trayectoriaData: {
+    formacion: {
+      titulo: string;
+      institucion: string;
+      anio: string;
+    }[];
+    especialidades: {
+      nombre: string;
+      descripcion: string;
+      icono: string;
+    }[];
+    membresias: string[];
+  };
+}
+
+const { heroData, bioData, trayectoriaData } = Astro.props;
+---
+
+<div class="flex flex-col min-h-screen">
+  <Header />
+
+  <main class="flex-1">
+    <HeroSection
+      nombre={heroData.nombre}
+      titulo={heroData.titulo}
+      colegiatura={heroData.colegiatura}
+      experiencia={heroData.experiencia}
+      slogan={heroData.slogan}
+    />
+
+    <BioSection
+      biografia={bioData.biografia}
+      logros={bioData.logros}
+      vision={bioData.vision}
+    />
+
+    <TrayectoriaSection
+      formacion={trayectoriaData.formacion}
+      especialidades={trayectoriaData.especialidades}
+      membresias={trayectoriaData.membresias}
+    />
+  </main>
+
+  <Footer />
+</div>
