@@ -6,16 +6,31 @@ import Nosotros from "./Nosotros.astro";
 import Footer from "./Footer.astro";
 import Equipo from "./Equipo.astro";
 import Contacto from "./Contacto.astro";
+import ScrollReveal from "./ScrollReveal.astro";
 ---
 
 <div id="container" class="flex flex-col min-h-screen">
   <Header />
   <main class="flex-1">
-    <Hero />
-    <Servicios />
-    <Nosotros />
-    <Equipo />
-    <Contacto />
+    <ScrollReveal animation="fade-up" delay={0}>
+      <Hero />
+    </ScrollReveal>
+
+    <ScrollReveal animation="fade-up" delay={100}>
+      <Servicios />
+    </ScrollReveal>
+
+    <ScrollReveal animation="fade-up" delay={200}>
+      <Nosotros />
+    </ScrollReveal>
+
+    <ScrollReveal animation="fade-up" delay={300}>
+      <Equipo />
+    </ScrollReveal>
+
+    <ScrollReveal animation="fade-up" delay={400}>
+      <Contacto />
+    </ScrollReveal>
   </main>
   <Footer />
 </div>
