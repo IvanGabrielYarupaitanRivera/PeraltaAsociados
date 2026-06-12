@@ -1,0 +1,53 @@
+---
+// SchemaAttorney.astro — JSON-LD @graph para Ciro Gabriel Yarupaitan Peralta
+// Vinculado bidireccionalmente con el LegalService principal (#firm)
+// Usa is:inline para evitar que Astro procese/deduplique el script
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Attorney",
+      "@id": "https://peraltaasociados.com/#attorney-ciro",
+      "name": "Ciro Gabriel Yarupaitan Peralta",
+      "givenName": "Ciro Gabriel",
+      "familyName": "Yarupaitan Peralta",
+      "jobTitle": "Abogado Fundador y Director Principal",
+      "telephone": "+51976762237",
+      "image":
+        "https://peraltaasociados.com/assets/images/ciro-gabriel-yarupaitan-peralta/perfil-profesional.jpg",
+      "sameAs": [
+        "[URL_LINKEDIN - PENDIENTE]",
+        "[URL_PADRON_COLEGIO - PENDIENTE]",
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "[UNIVERSIDAD - PENDIENTE]",
+        "sameAs": "[URL_WIKIPEDIA_UNIVERSIDAD - PENDIENTE]",
+      },
+      "memberOf": {
+        "@type": "Organization",
+        "name": "Colegio de Abogados de Huancavelica",
+      },
+      "knowsAbout": [
+        "Derecho Civil",
+        "Derecho Laboral",
+        "Derecho Administrativo",
+        "Derecho Constitucional",
+        "Litigios Complejos",
+        "Asesoría Jurídica en Huancavelica",
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Abogado Colegiado",
+      },
+      "worksFor": {
+        "@type": "LegalService",
+        "@id": "https://peraltaasociados.com/#firm",
+      },
+    },
+  ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} is:inline></script>
