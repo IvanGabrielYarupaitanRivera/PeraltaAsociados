@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
+import BackgroundPattern from "@components/BackgroundPattern.astro";
 import ScrollReveal from "@components/ScrollReveal.astro";
 
 export interface Props {
@@ -12,62 +12,92 @@ const { biografia, logros, vision } = Astro.props;
 ---
 
 <section
-  class="py-20 bg-white"
+  class="py-20 relative bg-neutral-100"
   aria-label="Perfil profesional de Ciro Gabriel Yarupaitan Peralta"
 >
-  <div class="container mx-auto px-4 max-w-4xl">
-    <!-- Bloque: Perfil y Visión Jurídica -->
+  <BackgroundPattern variant="subtle" opacity={0.3} />
+
+  <div class="relative z-10 container mx-auto px-4  ">
+    <!-- Perfil y Visión Jurídica -->
     <ScrollReveal animation="fade-up" delay={100}>
-      <header class="flex items-center gap-4 mb-8">
-        <span class="sm:block h-0.5 w-12 bg-secondary" aria-hidden="true"></span>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-primary">
+      <div class="flex items-center gap-4 mb-8">
+        <div class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></div>
+        <p class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap">
+          Trayectoria y Principios
+        </p>
+        <div class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></div>
+      </div>
+
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="font-serif text-3xl md:text-4xl text-primary font-bold mb-4">
           Perfil y Visión Jurídica
         </h2>
-      </header>
+        <p class="text-gray-600">
+          Trayectoria y principios que guían nuestro ejercicio profesional
+        </p>
+      </div>
 
-      <div class="space-y-6 text-neutral-700 text-base sm:text-lg leading-relaxed">
-        <p class="text-pretty">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="text-lg text-neutral-700 leading-relaxed text-pretty">
           {biografia}
         </p>
-
-        {vision && (
-          <div class="bg-neutral-50 border-l-4 border-secondary p-6 rounded-r-sm">
-            <p class="text-primary font-medium mb-2 text-sm uppercase tracking-wide">
-              Filosofía Profesional
-            </p>
-            <p class="text-neutral-700 text-pretty italic">
-              "{vision}"
-            </p>
-          </div>
-        )}
       </div>
     </ScrollReveal>
 
-    <!-- Bloque: Casos de Éxito -->
+    <!-- Filosofía Profesional -->
+    {vision && (
+      <ScrollReveal animation="fade-up" delay={100}>
+        <div class="my-16">
+          <blockquote class="relative py-8 px-4 border-t border-b border-neutral-200 text-center">
+            <span
+              class="absolute top-2 left-1/2 -translate-x-1/2 text-5xl text-secondary/20 font-black pointer-events-none select-none"
+              aria-hidden="true"
+            >
+              "
+            </span>
+            <p class="text-xl sm:text-2xl italic text-primary max-w-2xl mx-auto leading-normal">
+              "{vision}"
+            </p>
+            <cite class="block mt-4 text-xs uppercase tracking-widest text-neutral-500 not-italic font-medium">
+              — Filosofía Profesional del Despacho
+            </cite>
+          </blockquote>
+        </div>
+      </ScrollReveal>
+    )}
+
+    <!-- Casos de Éxito y Reconocimientos -->
     {logros.length > 0 && (
       <ScrollReveal animation="fade-up" delay={100}>
-        <div class="mt-16">
-          <header class="flex items-center gap-4 mb-8">
-            <span class="sm:block h-0.5 w-12 bg-secondary" aria-hidden="true"></span>
-            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-primary">
-              Casos de Éxito y Reconocimientos
-            </h2>
-          </header>
+        <div class="flex items-center gap-4 mb-8">
+          <div class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></div>
+          <p class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap">
+            Resultados que Respaldan
+          </p>
+          <div class="sm:block h-0.5 flex-1 bg-secondary" aria-hidden="true"></div>
+        </div>
 
-          <div class="grid sm:grid-cols-2 gap-4">
-            {logros.map((logro) => (
-              <div
-                class="flex items-start gap-3 p-4 rounded-sm bg-neutral-50 border border-neutral-100"
-              >
-                <Icon
-                  name="mdi:check-circle"
-                  class="w-6 h-6 text-secondary shrink-0 mt-0.5"
-                  aria-hidden="true"
-                />
-                <p class="text-neutral-700 text-pretty">{logro}</p>
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h3 class="font-serif text-2xl md:text-3xl text-primary font-bold mb-3">
+            Casos de Éxito y Reconocimientos
+          </h3>
+        </div>
+
+        <div class="divide-y divide-neutral-200 border-t border-b border-neutral-200 max-w-2xl mx-auto">
+          {logros.map((logro, index) => (
+            <div
+              class="group py-6 flex flex-col md:flex-row md:items-start gap-4 md:gap-8 transition-colors duration-300 hover:bg-neutral-50/50 px-2"
+            >
+              <div class="text-xl font-bold text-secondary font-sans md:pt-1">
+                {String(index + 1).padStart(2, "0")}
               </div>
-            ))}
-          </div>
+              <div class="space-y-2 flex-1">
+                <p class="text-base text-neutral-700 leading-relaxed text-pretty">
+                  {logro}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </ScrollReveal>
     )}
