@@ -1,0 +1,107 @@
+---
+import Layout from "@layouts/Layout.astro";
+import SchemaAttorney from "@components/ciro-gabriel-yarupaitan-peralta/SchemaAttorney.astro";
+import HeroSection from "@components/ciro-gabriel-yarupaitan-peralta/Hero.astro";
+import BioSection from "@components/ciro-gabriel-yarupaitan-peralta/Bio.astro";
+import TrayectoriaSection from "@components/ciro-gabriel-yarupaitan-peralta/Trayectoria.astro";
+
+const pageTitle =
+  "Ciro Gabriel Yarupaitan Peralta — Abogado Fundador | Peralta Asociados";
+const pageDescription =
+  "Conoce al Dr. Ciro Gabriel Yarupaitan Peralta, abogado fundador de Peralta Asociados. [X] años de experiencia en Derecho Civil, Laboral, Administrativo y Constitucional en Huancavelica.";
+
+// Datos placeholder — reemplazar cuando el cliente entregue la información real
+const heroData = {
+  nombre: "Ciro Gabriel Yarupaitan Peralta",
+  titulo: "Abogado Fundador y Director Principal",
+  colegiatura: "[NÚMERO DE COLEGIATURA]",
+  experiencia: "[X] años de experiencia",
+  slogan: "Comprometido con la justicia en Huancavelica desde [AÑO]",
+};
+
+const bioData = {
+  biografia:
+    "[TEXTO BIOGRÁFICO - PENDIENTE. Incluir menciones a: Corte Superior de Justicia de Huancavelica, Gobierno Regional de Huancavelica, Municipalidad Provincial, y años de experiencia litigando en la región.]",
+  vision:
+    "[FILOSOFÍA PROFESIONAL - PENDIENTE. Describir el enfoque de justicia, ética profesional y compromiso con la comunidad de Huancavelica.]",
+  logros: [
+    "[LOGRO 1 - PENDIENTE. Ej: Más de X casos exitosos en derecho civil]",
+    "[LOGRO 2 - PENDIENTE. Ej: Defensa constitucional de alta complejidad]",
+    "[LOGRO 3 - PENDIENTE. Ej: Reconocimiento por labor jurídica en la región]",
+  ],
+};
+
+const trayectoriaData = {
+  formacion: [
+    {
+      titulo: "[TÍTULO UNIVERSITARIO - PENDIENTE]",
+      institucion: "[UNIVERSIDAD - PENDIENTE]",
+      anio: "[AÑO DE EGRESO]",
+    },
+  ],
+  especialidades: [
+    {
+      nombre: "Derecho Civil",
+      descripcion:
+        "[DESCRIPCIÓN - PENDIENTE] Asesoría en prescripción adquisitiva, pensión de alimentos, conciliación extrajudicial y saneamiento de propiedades.",
+      icono: "mdi:scale-balance",
+    },
+    {
+      nombre: "Derecho Laboral",
+      descripcion:
+        "[DESCRIPCIÓN - PENDIENTE] Defensa en despidos arbitrarios, liquidaciones, negociación colectiva y litigios laborales.",
+      icono: "mdi:briefcase",
+    },
+    {
+      nombre: "Derecho Administrativo",
+      descripcion:
+        "[DESCRIPCIÓN - PENDIENTE] Recursos administrativos ante entidades públicas, procesos sancionadores y defensa ante el GORE y municipalidades.",
+      icono: "mdi:shield-check",
+    },
+    {
+      nombre: "Derecho Constitucional",
+      descripcion:
+        "[DESCRIPCIÓN - PENDIENTE] Procesos de amparo, hábeas corpus y defensa de derechos fundamentales ante la Corte Superior.",
+      icono: "mdi:gavel",
+    },
+  ],
+  membresias: [
+    "Colegio de Abogados de Huancavelica",
+    "[MEMBRESÍA ADICIONAL - PENDIENTE]",
+  ],
+};
+
+const canonicalUrl = new URL(
+  Astro.url.pathname,
+  "https://peraltaasociados.com",
+).href;
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  robots="index, follow"
+>
+  <link rel="canonical" href={canonicalUrl} />
+  <SchemaAttorney />
+
+  <HeroSection
+    nombre={heroData.nombre}
+    titulo={heroData.titulo}
+    colegiatura={heroData.colegiatura}
+    experiencia={heroData.experiencia}
+    slogan={heroData.slogan}
+  />
+
+  <BioSection
+    biografia={bioData.biografia}
+    logros={bioData.logros}
+    vision={bioData.vision}
+  />
+
+  <TrayectoriaSection
+    formacion={trayectoriaData.formacion}
+    especialidades={trayectoriaData.especialidades}
+    membresias={trayectoriaData.membresias}
+  />
+</Layout>
