@@ -1,8 +1,7 @@
 ---
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import BackgroundPattern from "./BackgroundPattern.astro";
 import ScrollReveal from "./ScrollReveal.astro";
+import ServicioCard from "./ServicioCard.astro";
 
 import derechoAdministrativo from "@assets/images/servicios/derechoAdministrativo.webp";
 import derechoCivil from "@assets/images/servicios/derechoCivil.webp";
@@ -16,236 +15,64 @@ import derechoConstitucional from "@assets/images/servicios/derechoConstituciona
   <div class="relative z-10">
     <div class="container mx-auto px-4">
       <ScrollReveal animation="fade-up" delay={100}>
-      <!-- Texto decorativo -->
-      <div class="flex items-center gap-4 mb-8">
-        <div class="sm:block h-0.5 flex-1 bg-secondary"></div>
-        <p
-          class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap"
-        >
-          Defendiendo sus derechos
-        </p>
-        <div class="sm:block h-0.5 flex-1 bg-secondary"></div>
-      </div>
+        <!-- Texto decorativo -->
+        <div class="flex items-center gap-4 mb-8">
+          <div class="sm:block h-0.5 flex-1 bg-secondary"></div>
+          <p class="text-secondary font-medium tracking-wide uppercase text-sm whitespace-nowrap">
+            Defendiendo sus derechos
+          </p>
+          <div class="sm:block h-0.5 flex-1 bg-secondary"></div>
+        </div>
 
-      <!-- Encabezado de sección -->
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="font-serif text-3xl md:text-4xl text-primary font-bold mb-4">
-          Nuestros Servicios Legales
-        </h2>
-        <p class="text-gray-600">
-          Soluciones legales claras y efectivas para proteger sus derechos
-        </p>
-      </div>
+        <!-- Encabezado de sección -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="font-serif text-3xl md:text-4xl text-primary font-bold mb-4">
+            Nuestros Servicios Legales
+          </h2>
+          <p class="text-gray-600">
+            Soluciones legales claras y efectivas para proteger sus derechos
+          </p>
+        </div>
 
-      <!-- Grid de servicios -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card de Derecho Administrativo -->
-        <article class="relative h-150 group overflow-hidden rounded-sm">
-          <!-- Imagen de fondo -->
-          <Image
-            src={derechoAdministrativo}
-            alt="Asesoría legal en derecho administrativo en Huancavelica - Imagen de la justicia con una balanza"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            width="720"
-            height="600"
-            widths={[240, 540, 720]}
-            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px`}
-            format="webp"
-            loading="lazy"
-            decoding="async"
+        <!-- Grid de servicios -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <ServicioCard
+            imagen={derechoAdministrativo}
+            alt="Asesoría legal en derecho administrativo en Huancavelica"
+            titulo="Derecho Administrativo"
+            descripcion="¿Problemas laborales o con entidades públicas? Te defendemos en sanciones, procesos disciplinarios y te guiamos en trámites gubernamentales de manera clara y efectiva."
+            url="/derecho-administrativo/"
+            ariaLabel="Ver más detalles sobre Derecho Administrativo"
           />
 
-          <!-- Overlay gradiente -->
-          <div
-            class="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-          </div>
-
-          <!-- Contenido -->
-          <footer
-            class="absolute bottom-0 left-0 right-0 p-8 text-white bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-            <!-- Contenido del servicio -->
-            <header class="space-y-3 mb-6">
-              <h3 class="font-serif text-2xl font-bold">
-                Derecho Administrativo
-              </h3>
-              <p class="text-neutral-200 text-pretty">
-                ¿Problemas laborales o con entidades públicas? Te defendemos en
-                sanciones, procesos disciplinarios y te guiamos en trámites
-                gubernamentales de manera clara y efectiva.
-              </p>
-            </header>
-
-            <!-- Enlace a más detalles -->
-            <a
-              href="/derecho-administrativo/"
-              class="inline-flex items-center px-8 py-2 text-sm bg-primary hover:bg-primary/90 text-white transition-all duration-300 rounded-sm group"
-              aria-label="Ver más detalles sobre Derecho Administrativo"
-            >
-              <span>Ver detalles</span>
-              <Icon
-                name="mdi:arrow-right"
-                class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </a>
-          </footer>
-        </article>
-
-        <!-- Card de Derecho Civil -->
-        <article class="relative h-150 group overflow-hidden rounded-sm">
-          <!-- Imagen de fondo -->
-          <Image
-            src={derechoCivil}
-            alt="Asesoría legal en derecho civil en Huancavelica - Documentos legales y balanza de justicia"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            widths={[240, 540, 720]}
-            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px`}
-            format="webp"
-            loading="lazy"
-            decoding="async"
+          <ServicioCard
+            imagen={derechoCivil}
+            alt="Asesoría legal en derecho civil en Huancavelica"
+            titulo="Derecho Civil"
+            descripcion="Te ayudamos con trámites de posesión de propiedades, pensión de alimentos y cumplimiento de acuerdos de conciliación. Soluciones efectivas para tus asuntos legales civiles."
+            url="/derecho-civil/"
+            ariaLabel="Ver más detalles sobre servicios de Derecho Civil"
           />
 
-          <!-- Overlay gradiente -->
-          <div
-            class="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-          </div>
-
-          <!-- Contenido -->
-          <footer
-            class="absolute bottom-0 left-0 right-0 p-8 text-white bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-            <!-- Contenido del servicio -->
-            <header class="space-y-3 mb-6">
-              <h3 class="font-serif text-2xl font-bold">Derecho Civil</h3>
-              <p class="text-neutral-200 text-pretty">
-                Te ayudamos con trámites de posesión de propiedades, pensión de
-                alimentos y cumplimiento de acuerdos de conciliación. Soluciones
-                efectivas para tus asuntos legales civiles.
-              </p>
-            </header>
-
-            <!-- Enlace a más detalles -->
-            <a
-              href="/derecho-civil/"
-              class="inline-flex items-center px-8 py-2 text-sm bg-primary hover:bg-primary/90 text-white transition-all duration-300 rounded-sm group"
-              aria-label="Ver más detalles sobre servicios de Derecho Civil"
-            >
-              <span>Ver detalles</span>
-              <Icon
-                name="mdi:arrow-right"
-                class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </a>
-          </footer>
-        </article>
-
-        <!-- Card de Derecho Laboral -->
-        <article class="relative h-150 group overflow-hidden rounded-sm">
-          <!-- Imagen de fondo -->
-          <Image
-            src={derechoLaboral}
-            alt="Asesoría en derecho laboral en Huancavelica - Defensa de derechos laborales y beneficios sociales"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            widths={[240, 540, 720]}
-            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px`}
-            format="webp"
-            loading="lazy"
-            decoding="async"
+          <ServicioCard
+            imagen={derechoLaboral}
+            alt="Asesoría en derecho laboral en Huancavelica"
+            titulo="Derecho Laboral"
+            descripcion="¿Te despidieron injustamente o no te pagan tus beneficios? Te ayudamos a recuperar tu trabajo y obtener las compensaciones que te corresponden por ley."
+            url="/derecho-laboral/"
+            ariaLabel="Ver más detalles sobre servicios de Derecho Laboral"
           />
 
-          <!-- Overlay gradiente -->
-          <div
-            class="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-          </div>
-
-          <!-- Contenido -->
-          <footer
-            class="absolute bottom-0 left-0 right-0 p-8 text-white bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-            <!-- Contenido del servicio -->
-            <header class="space-y-3 mb-6">
-              <h3 class="font-serif text-2xl font-bold">Derecho Laboral</h3>
-              <p class="text-neutral-200 text-pretty">
-                ¿Te despidieron injustamente o no te pagan tus beneficios? Te
-                ayudamos a recuperar tu trabajo y obtener las compensaciones que
-                te corresponden por ley. Defendemos tus derechos laborales.
-              </p>
-            </header>
-
-            <!-- Enlace a más detalles -->
-            <a
-              href="/derecho-laboral/"
-              class="inline-flex items-center px-8 py-2 text-sm bg-primary hover:bg-primary/90 text-white transition-all duration-300 rounded-sm group"
-              aria-label="Ver más detalles sobre servicios de Derecho Laboral"
-            >
-              <span>Ver detalles</span>
-              <Icon
-                name="mdi:arrow-right"
-                class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </a>
-          </footer>
-        </article>
-
-        <!-- Card de Derecho Constitucional -->
-        <article class="relative h-150 group overflow-hidden rounded-sm">
-          <!-- Imagen de fondo -->
-          <Image
-            src={derechoConstitucional}
-            alt="Asesoría en derecho constitucional en Huancavelica - Protección de derechos fundamentales"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-            widths={[240, 540, 720]}
-            sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px`}
-            format="webp"
-            loading="lazy"
-            decoding="async"
+          <ServicioCard
+            imagen={derechoConstitucional}
+            alt="Asesoría en derecho constitucional en Huancavelica"
+            titulo="Derecho Constitucional"
+            descripcion="Te protegemos mediante acciones de amparo, habeas corpus y hacemos cumplir las sentencias judiciales a tu favor. Defendemos tus libertades y derechos constitucionales."
+            url="/derecho-constitucional/"
+            ariaLabel="Ver más detalles sobre servicios de Derecho Constitucional"
           />
-
-          <!-- Overlay gradiente -->
-          <div
-            class="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-          </div>
-
-          <!-- Contenido -->
-          <footer
-            class="absolute bottom-0 left-0 right-0 p-8 text-white bg-linear-to-t from-black via-black/50 to-transparent"
-          >
-            <!-- Contenido del servicio -->
-            <header class="space-y-3 mb-6">
-              <h3 class="font-serif text-2xl font-bold">
-                Derecho Constitucional
-              </h3>
-              <p class="text-neutral-200 text-pretty">
-                Te protegemos mediante acciones de amparo, habeas corpus y
-                hacemos cumplir las sentencias judiciales a tu favor. Defendemos
-                tus libertades y derechos constitucionales.
-              </p>
-            </header>
-
-            <!-- Enlace a más detalles -->
-            <a
-              href="/derecho-constitucional/"
-              class="inline-flex items-center px-8 py-2 text-sm bg-primary hover:bg-primary/90 text-white transition-all duration-300 rounded-sm group"
-              aria-label="Ver más detalles sobre servicios de Derecho Constitucional"
-            >
-              <span>Ver detalles</span>
-              <Icon
-                name="mdi:arrow-right"
-                class="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
-            </a>
-          </footer>
-        </article>
-      </div>
-    </div>
+        </div>
       </ScrollReveal>
+    </div>
   </div>
 </section>
