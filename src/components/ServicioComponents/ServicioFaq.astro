@@ -102,11 +102,7 @@ const faqSchema = {
     }
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initFaq);
-  } else {
-    initFaq();
-  }
+  document.addEventListener("astro:page-load", initFaq);
 </script>
 
 <style>
