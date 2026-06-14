@@ -1,4 +1,5 @@
 ---
+import ciroFoto from "@assets/images/ciro-gabriel-yarupaitan-peralta/ciro-yarupaitan-peralta-abogado-huancavelica-peru.webp";
 import Layout from "@layouts/Layout.astro";
 import SchemaAttorney from "@components/ciro-gabriel-yarupaitan-peralta/SchemaAttorney.astro";
 import FundadorPage from "@components/ciro-gabriel-yarupaitan-peralta/FundadorPage.astro";
@@ -6,68 +7,68 @@ import FundadorPage from "@components/ciro-gabriel-yarupaitan-peralta/FundadorPa
 const pageTitle =
   "Ciro Gabriel Yarupaitan Peralta — Abogado Fundador | Peralta Asociados";
 const pageDescription =
-  "Conoce al Dr. Ciro Gabriel Yarupaitan Peralta, abogado fundador de Peralta Asociados. [X] años de experiencia en Derecho Civil, Laboral, Administrativo y Constitucional en Huancavelica.";
+  "Conoce al Dr. Ciro Gabriel Yarupaitan Peralta, abogado fundador de Peralta Asociados. 30 años de experiencia en gestión pública, ejecutor coactivo, juez de paz letrado y asesor jurídico. Derecho Civil, Laboral, Administrativo y Constitucional en Huancavelica.";
 const pageKeywords =
-  "ciro gabriel yarupaitan peralta, abogado fundador huancavelica, peralta asociados fundador, abogado huancavelica, estudio jurídico huancavelica, derecho civil huancavelica, derecho laboral huancavelica";
+  "ciro gabriel yarupaitan peralta, abogado fundador huancavelica, peralta asociados fundador, abogado huancavelica, estudio jurídico huancavelica, C.A.H.147, ejecutor coactivo, juez de paz huancavelica, derecho constitucional huancavelica";
 
-// Datos placeholder — reemplazar cuando el cliente entregue la información real
 const heroData = {
   nombre: "Ciro Gabriel Yarupaitan Peralta",
   titulo: "Abogado Fundador y Director Principal",
-  colegiatura: "[NÚMERO DE COLEGIATURA]",
-  experiencia: "[X] años de experiencia",
-  slogan: "Comprometido con la justicia en Huancavelica desde [AÑO]",
+  colegiatura: "C.A.H.147",
+  experiencia: "30 AÑOS DE EXPERIENCIA",
+  slogan: "Fundado en 2008 — Comprometido con Huancavelica",
 };
 
 const bioData = {
-  biografia:
-    "[TEXTO BIOGRÁFICO - PENDIENTE. Incluir menciones a: Corte Superior de Justicia de Huancavelica, Gobierno Regional de Huancavelica, Municipalidad Provincial, y años de experiencia litigando en la región.]",
-  vision:
-    "[FILOSOFÍA PROFESIONAL - PENDIENTE. Describir el enfoque de justicia, ética profesional y compromiso con la comunidad de Huancavelica.]",
+  biografia: `Más de 30 años en la gestión pública, desempeñándose como ejecutor coactivo e inspector del trabajo en la Dirección de Trabajo y Dirección del Empleo. Se ha desempeñado como juez de paz letrado en la Corte Superior de Justicia de Huancavelica y laboró en la Gerencia Regional de Desarrollo Social del Gobierno Regional de Huancavelica. Con más de 20 años de experiencia en el litigio, ha consolidado una trayectoria jurídica integral que combina la función pública con la defensa legal activa.`,
+  vision: `"Como director de Peralta Asociados, ejerzo el derecho bajo una convicción clara: la justicia debe ser un instrumento real de equidad social, no un trámite abstracto. Mi práctica profesional en Huancavelica se rige por una ética estricta y el compromiso directo con nuestra comunidad, asegurando que cada defensa legal sea un respaldo firme, humano y técnicamente impecable para proteger los derechos de nuestra región."`,
   logros: [
-    "[LOGRO 1 - PENDIENTE. Ej: Más de X casos exitosos en derecho civil]",
-    "[LOGRO 2 - PENDIENTE. Ej: Defensa constitucional de alta complejidad]",
-    "[LOGRO 3 - PENDIENTE. Ej: Reconocimiento por labor jurídica en la región]",
+    "Reincorporaciones laborales exitosas: Defensa y reposición de trabajadores despedidos arbitrariamente ante el Poder Judicial, logrando la restitución de sus derechos y el pago de beneficios sociales adeudados.",
+    "Nulidades de actos jurídicos ante COFOPRI: Anulación de actos administrativos irregulares ante el Organismo de Formalización de la Propiedad Informal, protegiendo el derecho de propiedad de familias en Huancavelica.",
+    "Divorcios en mutuo acuerdo: Asesoría y acompañamiento integral en procesos de disolución conyugal, garantizando acuerdos justos y rápidos en beneficio de ambas partes sin conflictos prolongados.",
+    "Reconocimiento del Colegio de Abogados de Huancavelica: Distinción otorgada por la ilustre institución colegiada en mérito a la trayectoria profesional y el compromiso con la justicia en la región.",
   ],
 };
 
 const trayectoriaData = {
   formacion: [
     {
-      titulo: "[TÍTULO UNIVERSITARIO - PENDIENTE]",
-      institucion: "[UNIVERSIDAD - PENDIENTE]",
-      anio: "[AÑO DE EGRESO]",
+      titulo: "Maestría en Derecho Constitucional",
+      institucion: "Universidad Nacional de Huancavelica",
+      anio: "2012",
     },
   ],
   especialidades: [
     {
       nombre: "Derecho Civil",
       descripcion:
-        "[DESCRIPCIÓN - PENDIENTE] Asesoría en prescripción adquisitiva, pensión de alimentos, conciliación extrajudicial y saneamiento de propiedades.",
+        "Amplia experiencia en prescripción adquisitiva, pensión de alimentos, conciliación extrajudicial, saneamiento de propiedades y nulidades de actos jurídicos. Representación en procesos civiles ante juzgados de Huancavelica con un enfoque en la protección del patrimonio familiar.",
       icono: "mdi:scale-balance",
     },
     {
       nombre: "Derecho Laboral",
       descripcion:
-        "[DESCRIPCIÓN - PENDIENTE] Defensa en despidos arbitrarios, liquidaciones, negociación colectiva y litigios laborales.",
+        "Defensa especializada en despidos arbitrarios, reposición laboral, cobro de beneficios sociales, liquidaciones y negociación colectiva. Experiencia como inspector del trabajo, lo que otorga una visión integral de los derechos laborales desde ambas orillas del ordenamiento jurídico.",
       icono: "mdi:briefcase",
     },
     {
       nombre: "Derecho Administrativo",
       descripcion:
-        "[DESCRIPCIÓN - PENDIENTE] Recursos administrativos ante entidades públicas, procesos sancionadores y defensa ante el GORE y municipalidades.",
+        "Procesos disciplinarios, defensa ante SUNAFIL y SUNAT, recursos impugnativos y trámites administrativos ante entidades públicas. Experiencia como ejecutor coactivo y asesor jurídico en el sector público, garantizando una defensa técnica y estratégica.",
       icono: "mdi:shield-check",
     },
     {
       nombre: "Derecho Constitucional",
       descripcion:
-        "[DESCRIPCIÓN - PENDIENTE] Procesos de amparo, hábeas corpus y defensa de derechos fundamentales ante la Corte Superior.",
+        "Acciones de amparo, hábeas corpus, acciones de cumplimiento y defensa de derechos fundamentales. Experiencia como juez de paz letrado, lo que proporciona un conocimiento profundo de la jurisprudencia constitucional y los mecanismos de tutela de derechos.",
       icono: "mdi:gavel",
     },
   ],
   membresias: [
-    "Colegio de Abogados de Huancavelica",
-    "[MEMBRESÍA ADICIONAL - PENDIENTE]",
+    "Miembro activo del Colegio de Abogados de Huancavelica",
+    "Cargos directivos en la Cooperativa de Ahorro y Crédito Limitada Nro. 582 — Huancavelica",
+    "Cargos directivos en la Cooperativa de Ahorro y Crédito Santa Rosa — Hospital de Huancavelica",
+    "Jefe de la Oficina de Asesoría Jurídica de la Dirección Regional de Salud — Huancavelica",
   ],
 };
 
@@ -85,6 +86,7 @@ const trayectoriaData = {
   <SchemaAttorney slot="head-extra" />
 
   <FundadorPage
+    foto={ciroFoto}
     heroData={heroData}
     bioData={bioData}
     trayectoriaData={trayectoriaData}

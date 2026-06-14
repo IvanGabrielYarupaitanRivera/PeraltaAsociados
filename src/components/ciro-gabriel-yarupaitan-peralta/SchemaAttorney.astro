@@ -17,29 +17,47 @@ const personSchema = {
       "image":
         "https://peraltaasociados.com/assets/images/ciro-gabriel-yarupaitan-peralta/perfil-profesional.jpg",
       "sameAs": [
-        "[URL_LINKEDIN - PENDIENTE]",
-        "[URL_PADRON_COLEGIO - PENDIENTE]",
+        "https://www.facebook.com/PeraltaAsociadosPeru",
       ],
       "alumniOf": {
         "@type": "EducationalOrganization",
-        "name": "[UNIVERSIDAD - PENDIENTE]",
-        "sameAs": "[URL_WIKIPEDIA_UNIVERSIDAD - PENDIENTE]",
+        "name": "Maestría en Derecho Constitucional",
+        "description": "Egresado 2012",
       },
-      "memberOf": {
-        "@type": "Organization",
-        "name": "Colegio de Abogados de Huancavelica",
-      },
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "Colegio de Abogados de Huancavelica",
+          "identifier": "C.A.H.147",
+        },
+        {
+          "@type": "Organization",
+          "name": "Cooperativa de Ahorro y Crédito Limitada Nro. 582 — Huancavelica",
+        },
+        {
+          "@type": "Organization",
+          "name": "Cooperativa de Ahorro y Crédito Santa Rosa — Hospital de Huancavelica",
+        },
+        {
+          "@type": "Organization",
+          "name": "Dirección Regional de Salud — Huancavelica",
+          "description": "Jefe de la Oficina de Asesoría Jurídica",
+        },
+      ],
       "knowsAbout": [
         "Derecho Civil",
         "Derecho Laboral",
         "Derecho Administrativo",
         "Derecho Constitucional",
-        "Litigios Complejos",
-        "Asesoría Jurídica en Huancavelica",
+        "Ejecución Coactiva",
+        "Inspección del Trabajo",
+        "Litigios Complejos en Huancavelica",
       ],
       "hasCredential": {
         "@type": "EducationalOccupationalCredential",
         "name": "Abogado Colegiado",
+        "credentialCategory": "colegiatura",
+        "identifier": "C.A.H.147",
       },
       "worksFor": {
         "@type": "LegalService",

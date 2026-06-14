@@ -90,9 +90,8 @@ const { biografia, logros, vision } = Astro.props;
           </h3>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-12 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 max-w-4xl mx-auto">
           {logros.map((logro, index) => {
-            const categorias = ["Precedente Civil", "Litigio Constitucional", "Distinción Corporativa"];
             return (
               <article
                 class="group relative flex flex-col justify-between pt-6 border-t border-neutral-200 cursor-default"
@@ -117,7 +116,7 @@ const { biografia, logros, vision } = Astro.props;
                 </div>
 
                 <span class="text-[10px] font-sans tracking-widest text-neutral-400 uppercase mt-6 block">
-                  {categorias[index] || "Precedente Legal"}
+                  {index < 3 ? "Caso de Éxito" : "Reconocimiento"}
                 </span>
               </article>
             );

@@ -39,7 +39,7 @@ const whatsappUrl = `https://wa.me/51976762237?text=${whatsappMessage}`;
         <!-- Columna foto -->
         <div class="lg:col-span-2 flex justify-center lg:justify-end">
           <div
-            class="relative w-64 h-80 sm:w-72 sm:h-96 lg:w-80 lg:h-112 rounded-xl overflow-hidden shadow-2xl ring-2 ring-secondary/30"
+            class="relative w-64 sm:w-72 lg:w-80 aspect-3/4 rounded-sm overflow-hidden shadow-2xl ring-2 ring-secondary/30"
           >
             {foto ? (
               <Picture
@@ -47,13 +47,13 @@ const whatsappUrl = `https://wa.me/51976762237?text=${whatsappMessage}`;
                 formats={["avif", "webp"]}
                 widths={[400, 640]}
                 sizes="(max-width: 768px) 100vw, 400px"
-                alt="Ciro Gabriel Yarupaitan Peralta"
+                alt="Retrato profesional del abogado Ciro Yarupaitan Peralta en su despacho jurídico, rodeado de bibliografía especializada y un entorno que refleja experiencia, confianza y profesionalismo."
                 class="w-full h-full object-cover object-top"
                 loading="eager"
                 decoding="async"
                 fetchpriority="high"
-                width={400}
-                height={500}
+                width={360}
+                height={480}
                 pictureAttributes={{
                   class: "w-full h-full",
                 }}
