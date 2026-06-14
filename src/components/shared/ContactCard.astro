@@ -1,0 +1,106 @@
+---
+import { Icon } from "astro-icon/components";
+
+export interface BenefitItem {
+  /** Texto del beneficio */
+  text: string;
+}
+
+export interface Props {
+  /** ID del artículo (para anclaje) */
+  id: string;
+  /** Nombre del icono MDI */
+  icono: string;
+  /** Título de la card */
+  titulo: string;
+  /** Subtítulo */
+  subtitulo: string;
+  /** Descripción introductoria */
+  descripcion: string;
+  /** Lista de 3 beneficios */
+  beneficios: BenefitItem[];
+  /** URL del CTA */
+  ctaUrl: string;
+  /** Texto del botón CTA */
+  ctaLabel: string;
+  /** Icono MDI del botón CTA */
+  ctaIcono: string;
+  /** Texto del footer */
+  footerText: string;
+  /** Aria-label del enlace CTA */
+  ctaAriaLabel: string;
+}
+
+const {
+  id,
+  icono,
+  titulo,
+  subtitulo,
+  descripcion,
+  beneficios,
+  ctaUrl,
+  ctaLabel,
+  ctaIcono,
+  footerText,
+  ctaAriaLabel,
+} = Astro.props;
+---
+
+<article
+  class="p-8 rounded-sm shadow-lg transform hover:shadow-xl transition-all duration-300 bg-white"
+  id={id}
+>
+  <!-- Encabezado con icono -->
+  <header class="flex items-center gap-4 mb-6">
+    <div class="p-3 bg-blue-100 rounded-full">
+      <Icon name={icono} class="w-6 h-6 text-primary" aria-hidden="true" />
+    </div>
+    <div>
+      <h2 class="font-serif text-2xl text-primary mb-1">{titulo}</h2>
+      <p class="text-sm text-gray-500 text-pretty line-clamp-1">{subtitulo}</p>
+    </div>
+  </header>
+
+  <!-- Beneficios -->
+  <section class="space-y-6 mb-8" aria-labelledby={`${id}-description`}>
+    <div class="space-y-4">
+      <h3 id={`${id}-description`} class="sr-only">
+        Beneficios de {titulo.toLowerCase()}
+      </h3>
+      <p class="text-gray-600 text-sm">{descripcion}</p>
+
+      <ul class="text-gray-600">
+        {beneficios.map((b) => (
+          <li>
+            <div class="flex items-center gap-2 py-2 hover:bg-gray-50 transition-all duration-300 group">
+              <Icon name="mdi:star-four-points" class="w-4 h-4 text-primary" aria-hidden="true" />
+              <span class="text-sm font-medium group-hover:translate-x-1 transition-transform duration-300">
+                {b.text}
+              </span>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <footer class="space-y-4">
+    <a
+      href={ctaUrl}
+      class="flex items-center justify-center w-full px-8 py-2 text-sm bg-primary hover:bg-blue-950 text-white transition-all duration-300 rounded-sm group"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={ctaAriaLabel}
+    >
+      <span class="font-medium">{ctaLabel}</span>
+      <Icon
+        name={ctaIcono}
+        class="w-4 h-4 mx-2 transform transition-transform duration-300 group-hover:translate-x-1"
+        aria-hidden="true"
+      />
+    </a>
+
+    <p class="text-xs text-center text-gray-500">{footerText}</p>
+  </footer>
+</article>

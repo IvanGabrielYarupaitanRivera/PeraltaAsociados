@@ -9,3 +9,4 @@ export { default as ScrollReveal } from "./ScrollReveal.astro";
 export { default as Servicios } from "./Servicios.astro";
 export { default as WhatsAppFloat } from "./WhatsAppFloat.astro";
 export { default as SiteHeader } from "./shared/SiteHeader.astro";
+export { default as ContactCard } from "./shared/ContactCard.astro";
