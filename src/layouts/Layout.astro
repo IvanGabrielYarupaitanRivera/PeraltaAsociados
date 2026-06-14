@@ -196,6 +196,12 @@ const schemaData = {
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonicalUrl} />
 
+    <!-- Verificación Bing Webmaster Tools -->
+    <meta name="msvalidate.01" content="212B24E9157CE54B8F464CB7B221FC64" />
+
+    <!-- Analytics Umami (cookie-less, sin impacto en SEO) -->
+    <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="2f65f9d8-da6e-4324-b309-777b8d8c2278"></script>
+
     <!-- Slot para inyecciones específicas de páginas hijas (schemas, metadatos extra) -->
     <slot name="head-extra" />
 
