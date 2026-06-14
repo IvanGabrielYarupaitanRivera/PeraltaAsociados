@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
 import ScrollReveal from "@components/ScrollReveal.astro";
+import BackgroundPattern from "@components/BackgroundPattern.astro";
 
 export interface Props {
   nombre: string;
@@ -28,113 +29,113 @@ const whatsappUrl = `https://wa.me/51976762237?text=${whatsappMessage}`;
 ---
 
 <section
-  class="relative overflow-hidden bg-linear-to-br from-blue-900 via-primary to-blue-900"
+  class="relative overflow-hidden bg-linear-to-br from-blue-950 via-primary to-blue-900"
   aria-label="Ciro Gabriel Yarupaitan Peralta — Abogado Fundador"
 >
-  <div class="container mx-auto px-4 py-16 md:py-24 lg:py-32">
-    <ScrollReveal animation="fade-up" delay={0}>
-      <div
-        class="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center max-w-5xl mx-auto"
-      >
-        <!-- Columna foto -->
-        <div class="lg:col-span-2 flex justify-center lg:justify-end">
-          <div
-            class="relative w-64 sm:w-72 lg:w-80 aspect-3/4 rounded-sm overflow-hidden shadow-2xl ring-2 ring-secondary/30"
-          >
+  <BackgroundPattern variant="subtle" opacity={0.08} />
+
+  <div class="relative z-10 container mx-auto px-4 py-16 md:py-24 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
+      <!-- Columna: Foto -->
+      <ScrollReveal animation="fade-up" delay={0}>
+        <div class="flex justify-center lg:justify-end">
+          <div class="relative w-72 sm:w-80 lg:w-96 aspect-3/4">
             {foto ? (
-              <Picture
-                src={foto}
-                formats={["avif", "webp"]}
-                widths={[400, 640]}
-                sizes="(max-width: 768px) 100vw, 400px"
-                alt="Retrato profesional del abogado Ciro Yarupaitan Peralta en su despacho jurídico, rodeado de bibliografía especializada y un entorno que refleja experiencia, confianza y profesionalismo."
-                class="w-full h-full object-cover object-top"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-                width={360}
-                height={480}
-                pictureAttributes={{
-                  class: "w-full h-full",
-                }}
-              />
+              <>
+                <!-- Marco dorado decorativo -->
+                <div
+                  class="absolute -inset-3 border border-secondary/20 rounded-sm"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  class="absolute -inset-1.5 border border-secondary/10 rounded-sm"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="relative rounded-sm overflow-hidden h-full ring-1 ring-secondary/25 shadow-2xl">
+                  <Picture
+                    src={foto}
+                    formats={["avif", "webp"]}
+                    widths={[400, 640, 800]}
+                    sizes="(max-width: 768px) 72vw, (max-width: 1024px) 40vw, 384px"
+                    alt="Retrato profesional del abogado Ciro Yarupaitan Peralta en su despacho jurídico, rodeado de bibliografía especializada y un entorno que refleja experiencia, confianza y profesionalismo."
+                    class="w-full h-full object-cover object-top"
+                    loading="eager"
+                    decoding="async"
+                    fetchpriority="high"
+                    width={384}
+                    height={512}
+                    pictureAttributes={{
+                      class: "w-full h-full",
+                    }}
+                  />
+                </div>
+              </>
             ) : (
               <div
-                class="w-full h-full bg-primary/50 flex items-center justify-center"
+                class="w-full h-full bg-primary/40 rounded-sm ring-1 ring-secondary/25 flex items-center justify-center"
                 aria-hidden="true"
               >
                 <Icon
                   name="mdi:account-tie"
-                  class="w-20 h-20 text-secondary/50"
+                  class="w-20 h-20 text-secondary/40"
                 />
               </div>
             )}
-          </div>
-        </div>
 
-        <!-- Columna texto -->
-        <div class="lg:col-span-3 text-center lg:text-left">
-          <!-- Línea decorativa + experiencia -->
-          <div class="flex items-center gap-4 mb-6 justify-center lg:justify-start">
-            <span class="sm:block h-0.5 w-12 bg-secondary" aria-hidden="true"></span>
-            <p
-              class="text-secondary font-medium tracking-wide uppercase text-sm sm:text-base"
-            >
-              {experiencia}
-            </p>
-          </div>
-
-          <!-- H1 — Estrictamente el nombre -->
-          <h1
-            class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-4 text-balance"
-          >
-            {nombre}
-          </h1>
-
-          <!-- Título profesional (NO en H1) -->
-          <p
-            class="text-secondary text-lg sm:text-xl font-medium mb-6"
-          >
-            {titulo}
-          </p>
-
-          <!-- Datos: colegiatura + slogan -->
-          <div class="flex flex-wrap gap-4 mb-8 justify-center lg:justify-start">
+            {/* Badge de colegiatura flotante sobre la foto */}
             {colegiatura && (
               <span
-                class="inline-flex items-center gap-2 text-white/80 text-sm bg-white/10 px-4 py-2 rounded-sm"
+                class="absolute -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 bg-secondary text-primary text-xs font-bold tracking-widest px-3 py-1.5 rounded-sm shadow-lg"
+                aria-label={`Colegiatura: ${colegiatura}`}
               >
-                <Icon
-                  name="mdi:shield-check"
-                  class="w-4 h-4 text-secondary"
-                  aria-hidden="true"
-                />
                 {colegiatura}
               </span>
             )}
-            {slogan && (
-              <span
-                class="inline-flex items-center gap-2 text-white/80 text-sm bg-white/10 px-4 py-2 rounded-sm"
-              >
-                <Icon
-                  name="mdi:star-four-points"
-                  class="w-4 h-4 text-secondary"
-                  aria-hidden="true"
-                />
-                {slogan}
-              </span>
-            )}
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <!-- Columna: Texto -->
+      <ScrollReveal animation="fade-up" delay={150}>
+        <div class="text-center lg:text-left max-w-lg mx-auto lg:mx-0">
+
+          {/* Badge: 30 AÑOS — el gancho de apertura */}
+          <div class="inline-flex items-center gap-3 mb-6">
+            <span class="h-px w-6 bg-secondary" aria-hidden="true"></span>
+            <span class="text-secondary  tracking-[0.2em] uppercase text-sm">
+              {experiencia}
+            </span>
+            <span class="h-px w-6 bg-secondary" aria-hidden="true"></span>
           </div>
 
-          <!-- CTA principal -->
-          <div
-            class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-          >
+          {/* H1: Nombre */}
+          <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white font-bold mb-5 text-balance leading-tight">
+            {nombre}
+          </h1>
+
+          {/* Línea dorada extensible bajo el H1 */}
+          <div class="h-px w-16 bg-secondary/40 mx-auto lg:mx-0 mb-6" aria-hidden="true"></div>
+
+          {/* Título profesional */}
+          <p class="text-secondary/90 text-lg sm:text-xl font-medium mb-4">
+            {titulo}
+          </p>
+
+          {/* Slogan */}
+          {slogan && (
+            <p class="text-white/60 text-base mb-8 text-pretty max-w-md mx-auto lg:mx-0">
+              {slogan}
+            </p>
+          )}
+
+          {/* CTAs */}
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center px-8 py-4 text-lg font-medium text-primary bg-secondary hover:bg-white transition-all duration-300 rounded-sm group shadow-lg hover:shadow-xl"
+              class="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-primary bg-secondary hover:bg-secondary/90 transition-colors duration-300 rounded-sm shadow-lg hover:shadow-xl"
               aria-label="Agendar consulta legal con el Dr. Ciro Yarupaitan por WhatsApp"
             >
               <Icon
@@ -143,26 +144,21 @@ const whatsappUrl = `https://wa.me/51976762237?text=${whatsappMessage}`;
                 aria-hidden="true"
               />
               Agendar Consulta
-              <Icon
-                name="mdi:arrow-right"
-                class="w-5 h-5 ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden="true"
-              />
             </a>
             <a
               href="/contacto/"
-              class="inline-flex items-center px-8 py-4 text-lg font-medium text-white border border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-300 rounded-sm group"
+              class="group inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-white/20 hover:border-white/50 hover:bg-white/5 transition-all duration-300 rounded-sm"
             >
               <Icon
                 name="mdi:email"
-                class="w-5 h-5 mr-2"
+                class="w-5 h-5 mr-2 transition-transform duration-300 group-hover:-translate-y-0.5"
                 aria-hidden="true"
               />
               Escríbanos
             </a>
           </div>
         </div>
-      </div>
-    </ScrollReveal>
+      </ScrollReveal>
+    </div>
   </div>
 </section>
